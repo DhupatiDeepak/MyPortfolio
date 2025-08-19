@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Dhupati - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark transition-all duration-500">
+    <div id="particles" class="particles"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-dark glass-card z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold heading-font gradient-text">DEEPAKPORTFOLIO</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-accent">Home</a>
+                <a href="#about" class="hover:text-accent">About</a>
+                <a href="#internships" class="hover:text-accent">Internships</a>
+                <a href="#skills" class="hover:text-accent">Skills</a>
+                <a href="#projects" class="hover:text-accent">Projects</a>
+                <a href="#education" class="hover:text-accent">Education</a>
+                <a href="#certificates" class="hover:text-accent">Certificates</a>
+                <a href="#awards" class="hover:text-accent">Awards</a>
+                <a href="#interests" class="hover:text-accent">Interests</a>
+                <a href="#contact" class="hover:text-accent">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="btn-glow flex items-center text-sm"><i class="fa-solid fa-moon mr-2"></i> Toggle Theme</button>
+                <a href="resume.pdf" download class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full pulse-glow">Download Resume</a>
+                <button id="menu-toggle" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark glass-card">
+            <div class="flex flex-col items-center space-y-4 py-4">
+                <a href="#home" class="hover:text-accent">Home</a>
+                <a href="#about" class="hover:text-accent">About</a>
+                <a href="#internships" class="hover:text-accent">Internships</a>
+                <a href="#skills" class="hover:text-accent">Skills</a>
+                <a href="#projects" class="hover:text-accent">Projects</a>
+                <a href="#education" class="hover:text-accent">Education</a>
+                <a href="#certificates" class="hover:text-accent">Certificates</a>
+                <a href="#awards" class="hover:text-accent">Awards</a>
+                <a href="#interests" class="hover:text-accent">Interests</a>
+                <a href="#contact" class="hover:text-accent">Contact</a>
+                <a href="resume.pdf" download class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full pulse-glow">Download Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center gradient-bg">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center hero-content">
+            <div class="md:w-1/2 hero-text fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold heading-font mb-4">Hi, I'm Dhupati Deepak</h1>
+                <h2 class="text-2xl md:text-3xl gradient-text mb-6">Software Engineer</h2>
+                <p class="text-lg mb-6">Dedicated drone executive member and coordinator for the Innovation and Incubation Club (IIC) at college. Excel in leadership, time management, and event planning with a proven ability to schedule and manage events while multitasking effectively. Leveraging technical skills and organizational abilities to contribute to innovative and dynamic work environments.</p>
+                <div class="space-x-4">
+                    <a href="#projects" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-6 py-3 rounded-full hover-tilt">View My Work</a>
+                    <a href="#contact" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-6 py-3 rounded-full hover-tilt">Contact Me</a>
+                    <a href="resume.pdf" download class="btn-glow bg-gradient-to-r from-accent to-primary text-white px-6 py-3 rounded-full hover-tilt"><i class="fas fa-file-download mr-2"></i> Resume</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0 fade-in">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Deepak Dhupati" class="w-3/4 mx-auto rounded-full neon-border">
+                <p class="text-center mt-4 text-lg gradient-text">🚀 Available for work</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+                <div class="md:w-1/2 glass-card p-6 fade-in hover-tilt">
+                    <h3 class="text-2xl font-bold heading-font mb-4">Who I Am</h3>
+                    <p class="mb-4">As a dedicated drone executive member and coordinator for the Innovation and Incubation Club (IIC) at my college, I excel in leadership, time management, and event planning. I have a proven ability to schedule and manage events while multitasking effectively. I aim to leverage my technical skills and organizational abilities to contribute to an innovative and dynamic work environment.</p>
+                    <p class="mb-4">Focusing on AI/ML, Drones, Python/C++. Languages: English, Telugu.</p>
+                    <div class="flex space-x-4">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Guntur, India</p>
+                        <p><i class="fas fa-briefcase mr-2"></i> Open to Opportunities</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 glass-card p-6 fade-in hover-tilt">
+                    <h3 class="text-2xl font-bold heading-font mb-4">My Approach</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-lightbulb text-primary text-2xl mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Innovative Solutions</h4>
+                                <p>Creative approaches to complex problems in AI and drone technology</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-code text-primary text-2xl mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Clean Code</h4>
+                                <p>Well-structured and maintainable codebase using OOP and design patterns</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-rocket text-primary text-2xl mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Efficient Delivery</h4>
+                                <p>Optimizing for real-time performance and scalability</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internships Section -->
+    <section id="internships" class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Internships Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item glass-card p-6 mb-8 fade-in hover-tilt">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold heading-font">Software Engineering Intern • People Tech Group</h3>
+                            <p>Hands-on experience in C++ (Advanced Level) building real-time modules using OOP, STL, and multithreading</p>
+                        </div>
+                        <p class="text-primary mt-2 md:mt-0">March 2025 – Present</p>
+                    </div>
+                    <p class="mt-4">Utilized tools like Git, GitHub, and Linux shell scripting for version control and automation. Applied design patterns and OOP principles to improve code maintainability and system scalability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">My Skills</h2>
+            <div class="skills-grid grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fab fa-python text-primary text-2xl mr-2"></i> Python
+                </div>
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fas fa-code text-primary text-2xl mr-2"></i> C++
+                </div>
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fab fa-html5 text-primary text-2xl mr-2"></i> HTML
+                </div>
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fab fa-css3-alt text-primary text-2xl mr-2"></i> CSS
+                </div>
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fas fa-brain text-primary text-2xl mr-2"></i> Machine Learning
+                </div>
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fas fa-users text-primary text-2xl mr-2"></i> Team Collaboration
+                </div>
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fas fa-chess text-primary text-2xl mr-2"></i> Strategic Planning
+                </div>
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fas fa-puzzle-piece text-primary text-2xl mr-2"></i> Problem Solving
+                </div>
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fas fa-camera text-primary text-2xl mr-2"></i> OpenCV
+                </div>
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fas fa-hand-point-up text-primary text-2xl mr-2"></i> MediaPipe
+                </div>
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fab fa-git-alt text-primary text-2xl mr-2"></i> Git
+                </div>
+                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
+                    <i class="fab fa-github text-primary text-2xl mr-2"></i> GitHub
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="cert-card glass-card p-4 fade-in hover-tilt">
+                    <img src="https://images.unsplash.com/photo-1516321310762-4794370e6a50?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="ASL Translator" class="w-full rounded-lg cert-img">
+                    <div class="cert-overlay">
+                        <div>
+                            <h3 class="text-xl font-bold heading-font">ASL Translator</h3>
+                            <div class="flex space-x-2 mt-2">
+                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">OpenCV</span>
+                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">MediaPipe</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4">Developed a real-time hand gesture recognition system to interpret ASL alphabets, enabling dynamic word construction. Ensured seamless user experience despite varying hand sizes, orientations, and lighting. Optimized for accurate, real-time detection with minimal latency. Impacts accessibility for hearing/speech impaired individuals.</p>
+                    <div class="mt-4 space-x-4">
+                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">Live Demo</a>
+                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Code</a>
+                    </div>
+                </div>
+                <div class="cert-card glass-card p-4 fade-in hover-tilt">
+                    <img src="https://images.unsplash.com/photo-1566241135-3701423eb92c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Wave Point Navigation System" class="w-full rounded-lg cert-img">
+                    <div class="cert-overlay">
+                        <div>
+                            <h3 class="text-xl font-bold heading-font">Wave Point Navigation System for Autonomous Drones</h3>
+                            <div class="flex space-x-2 mt-2">
+                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Drones</span>
+                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Tello</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4">Designed a navigation system for Tello drones to autonomously navigate waypoints and capture aerial images. Resolved stability, accuracy, and synchronization issues for seamless operation. Improved autonomy for surveillance and mapping tasks.</p>
+                    <div class="mt-4 space-x-4">
+                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">Live Demo</a>
+                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Code</a>
+                    </div>
+                </div>
+                <div class="cert-card glass-card p-4 fade-in hover-tilt">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Morse Code Generator" class="w-full rounded-lg cert-img">
+                    <div class="cert-overlay">
+                        <div>
+                            <h3 class="text-xl font-bold heading-font">Morse Code Generator</h3>
+                            <div class="flex space-x-2 mt-2">
+                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Embedded C</span>
+                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Arduino</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4">Created a Morse Code Generator to convert text into Morse code using Embedded C and an embedded system. Resolved timing issues for accurate and audible Morse signals. Enhanced accessibility and emergency communication, with future plans for Morse-to-text decoding.</p>
+                    <div class="mt-4 space-x-4">
+                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">Live Demo</a>
+                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="btn-glow bg-gradient-to-r from-accent to-primary text-white px-6 py-3 rounded-full hover-tilt">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Education Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item glass-card p-6 mb-8 fade-in hover-tilt">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold heading-font">B.Tech</h3>
+                            <p>Seshadri Rao Gudlavalleru Engineering College, Gudlavalleru, Gudivada</p>
+                        </div>
+                        <p class="text-primary mt-2 md:mt-0">Ongoing</p>
+                    </div>
+                </div>
+                <div class="timeline-item glass-card p-6 mb-8 fade-in hover-tilt">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold heading-font">Intermediate</h3>
+                            <p>Narayana Junior College, Vijayawada</p>
+                        </div>
+                        <p class="text-primary mt-2 md:mt-0">Completed</p>
+                    </div>
+                </div>
+                <div class="timeline-item glass-card p-6 mb-8 fade-in hover-tilt">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold heading-font">S.S.C</h3>
+                            <p>Bhashyam High School, Guntur</p>
+                        </div>
+                        <p class="text-primary mt-2 md:mt-0">Completed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Certificates</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="cert-card glass-card p-4 fade-in hover-tilt">
+                    <h3 class="text-xl font-bold heading-font">Oracle Certified Professional - Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</h3>
+                    <p class="text-primary">Oracle • Issued: 2024</p>
+                    <div class="mt-4 space-x-4">
+                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
+                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Download</a>
+                    </div>
+                </div>
+                <div class="cert-card glass-card p-4 fade-in hover-tilt">
+                    <h3 class="text-xl font-bold heading-font">Microsoft Certified: Azure Fundamentals</h3>
+                    <p class="text-primary">Microsoft • Issued: 2024</p>
+                    <div class="mt-4 space-x-4">
+                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
+                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Download</a>
+                    </div>
+                </div>
+                <div class="cert-card glass-card p-4 fade-in hover-tilt">
+                    <h3 class="text-xl font-bold heading-font">IBM Verified Certificate: Machine Learning with Python</h3>
+                    <p class="text-primary">IBM • Issued: 2024</p>
+                    <div class="mt-4 space-x-4">
+                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
+                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="py-20 bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Awards & Achievements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="cert-card glass-card p-4 fade-in hover-tilt">
+                    <h3 class="text-xl font-bold heading-font">Drone Executive Member</h3>
+                    <p class="text-primary">Innovation and Incubation Club</p>
+                    <div class="mt-4">
+                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
+                    </div>
+                </div>
+                <div class="cert-card glass-card p-4 fade-in hover-tilt">
+                    <h3 class="text-xl font-bold heading-font">Project Innovation - ASL Translator</h3>
+                    <p class="text-primary">Accessibility Impact</p>
+                    <div class="mt-4">
+                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
+                    </div>
+                </div>
+                <div class="cert-card glass-card p-4 fade-in hover-tilt">
+                    <h3 class="text-xl font-bold heading-font">Drone Autonomy Excellence</h3>
+                    <p class="text-primary">Wave Point Navigation</p>
+                    <div class="mt-4">
+                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Personal Interests</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="interest glass-card p-4 text-center hover-tilt">Drones</div>
+                <div class="interest glass-card p-4 text-center hover-tilt">Machine Learning</div>
+                <div class="interest glass-card p-4 text-center hover-tilt">Programming</div>
+                <div class="interest glass-card p-4 text-center hover-tilt">Problem Solving</div>
+                <div class="interest glass-card p-4 text-center hover-tilt">Team Collaboration</div>
+                <div class="interest glass-card p-4 text-center hover-tilt">Innovation</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Get In Touch</h2>
+            <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+                <div class="md:w-1/2 glass-card p-6 fade-in hover-tilt">
+                    <h3 class="text-2xl font-bold heading-font mb-4">Contact Information</h3>
+                    <p class="mb-4">Have a project in mind or want to discuss potential opportunities? Feel free to reach out and I'll get back to you as soon as possible.</p>
+                    <div class="space-y-4">
+                        <p><i class="fas fa-envelope mr-2"></i> Email: <a href="mailto:dhupatideepak@gmail.com" class="text-primary hover:text-accent">dhupatideepak@gmail.com</a></p>
+                        <p><i class="fas fa-phone mr-2"></i> Phone: <a href="tel:+91-9704374382" class="text-primary hover:text-accent">+91-9704374382</a></p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Location: Guntur, India</p>
+                    </div>
+                    <h4 class="font-bold mt-6">Follow Me</h4>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="#" class="text-primary hover:text-accent"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="#" class="text-primary hover:text-accent"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="#" class="text-primary hover:text-accent"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="#" class="text-primary hover:text-accent"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 glass-card p-6 fade-in hover-tilt">
+                    <h3 class="text-2xl font-bold heading-font mb-4">Send Me a Message</h3>
+                    <div class="space-y-4">
+                        <input type="text" placeholder="Your Name" class="w-full p-3 bg-dark border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        <input type="email" placeholder="Your Email" class="w-full p-3 bg-dark border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        <input type="text" placeholder="Subject" class="w-full p-3 bg-dark border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        <textarea placeholder="Message" class="w-full p-3 bg-dark border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent h-32"></textarea>
+                        <div class="flex space-x-4">
+                            <button class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-6 py-3 rounded-full hover-tilt">Send Message</button>
+                            <a href="resume.pdf" download class="btn-glow bg-gradient-to-r from-accent to-primary text-white px-6 py-3 rounded-full hover-tilt">Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-dark glass-card">
+        <div class="container mx-auto px-4 text-center">
+            <a href="#" class="text-2xl font-bold heading-font gradient-text">DEEPAKPORTFOLIO</a>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#home" class="hover:text-accent">Home</a>
+                <a href="#about" class="hover:text-accent">About</a>
+                <a href="#internships" class="hover:text-accent">Internships</a>
+                <a href="#skills" class="hover:text-accent">Skills</a>
+                <a href="#projects" class="hover:text-accent">Projects</a>
+                <a href="#education" class="hover:text-accent">Education</a>
+                <a href="#certificates" class="hover:text-accent">Certificates</a>
+                <a href="#awards" class="hover:text-accent">Awards</a>
+                <a href="#interests" class="hover:text-accent">Interests</a>
+                <a href="#contact" class="hover:text-accent">Contact</a>
+            </div>
+            <p class="mt-4">© 2025 DeepakPortfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
