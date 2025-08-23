@@ -1,283 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Dhupati - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deepak Portfolio | Modern Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "X-ud7RB3C-r97TyLR",
+      });
+   })();
+</script>
+      <style>
+        #certificateModal .modal-content img {
+            max-width: 90vw;
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+        }
+    </style>
 </head>
-<body class="bg-dark transition-all duration-500">
-    <div id="particles" class="particles"></div>
+<body class="min-h-screen">
+    <!-- Floating particles background -->
+    <div class="particles" id="particles"></div>
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-dark glass-card z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold heading-font gradient-text">DEEPAKPORTFOLIO</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#home" class="hover:text-accent">Home</a>
-                <a href="#about" class="hover:text-accent">About</a>
-                <a href="#internships" class="hover:text-accent">Internships</a>
-                <a href="#skills" class="hover:text-accent">Skills</a>
-                <a href="#projects" class="hover:text-accent">Projects</a>
-                <a href="#education" class="hover:text-accent">Education</a>
-                <a href="#certificates" class="hover:text-accent">Certificates</a>
-                <a href="#awards" class="hover:text-accent">Awards</a>
-                <a href="#interests" class="hover:text-accent">Interests</a>
-                <a href="#contact" class="hover:text-accent">Contact</a>
+    <!-- Navigation -->
+    <nav class="glass-card fixed w-full z-50 py-4 px-6 md:px-12">
+        <div class="flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text heading-font">DEEPAK<span class="text-white">PORTFOLIO</span></a>
+            <div class="hidden md:flex md:items-center md:space-x-8">
+                <a href="#home" class="text-white hover:text-purple-300 transition">Home</a>
+                <a href="#about" class="text-white hover:text-purple-300 transition">About</a>
+                <a href="#skills" class="text-white hover:text-purple-300 transition">Skills</a>
+                <a href="#internships" class="text-white hover:text-purple-300 transition">Internships</a>
+                <a href="#projects" class="text-white hover:text-purple-300 transition">Projects</a>
+                <a href="#certificates" class="text-white hover:text-purple-300 transition">Certificates</a>
+                <a href="#education" class="text-white hover:text-purple-300 transition">Education</a>
+                <a href="#awards" class="text-white hover:text-purple-300 transition">Awards</a>
+                <a href="#interests" class="text-white hover:text-purple-300 transition">Interests</a>
+                <a href="#contact" class="text-white hover:text-purple-300 transition">Contact</a>
             </div>
-            <div class="flex items-center space-x-4">
-                <button id="theme-toggle" class="btn-glow flex items-center text-sm"><i class="fa-solid fa-moon mr-2"></i> Toggle Theme</button>
-                <a href="resume.pdf" download class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full pulse-glow">Download Resume</a>
-                <button id="menu-toggle" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" class="text-white hover:text-purple-300 transition"><i class="fas fa-moon"></i></button>
+                <a id="resumeTopBtn" href="images/Deepak_Resume.pdf" download class="hidden md:inline-flex btn-glow pulse-glow border-2 border-purple-500 text-white px-4 py-2 rounded-full font-medium hover:bg-purple-900/30 transition">
+                    <i class="fa-solid fa-file-arrow-down mr-2"></i> Download Resume
+                </a>
+                <button class="md:hidden text-white" id="menu-toggle"><i class="fas fa-bars text-2xl"></i></button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-dark glass-card">
-            <div class="flex flex-col items-center space-y-4 py-4">
-                <a href="#home" class="hover:text-accent">Home</a>
-                <a href="#about" class="hover:text-accent">About</a>
-                <a href="#internships" class="hover:text-accent">Internships</a>
-                <a href="#skills" class="hover:text-accent">Skills</a>
-                <a href="#projects" class="hover:text-accent">Projects</a>
-                <a href="#education" class="hover:text-accent">Education</a>
-                <a href="#certificates" class="hover:text-accent">Certificates</a>
-                <a href="#awards" class="hover:text-accent">Awards</a>
-                <a href="#interests" class="hover:text-accent">Interests</a>
-                <a href="#contact" class="hover:text-accent">Contact</a>
-                <a href="resume.pdf" download class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full pulse-glow">Download Resume</a>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden mt-4" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="text-white hover:text-purple-300 transition">Home</a>
+                <a href="#about" class="text-white hover:text-purple-300 transition">About</a>
+                <a href="#skills" class="text-white hover:text-purple-300 transition">Skills</a>
+                <a href="#internships" class="text-white hover:text-purple-300 transition">Internships</a>
+                <a href="#projects" class="text-white hover:text-purple-300 transition">Projects</a>
+                <a href="#certificates" class="text-white hover:text-purple-300 transition">Certificates</a>
+                <a href="#education" class="text-white hover:text-purple-300 transition">Education</a>
+                <a href="#awards" class="text-white hover:text-purple-300 transition">Awards</a>
+                <a href="#interests" class="text-white hover:text-purple-300 transition">Interests</a>
+                <a href="#contact" class="text-white hover:text-purple-300 transition">Contact</a>
+                <a href="images/Deepak_Resume.pdf" download class="text-white hover:text-purple-300 transition">Download Resume</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center gradient-bg">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center hero-content">
-            <div class="md:w-1/2 hero-text fade-in">
-                <h1 class="text-4xl md:text-5xl font-bold heading-font mb-4">Hi, I'm Dhupati Deepak</h1>
-                <h2 class="text-2xl md:text-3xl gradient-text mb-6">Software Engineer</h2>
-                <p class="text-lg mb-6">Dedicated drone executive member and coordinator for the Innovation and Incubation Club (IIC) at college. Excel in leadership, time management, and event planning with a proven ability to schedule and manage events while multitasking effectively. Leveraging technical skills and organizational abilities to contribute to innovative and dynamic work environments.</p>
-                <div class="space-x-4">
-                    <a href="#projects" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-6 py-3 rounded-full hover-tilt">View My Work</a>
-                    <a href="#contact" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-6 py-3 rounded-full hover-tilt">Contact Me</a>
-                    <a href="resume.pdf" download class="btn-glow bg-gradient-to-r from-accent to-primary text-white px-6 py-3 rounded-full hover-tilt"><i class="fas fa-file-download mr-2"></i> Resume</a>
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center px-4 pt-24 pb-10">
+        <div class="container mx-auto">
+            <div class="hero-content flex flex-col md:flex-row items-center justify-between gap-12">
+                <!-- Hero Text -->
+                <div class="hero-text fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 heading-font enhanced-typing-animation">
+                        <span class="neon-name hover-glow">
+                            <span>H</span><span>i</span><span>,</span><span> </span>
+                            <span>I</span><span>'</span><span>m</span><span> </span>
+                        </span>
+                        <span class="white-text">
+                            <span>D</span><span>h</span><span>u</span><span>p</span><span>a</span><span>t</span><span>i</span><span> </span>
+                            <span>D</span><span>e</span><span>e</span><span>p</span><span>a</span><span>k</span>
+                        </span>
+                    </h1>
+                    <h2 class="text-2xl md:text-4xl font-semibold mb-6 gradient-text heading-font">
+                        Aspiring Software Engineer
+                    </h2>
+                    <p class="text-lg md:text-xl mb-8 max-w-xl">
+                        I’m Dhupati Deepak, an aspiring Software Engineer with expertise in 
+                        <span class="font-semibold text-purple-300">C++, Python, Android, Linux, and AI</span>. 
+                        Passionate about building smart solutions that blend software, AI, and embedded systems 
+                        to solve real-world challenges.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="#projects" class="btn-glow bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-3 rounded-full font-medium transition">View My Work</a>
+                        <a href="#contact" class="btn-glow border-2 border-purple-500 text-white px-6 py-3 rounded-full font-medium hover:bg-purple-900/30 transition">Contact Me</a>
+                        <a href="./Deepak_Resume.pdf" download class="btn-glow pulse-glow border-2 border-purple-500 px-6 py-3 rounded-full font-medium hover:bg-purple-900/30 transition flex items-center">
+                            <i class="fa-solid fa-file-arrow-down mr-2"></i> Resume
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="md:w-1/2 mt-8 md:mt-0 fade-in">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Deepak Dhupati" class="w-3/4 mx-auto rounded-full neon-border">
-                <p class="text-center mt-4 text-lg gradient-text">🚀 Available for work</p>
+                <!-- Hero Image -->
+                <div class="hero-image fade-in">
+                    <div class="relative">
+                        <!-- Profile Image -->
+                        <div class="w-[28rem] h-[28rem] md:w-[32rem] md:h-[32rem] rounded-full overflow-hidden border-[6px] border-purple-500/40 shadow-2xl relative">
+                            <img src="images/Gemini_Generated_Image_ifcvuhifcvuhifcv.png" 
+                                 alt="Dhupati Deepak" 
+                                 class="w-full h-full object-cover transition duration-700 hover:scale-110" />
+                        </div>
+                        <!-- Availability Badge -->
+                        <div class="absolute -bottom-8 -right-8 bg-purple-900/90 backdrop-blur-md px-7 py-3.5 rounded-full shadow-lg">
+                            <span class="text-xl font-semibold tracking-wide">🚀 Available for Work</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-dark">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">About Me</h2>
-            <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
-                <div class="md:w-1/2 glass-card p-6 fade-in hover-tilt">
-                    <h3 class="text-2xl font-bold heading-font mb-4">Who I Am</h3>
-                    <p class="mb-4">As a dedicated drone executive member and coordinator for the Innovation and Incubation Club (IIC) at my college, I excel in leadership, time management, and event planning. I have a proven ability to schedule and manage events while multitasking effectively. I aim to leverage my technical skills and organizational abilities to contribute to an innovative and dynamic work environment.</p>
-                    <p class="mb-4">Focusing on AI/ML, Drones, Python/C++. Languages: English, Telugu.</p>
-                    <div class="flex space-x-4">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i> Guntur, India</p>
-                        <p><i class="fas fa-briefcase mr-2"></i> Open to Opportunities</p>
+    <section id="about" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font">
+                <span class="gradient-text">About</span> <span class="text-white">Me</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Who I Am -->
+                <div class="fade-in glass-card p-8 rounded-2xl hover-tilt border border-transparent">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text heading-font">Who I Am</h3>
+                    <p class="mb-4">
+                        I’m <span class="font-semibold text-purple-300">Dhupati Deepak</span>, a graduate in 
+                        <span class="font-semibold text-purple-300">B.Tech</span> from 
+                        <span class="font-semibold text-purple-300">Seshadri Rao Gudlavalleru Engineering College</span>.  
+                        I speak both <span class="font-semibold">English</span> and <span class="font-semibold">Telugu</span>.
+                    </p>
+                    <p class="mb-4">
+                        I successfully completed a <span class="font-semibold text-purple-300">6-month internship</span> 
+                        at <span class="font-semibold text-purple-300">People Tech Group, Adoni</span>, 
+                        where I gained hands-on experience working on real-world projects and strengthening my 
+                        technical and problem-solving skills.
+                    </p>
+                    <p class="mb-6">
+                        During my college days, I was an active <span class="font-semibold text-purple-300">drone executive member</span> 
+                        and coordinator of the <span class="font-semibold text-purple-300">Innovation and Incubation Club (IIC)</span>.  
+                        This experience helped me build strong leadership, time management, and event planning abilities.
+                    </p>
+                    <p class="mb-6">
+                        My core technical skills include 
+                        <span class="font-semibold text-purple-300">C++, Python, Android, Linux, and AI</span>.  
+                        I am passionate about creating innovative software solutions that integrate AI and embedded systems 
+                        to address real-world challenges.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="bg-purple-900/50 px-4 py-2 rounded-full">
+                            <span class="text-sm font-medium">📍 Guntur, India</span>
+                        </div>
                     </div>
                 </div>
-                <div class="md:w-1/2 glass-card p-6 fade-in hover-tilt">
-                    <h3 class="text-2xl font-bold heading-font mb-4">My Approach</h3>
+                <!-- My Approach -->
+                <div class="fade-in glass-card p-8 rounded-2xl hover-tilt border border-transparent">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text heading-font">My Approach</h3>
                     <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-lightbulb text-primary text-2xl mr-4"></i>
+                        <!-- Innovative Solutions -->
+                        <div class="flex items-start">
+                            <div class="bg-purple-500/20 p-2 rounded-full mr-4">
+                                <i class="fas fa-lightbulb text-purple-400"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold">Innovative Solutions</h4>
-                                <p>Creative approaches to complex problems in AI and drone technology</p>
+                                <h4 class="font-semibold">Innovative Solutions</h4>
+                                <p class="text-sm text-gray-300">Creative approaches to complex problems</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-code text-primary text-2xl mr-4"></i>
+                        <!-- Clean Code -->
+                        <div class="flex items-start">
+                            <div class="bg-purple-500/20 p-2 rounded-full mr-4">
+                                <i class="fas fa-code text-purple-400"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold">Clean Code</h4>
-                                <p>Well-structured and maintainable codebase using OOP and design patterns</p>
+                                <h4 class="font-semibold">Clean Code</h4>
+                                <p class="text-sm text-gray-300">Well-structured and maintainable codebase</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-rocket text-primary text-2xl mr-4"></i>
+                        <!-- Fast Delivery -->
+                        <div class="flex items-start">
+                            <div class="bg-purple-500/20 p-2 rounded-full mr-4">
+                                <i class="fas fa-rocket text-purple-400"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold">Efficient Delivery</h4>
-                                <p>Optimizing for real-time performance and scalability</p>
+                                <h4 class="font-semibold">Fast Delivery</h4>
+                                <p class="text-sm text-gray-300">Efficient workflows for timely results</p>
+                            </div>
+                        </div>
+                        <!-- Team Collaboration -->
+                        <div class="flex items-start">
+                            <div class="bg-purple-500/20 p-2 rounded-full mr-4">
+                                <i class="fas fa-users text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Team Collaboration</h4>
+                                <p class="text-sm text-gray-300">Working effectively within diverse teams</p>
+                            </div>
+                        </div>
+                        <!-- Strategic Planning -->
+                        <div class="flex items-start">
+                            <div class="bg-purple-500/20 p-2 rounded-full mr-4">
+                                <i class="fas fa-project-diagram text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Strategic Planning</h4>
+                                <p class="text-sm text-gray-300">Organizing tasks with a results-driven mindset</p>
+                            </div>
+                        </div>
+                        <!-- Problem Solving -->
+                        <div class="flex items-start">
+                            <div class="bg-purple-500/20 p-2 rounded-full mr-4">
+                                <i class="fas fa-puzzle-piece text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Problem Solving</h4>
+                                <p class="text-sm text-gray-300">Logical and analytical approaches to challenges</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Internships Section -->
-    <section id="internships" class="py-20 gradient-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Internships Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item glass-card p-6 mb-8 fade-in hover-tilt">
-                    <div class="timeline-dot"></div>
-                    <div class="flex flex-col md:flex-row justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold heading-font">Software Engineering Intern • People Tech Group</h3>
-                            <p>Hands-on experience in C++ (Advanced Level) building real-time modules using OOP, STL, and multithreading</p>
-                        </div>
-                        <p class="text-primary mt-2 md:mt-0">March 2025 – Present</p>
-                    </div>
-                    <p class="mt-4">Utilized tools like Git, GitHub, and Linux shell scripting for version control and automation. Applied design patterns and OOP principles to improve code maintainability and system scalability.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-dark">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">My Skills</h2>
-            <div class="skills-grid grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fab fa-python text-primary text-2xl mr-2"></i> Python
+    <section id="skills" class="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font">
+                <span class="gradient-text">My</span> <span class="text-white">Skills</span>
+            </h2>
+            <div class="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- Python -->
+                <div class="fade-in glass-card p-6 rounded-xl flex flex-col items-center hover-tilt border border-transparent">
+                    <div class="text-4xl mb-3 text-yellow-400"><i class="fab fa-python"></i></div>
+                    <span class="font-medium">Python</span>
                 </div>
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fas fa-code text-primary text-2xl mr-2"></i> C++
+                <!-- C++ -->
+                <div class="fade-in glass-card p-6 rounded-xl flex flex-col items-center hover-tilt border border-transparent">
+                    <div class="text-4xl mb-3 text-white"><i class="fas fa-code"></i></div>
+                    <span class="font-medium">C++</span>
                 </div>
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fab fa-html5 text-primary text-2xl mr-2"></i> HTML
+                <!-- HTML -->
+                <div class="fade-in glass-card p-6 rounded-xl flex flex-col items-center hover-tilt border border-transparent">
+                    <div class="text-4xl mb-3 text-orange-400"><i class="fab fa-html5"></i></div>
+                    <span class="font-medium">HTML</span>
                 </div>
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fab fa-css3-alt text-primary text-2xl mr-2"></i> CSS
+                <!-- CSS -->
+                <div class="fade-in glass-card p-6 rounded-xl flex flex-col items-center hover-tilt border border-transparent">
+                    <div class="text-4xl mb-3 text-blue-400"><i class="fab fa-css3-alt"></i></div>
+                    <span class="font-medium">CSS</span>
                 </div>
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fas fa-brain text-primary text-2xl mr-2"></i> Machine Learning
+                <!-- JavaScript -->
+                <div class="fade-in glass-card p-6 rounded-xl flex flex-col items-center hover-tilt border border-transparent">
+                    <div class="text-4xl mb-3 text-yellow-400"><i class="fab fa-js"></i></div>
+                    <span class="font-medium">JavaScript</span>
                 </div>
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fas fa-users text-primary text-2xl mr-2"></i> Team Collaboration
+                <!-- Machine Learning -->
+                <div class="fade-in glass-card p-6 rounded-xl flex flex-col items-center hover-tilt border border-transparent">
+                    <div class="text-4xl mb-3 text-white"><i class="fas fa-brain"></i></div>
+                    <span class="font-medium">Machine Learning</span>
                 </div>
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fas fa-chess text-primary text-2xl mr-2"></i> Strategic Planning
+                <!-- Linux -->
+                <div class="fade-in glass-card p-6 rounded-xl flex flex-col items-center hover-tilt border border-transparent">
+                    <div class="text-4xl mb-3 text-green-400"><i class="fab fa-linux"></i></div>
+                    <span class="font-medium">Linux</span>
                 </div>
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fas fa-puzzle-piece text-primary text-2xl mr-2"></i> Problem Solving
+                <!-- AI Tools -->
+                <div class="fade-in glass-card p-6 rounded-xl flex flex-col items-center hover-tilt border border-transparent">
+                    <div class="text-4xl mb-3 text-pink-400"><i class="fas fa-robot"></i></div>
+                    <span class="font-medium">AI Tools</span>
                 </div>
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fas fa-camera text-primary text-2xl mr-2"></i> OpenCV
+                <!-- Android -->
+                <div class="fade-in glass-card p-6 rounded-xl flex flex-col items-center hover-tilt border border-transparent">
+                    <div class="text-4xl mb-3 text-green-500"><i class="fab fa-android"></i></div>
+                    <span class="font-medium">Android</span>
                 </div>
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fas fa-hand-point-up text-primary text-2xl mr-2"></i> MediaPipe
+                <!-- Git -->
+                <div class="fade-in glass-card p-6 rounded-xl flex flex-col items-center hover-tilt border border-transparent">
+                    <div class="text-4xl mb-3 text-red-400"><i class="fab fa-git-alt"></i></div>
+                    <span class="font-medium">Git</span>
                 </div>
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fab fa-git-alt text-primary text-2xl mr-2"></i> Git
-                </div>
-                <div class="glass-card p-4 text-center hover-tilt flex items-center justify-center">
-                    <i class="fab fa-github text-primary text-2xl mr-2"></i> GitHub
+            </div>
+        </div>
+    </section>
+
+    <!-- Internships Section (Timeline) -->
+    <section id="internships" class="py-12 px-4 bg-gradient-to-b from-slate-800 to-slate-900">
+        <div class="container mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center heading-font">
+                <span class="gradient-text">Internships</span> <span class="text-white">Timeline</span>
+            </h2>
+            <div class="timeline space-y-3">
+                <div class="timeline-item fade-in">
+                    <span class="timeline-dot"></span>
+                    <div class="glass-card border border-transparent hover-tilt rounded-lg p-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <img alt="People Tech Group Logo" class="timeline-logo self-center" src="images/logo1.png" />
+                                <div>
+                                    <h3 class="text-lg font-semibold">Internship</h3>
+                                    <p class="text-sm text-gray-400">Software Engineering Intern | People Tech Group, Adoni | March 2025 – Present</p>
+                                    <ul class="list-disc list-inside mt-1 text-base text-gray-300 space-y-1">
+                                        <li>Hands-on experience in C++ (Advanced Level) using OOP, STL, and multithreading.</li>
+                                        <li>Worked with Git, GitHub, and Linux shell scripting for version control & automation.</li>
+                                        <li>Applied design patterns and OOP principles for better maintainability & scalability.</li>
+                                    </ul>
+                                    <p class="mt-1 text-base text-gray-300">Learned advanced C++ concepts, version control, and design patterns, improving technical skills and problem-solving abilities.</p>
+                                </div>
+                            </div>
+                            <div class="text-sm bg-purple-900/40 px-2 py-0.5 rounded-full self-start sm:self-auto">March 2025 – Present</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 gradient-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">My Projects</h2>
+    <section id="projects" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font"><span class="gradient-text">My</span> <span class="text-white">Projects</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="cert-card glass-card p-4 fade-in hover-tilt">
-                    <img src="https://images.unsplash.com/photo-1516321310762-4794370e6a50?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="ASL Translator" class="w-full rounded-lg cert-img">
-                    <div class="cert-overlay">
-                        <div>
-                            <h3 class="text-xl font-bold heading-font">ASL Translator</h3>
-                            <div class="flex space-x-2 mt-2">
-                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Python</span>
-                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">OpenCV</span>
-                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">MediaPipe</span>
-                            </div>
-                        </div>
+                <!-- Project 1: ASL Translator -->
+                <div class="fade-in glass-card rounded-xl overflow-hidden hover-tilt border border-transparent project-card">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Gemini_Generated_Image_opqot7opqot7opqo.png" alt="ASL Translator" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     </div>
-                    <p class="mt-4">Developed a real-time hand gesture recognition system to interpret ASL alphabets, enabling dynamic word construction. Ensured seamless user experience despite varying hand sizes, orientations, and lighting. Optimized for accurate, real-time detection with minimal latency. Impacts accessibility for hearing/speech impaired individuals.</p>
-                    <div class="mt-4 space-x-4">
-                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">Live Demo</a>
-                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Code</a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">ASL Translator</h3>
+                        <p class="text-gray-300 mb-4">Developed a real-time hand gesture recognition system to interpret ASL alphabets, enabling dynamic word construction. Ensured a seamless user experience with a responsive interface despite challenges like varying hand sizes, orientations, and lighting conditions. Overcame performance issues by optimizing resources for accurate, real-time gesture detection with minimal latency. Delivered a tool with significant impact on accessibility for individuals with hearing or speech impairments, advancing human-computer interaction technologies.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">OpenCV</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">MediaPipe</span>
+                        </div>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="https://github.com/DhupatiDeepak/Sign-languge-to-text-converter" class="text-sm border border-purple-500 text-white px-4 py-2 rounded-full font-medium transition hover:bg-purple-900/30">View on GitHub</a>
+                        </div>
                     </div>
                 </div>
-                <div class="cert-card glass-card p-4 fade-in hover-tilt">
-                    <img src="https://images.unsplash.com/photo-1566241135-3701423eb92c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Wave Point Navigation System" class="w-full rounded-lg cert-img">
-                    <div class="cert-overlay">
-                        <div>
-                            <h3 class="text-xl font-bold heading-font">Wave Point Navigation System for Autonomous Drones</h3>
-                            <div class="flex space-x-2 mt-2">
-                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Python</span>
-                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Drones</span>
-                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Tello</span>
-                            </div>
-                        </div>
+                <!-- Project 2: Wave Point Navigation System -->
+                <div class="fade-in glass-card rounded-xl overflow-hidden hover-tilt border border-transparent project-card">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Gemini_Generated_Image_f3p1ykf3p1ykf3p1.png" alt="Wave Point Navigation System for Autonomous Drones" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     </div>
-                    <p class="mt-4">Designed a navigation system for Tello drones to autonomously navigate waypoints and capture aerial images. Resolved stability, accuracy, and synchronization issues for seamless operation. Improved autonomy for surveillance and mapping tasks.</p>
-                    <div class="mt-4 space-x-4">
-                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">Live Demo</a>
-                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Code</a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">Wave Point Navigation System</h3>
+                        <p class="text-gray-300 mb-4">Designed a Wave Navigation System for Tello drones to autonomously navigate waypoints and capture aerial images using Python and the djitellopy library. Resolved issues with drone stability, waypoint accuracy, and image capture synchronization for seamless operation. Improved drone autonomy and showcased expertise in Python and drone technology for efficient surveillance and mapping tasks.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Drone Technology</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">djitellopy</span>
+                        </div>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="https://github.com/DhupatiDeepak/Wave-point-navigation" class="text-sm border border-purple-500 text-white px-4 py-2 rounded-full font-medium transition hover:bg-purple-900/30">View on GitHub</a>
+                        </div>
                     </div>
                 </div>
-                <div class="cert-card glass-card p-4 fade-in hover-tilt">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Morse Code Generator" class="w-full rounded-lg cert-img">
-                    <div class="cert-overlay">
-                        <div>
-                            <h3 class="text-xl font-bold heading-font">Morse Code Generator</h3>
-                            <div class="flex space-x-2 mt-2">
-                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Embedded C</span>
-                                <span class="bg-primary text-white px-2 py-1 rounded-full text-sm">Arduino</span>
-                            </div>
-                        </div>
+                <!-- Project 3: Morse Code Generator -->
+                <div class="fade-in glass-card rounded-xl overflow-hidden hover-tilt border border-transparent project-card">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Gemini_Generated_Image_nw3gp9nw3gp9nw3g.png" alt="Morse Code Generator" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     </div>
-                    <p class="mt-4">Created a Morse Code Generator to convert text into Morse code using Embedded C and an embedded system. Resolved timing issues for accurate and audible Morse signals. Enhanced accessibility and emergency communication, with future plans for Morse-to-text decoding.</p>
-                    <div class="mt-4 space-x-4">
-                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">Live Demo</a>
-                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Code</a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">Morse Code Generator</h3>
+                        <p class="text-gray-300 mb-4">Created a Morse Code Generator to convert text into Morse code signals using Embedded C and an Arduino Uno board at Seshadri Rao Gudlavalleru Engineering College. Resolved timing issues to ensure accurate and audible Morse signals. Enhanced accessibility and emergency communication, with future plans for Morse-to-text decoding.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Embedded C</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Arduino</span>
+                        </div>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="https://github.com/DhupatiDeepak/Morse-code" class="text-sm border border-purple-500 text-white px-4 py-2 rounded-full font-medium transition hover:bg-purple-900/30">View on GitHub</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="text-center mt-8">
-                <a href="#" class="btn-glow bg-gradient-to-r from-accent to-primary text-white px-6 py-3 rounded-full hover-tilt">View All Projects</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-20 bg-dark">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Education Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item glass-card p-6 mb-8 fade-in hover-tilt">
-                    <div class="timeline-dot"></div>
-                    <div class="flex flex-col md:flex-row justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold heading-font">B.Tech</h3>
-                            <p>Seshadri Rao Gudlavalleru Engineering College, Gudlavalleru, Gudivada</p>
+                <!-- Project 4: Surveillance Drone Project -->
+                <div class="fade-in glass-card rounded-xl overflow-hidden hover-tilt border border-transparent project-card">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Gemini_Generated_Image_y3thgby3thgby3th.png" alt="Surveillance Drone Project" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">Surveillance Drone</h3>
+                        <p class="text-gray-300 mb-4">Developed a comprehensive surveillance system using Tello drones to capture high-quality images for security and monitoring applications. The system demonstrates the powerful capabilities of drone-based surveillance technology, showcasing real-world applications for security monitoring, area scanning, and data collection. Implemented Python scripts for drone control and image capture functionality.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Tello Drones</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Surveillance</span>
                         </div>
-                        <p class="text-primary mt-2 md:mt-0">Ongoing</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="https://github.com/DhupatiDeepak/Surveillance-drone-project" class="text-sm border border-purple-500 text-white px-4 py-2 rounded-full font-medium transition hover:bg-purple-900/30">View on GitHub</a>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item glass-card p-6 mb-8 fade-in hover-tilt">
-                    <div class="timeline-dot"></div>
-                    <div class="flex flex-col md:flex-row justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold heading-font">Intermediate</h3>
-                            <p>Narayana Junior College, Vijayawada</p>
+                <!-- Project 5: Notes App -->
+                <div class="fade-in glass-card rounded-xl overflow-hidden hover-tilt border border-transparent project-card">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Gemini_Generated_Image_kbtdhekbtdhekbtd.png" alt="Notes App" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">Notes App</h3>
+                        <p class="text-gray-300 mb-4">Created a comprehensive Notes App designed for efficient note-taking and organization. The application provides users with a clean, intuitive interface for capturing ideas, creating to-do lists, and organizing information. Features include rich text formatting, search functionality, and cross-device synchronization, making it an essential productivity tool for students, professionals, and anyone needing to stay organized.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Mobile App</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Productivity</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">User Interface</span>
                         </div>
-                        <p class="text-primary mt-2 md:mt-0">Completed</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="https://github.com/DhupatiDeepak/NotesApp" class="text-sm border border-purple-500 text-white px-4 py-2 rounded-full font-medium transition hover:bg-purple-900/30">View on GitHub</a>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item glass-card p-6 mb-8 fade-in hover-tilt">
-                    <div class="timeline-dot"></div>
-                    <div class="flex flex-col md:flex-row justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold heading-font">S.S.C</h3>
-                            <p>Bhashyam High School, Guntur</p>
+                <!-- Project 6: Drone Projects Collection -->
+                <div class="fade-in glass-card rounded-xl overflow-hidden hover-tilt border border-transparent project-card">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Gemini_Generated_Image_8hosw08hosw08hos.png" alt="Drone Projects Collection" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">Drone Projects Collection</h3>
+                        <p class="text-gray-300 mb-4">Developed a comprehensive collection of three advanced drone applications using Tello drones and Python programming. The projects include face recognition, face tracking, and object detection systems, demonstrating sophisticated computer vision capabilities. Each application showcases different aspects of drone technology integration with AI and computer vision for real-world surveillance and monitoring applications.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Tello Drones</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Computer Vision</span>
                         </div>
-                        <p class="text-primary mt-2 md:mt-0">Completed</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="https://github.com/DhupatiDeepak/Drone-projects-" class="text-sm border border-purple-500 text-white px-4 py-2 rounded-full font-medium transition hover:bg-purple-900/30">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 7: Automatic Medicine Dispenser -->
+                <div class="fade-in glass-card rounded-xl overflow-hidden hover-tilt border border-transparent project-card">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Gemini_Generated_Image_x4hovmx4hovmx4ho.png" alt="Automatic Medicine Dispenser" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">Automatic Medicine Dispenser</h3>
+                        <p class="text-gray-300 mb-4">Designed and developed a user-friendly website for an automatic medicine dispenser system that revolutionizes medication management. The platform allows users to input prescriptions, select medicine quantities, and process payments seamlessly. The intuitive interface ensures accurate dispensing based on prescription requirements, improving medication adherence and reducing errors in healthcare delivery.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Web Development</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Healthcare</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">User Interface</span>
+                        </div>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="https://github.com/DhupatiDeepak/Automatic-Medicine-dispenser-" class="text-sm border border-purple-500 text-white px-4 py-2 rounded-full font-medium transition hover:bg-purple-900/30">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 8: RC Car Project -->
+                <div class="fade-in glass-card rounded-xl overflow-hidden hover-tilt border border-transparent project-card">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Gemini_Generated_Image_eumfkseumfkseumf.png" alt="Bluetooth Controlled RC Car" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">Bluetooth RC Car</h3>
+                        <p class="text-gray-300 mb-4">Engineered a Bluetooth-controlled RC car using Arduino Uno R3 and motor driver technology for wireless vehicle control. The system enables seamless communication with smartphones and computers through a Bluetooth module, allowing precise control of vehicle movements including forward, backward, left turns, right turns, and stopping commands. Demonstrates expertise in embedded systems and wireless communication protocols.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Embedded C</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Arduino</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Bluetooth</span>
+                        </div>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="https://github.com/DhupatiDeepak/Rc-Car-project-" class="text-sm border border-purple-500 text-white px-4 py-2 rounded-full font-medium transition hover:bg-purple-900/30">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 9: Movie Recommendation System -->
+                <div class="fade-in glass-card rounded-xl overflow-hidden hover-tilt border border-transparent project-card">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Gemini_Generated_Image_gt9srhgt9srhgt9s.png" alt="Movie Recommendation System" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">Movie Recommendation System</h3>
+                        <p class="text-gray-300 mb-4">Built an intelligent movie recommendation system using machine learning algorithms and data science techniques to provide personalized movie suggestions. The system analyzes user preferences, viewing history, and movie metadata to deliver accurate recommendations. Implemented collaborative filtering and content-based filtering approaches to enhance user experience and increase engagement with movie content platforms.</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Machine Learning</span>
+                            <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">Data Science</span>
+                        </div>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="https://github.com/DhupatiDeepak/Movie-Recommendation-System" class="text-sm border border-purple-500 text-white px-4 py-2 rounded-full font-medium transition hover:bg-purple-900/30">View on GitHub</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -285,114 +510,54 @@
     </section>
 
     <!-- Certificates Section -->
-    <section id="certificates" class="py-20 gradient-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Certificates</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="cert-card glass-card p-4 fade-in hover-tilt">
-                    <h3 class="text-xl font-bold heading-font">Oracle Certified Professional - Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</h3>
-                    <p class="text-primary">Oracle • Issued: 2024</p>
-                    <div class="mt-4 space-x-4">
-                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
-                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Download</a>
+    <section id="certificates" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font">
+                <span class="gradient-text">Certificates</span>
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Certificate Card -->
+                <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105">
+                    <div class="w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="images/image.png" alt="Oracle Certificate" class="max-h-full max-w-full object-contain" />
                     </div>
-                </div>
-                <div class="cert-card glass-card p-4 fade-in hover-tilt">
-                    <h3 class="text-xl font-bold heading-font">Microsoft Certified: Azure Fundamentals</h3>
-                    <p class="text-primary">Microsoft • Issued: 2024</p>
-                    <div class="mt-4 space-x-4">
-                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
-                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Download</a>
-                    </div>
-                </div>
-                <div class="cert-card glass-card p-4 fade-in hover-tilt">
-                    <h3 class="text-xl font-bold heading-font">IBM Verified Certificate: Machine Learning with Python</h3>
-                    <p class="text-primary">IBM • Issued: 2024</p>
-                    <div class="mt-4 space-x-4">
-                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
-                        <a href="#" class="btn-glow bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full">Download</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Awards Section -->
-    <section id="awards" class="py-20 bg-dark">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Awards & Achievements</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="cert-card glass-card p-4 fade-in hover-tilt">
-                    <h3 class="text-xl font-bold heading-font">Drone Executive Member</h3>
-                    <p class="text-primary">Innovation and Incubation Club</p>
                     <div class="mt-4">
-                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
+                        <h3 class="text-lg font-semibold">Oracle Certified Professional - Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</h3>
+                        <p class="text-sm text-gray-300">Oracle • Issued: 2024</p>
+                        <div class="mt-3">
+                            <button onclick="openModal('images/image.png')" class="btn-glow inline-flex items-center border border-purple-500 px-4 py-1 rounded-full text-sm hover:bg-purple-600 transition">
+                                View
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="cert-card glass-card p-4 fade-in hover-tilt">
-                    <h3 class="text-xl font-bold heading-font">Project Innovation - ASL Translator</h3>
-                    <p class="text-primary">Accessibility Impact</p>
+                <!-- Certificate 2 -->
+                <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105">
+                    <div class="w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="images/image copy.png" alt="Microsoft Certificate" class="max-h-full max-w-full object-contain" />
+                    </div>
                     <div class="mt-4">
-                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
+                        <h3 class="text-lg font-semibold">Microsoft Certified: Azure Fundamentals</h3>
+                        <p class="text-sm text-gray-300">Microsoft • Issued: 2022</p>
+                        <div class="mt-3">
+                            <button onclick="openModal('images/image copy.png')" class="btn-glow inline-flex items-center border border-purple-500 px-4 py-1 rounded-full text-sm hover:bg-purple-600 transition">
+                                View
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="cert-card glass-card p-4 fade-in hover-tilt">
-                    <h3 class="text-xl font-bold heading-font">Drone Autonomy Excellence</h3>
-                    <p class="text-primary">Wave Point Navigation</p>
+                <!-- Certificate 3 -->
+                <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105">
+                    <div class="w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="images/shared image.png" alt="IBM Certificate" class="max-h-full max-w-full object-contain" />
+                    </div>
                     <div class="mt-4">
-                        <a href="#" class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-full">View</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interests Section -->
-    <section id="interests" class="py-20 gradient-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Personal Interests</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                <div class="interest glass-card p-4 text-center hover-tilt">Drones</div>
-                <div class="interest glass-card p-4 text-center hover-tilt">Machine Learning</div>
-                <div class="interest glass-card p-4 text-center hover-tilt">Programming</div>
-                <div class="interest glass-card p-4 text-center hover-tilt">Problem Solving</div>
-                <div class="interest glass-card p-4 text-center hover-tilt">Team Collaboration</div>
-                <div class="interest glass-card p-4 text-center hover-tilt">Innovation</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-dark">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold heading-font text-center gradient-text mb-12">Get In Touch</h2>
-            <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
-                <div class="md:w-1/2 glass-card p-6 fade-in hover-tilt">
-                    <h3 class="text-2xl font-bold heading-font mb-4">Contact Information</h3>
-                    <p class="mb-4">Have a project in mind or want to discuss potential opportunities? Feel free to reach out and I'll get back to you as soon as possible.</p>
-                    <div class="space-y-4">
-                        <p><i class="fas fa-envelope mr-2"></i> Email: <a href="mailto:dhupatideepak@gmail.com" class="text-primary hover:text-accent">dhupatideepak@gmail.com</a></p>
-                        <p><i class="fas fa-phone mr-2"></i> Phone: <a href="tel:+91-9704374382" class="text-primary hover:text-accent">+91-9704374382</a></p>
-                        <p><i class="fas fa-map-marker-alt mr-2"></i> Location: Guntur, India</p>
-                    </div>
-                    <h4 class="font-bold mt-6">Follow Me</h4>
-                    <div class="flex space-x-4 mt-2">
-                        <a href="#" class="text-primary hover:text-accent"><i class="fab fa-linkedin fa-2x"></i></a>
-                        <a href="#" class="text-primary hover:text-accent"><i class="fab fa-github fa-2x"></i></a>
-                        <a href="#" class="text-primary hover:text-accent"><i class="fab fa-twitter fa-2x"></i></a>
-                        <a href="#" class="text-primary hover:text-accent"><i class="fab fa-instagram fa-2x"></i></a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 glass-card p-6 fade-in hover-tilt">
-                    <h3 class="text-2xl font-bold heading-font mb-4">Send Me a Message</h3>
-                    <div class="space-y-4">
-                        <input type="text" placeholder="Your Name" class="w-full p-3 bg-dark border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
-                        <input type="email" placeholder="Your Email" class="w-full p-3 bg-dark border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
-                        <input type="text" placeholder="Subject" class="w-full p-3 bg-dark border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
-                        <textarea placeholder="Message" class="w-full p-3 bg-dark border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent h-32"></textarea>
-                        <div class="flex space-x-4">
-                            <button class="btn-glow bg-gradient-to-r from-primary to-accent text-white px-6 py-3 rounded-full hover-tilt">Send Message</button>
-                            <a href="resume.pdf" download class="btn-glow bg-gradient-to-r from-accent to-primary text-white px-6 py-3 rounded-full hover-tilt">Download Resume</a>
+                        <h3 class="text-lg font-semibold">IBM Verified Certificate: Machine Learning with Python</h3>
+                        <p class="text-sm text-gray-300">IBM • Issued: 2024</p>
+                        <div class="mt-3">
+                            <button onclick="openModal('images/shared image.png')" class="btn-glow inline-flex items-center border border-purple-500 px-4 py-1 rounded-full text-sm hover:bg-purple-600 transition">
+                                View
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -400,32 +565,341 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-6 bg-dark glass-card">
-        <div class="container mx-auto px-4 text-center">
-            <a href="#" class="text-2xl font-bold heading-font gradient-text">DEEPAKPORTFOLIO</a>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="#home" class="hover:text-accent">Home</a>
-                <a href="#about" class="hover:text-accent">About</a>
-                <a href="#internships" class="hover:text-accent">Internships</a>
-                <a href="#skills" class="hover:text-accent">Skills</a>
-                <a href="#projects" class="hover:text-accent">Projects</a>
-                <a href="#education" class="hover:text-accent">Education</a>
-                <a href="#certificates" class="hover:text-accent">Certificates</a>
-                <a href="#awards" class="hover:text-accent">Awards</a>
-                <a href="#interests" class="hover:text-accent">Interests</a>
-                <a href="#contact" class="hover:text-accent">Contact</a>
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font">
+                <span class="gradient-text">My</span> <span class="text-white">Education</span>
+            </h2>
+            <div class="timeline space-y-6">
+                <div class="timeline-item fade-in">
+                    <span class="timeline-dot"></span>
+                    <div class="glass-card border border-transparent hover-tilt rounded-xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <img src="images/1650520191phpTC7t7e.jpeg" alt="SR Gudlavalleru Logo" class="education-logo" />
+                            <div>
+                                <h3 class="text-xl font-semibold">B.Tech</h3>
+                                <p class="text-sm text-gray-300">Seshadri Rao Gudlavalleru Engineering College, Gudlavalleru, Gudivada</p>
+                            </div>
+                        </div>
+                        <div class="text-sm bg-purple-900/40 px-3 py-1 rounded-full">2021 – 2025</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <span class="timeline-dot"></span>
+                    <div class="glass-card border border-transparent hover-tilt rounded-xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <img src="images/narayana_junior_college_narasimhakonda_nellore_cover.jpg" alt="Narayana Junior College Logo" class="education-logo" />
+                            <div>
+                                <h3 class="text-xl font-semibold">Intermediate</h3>
+                                <p class="text-sm text-gray-300">Narayana Junior College, Vijayawada</p>
+                            </div>
+                        </div>
+                        <div class="text-sm bg-purple-900/40 px-3 py-1 rounded-full">2019 – 2021</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <span class="timeline-dot"></span>
+                    <div class="glass-card border border-transparent hover-tilt rounded-xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <img src="images/images.png" alt="Bhashyam High School Logo" class="education-logo" />
+                            <div>
+                                <h3 class="text-xl font-semibold">S.S.C</h3>
+                                <p class="text-sm text-gray-300">Bhashyam High School, Guntur</p>
+                            </div>
+                        </div>
+                        <div class="text-sm bg-purple-900/40 px-3 py-1 rounded-full">2018 – 2019</div>
+                    </div>
+                </div>
             </div>
-            <p class="mt-4">© 2025 DeepakPortfolio. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font">
+                <span class="gradient-text">Awards</span>
+            </h2>
+            <div class="relative overflow-visible">
+                <button id="awardsPrev" class="awards-arrow left-arrow" aria-label="Scroll awards left">&#10094;</button>
+                <div id="awardsTrack" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory" style="min-width: 0;">
+                    <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105 award-card min-w-0">
+                        <div class="card-carousel w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="images/IMG-20240328-WA0014.jpg" alt="Consolation Prize - Innovation Fair" class="max-h-full max-w-full object-contain active" />
+                            <img src="images/IMG-20240327-WA0005.jpg" alt="Consolation Prize Secondary" class="max-h-full max-w-full object-contain" />
+                            <img src="images/Screenshot_2024-04-17-20-11-40-07_87dd071a61d3aa2ef6ddc24a836c4632.jpg" alt="Consolation Prize Tertiary" class="max-h-full max-w-full object-contain" />
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-lg font-semibold">Consolation Prize - Innovation Fair</h3>
+                            <p class="text-sm text-gray-300">JNTU Kakinada • 2024</p>
+                            <p class="text-sm text-gray-400 mt-2">Received a consolation prize for the "ATM-Any Time Medicine" project at the Innovation Fair organized by Jawaharlal Nehru Technological University, Kakinada, among 98 teams.</p>
+                            <div class="mt-3">
+                                <button onclick="openAwardModal(this.parentElement.parentElement.parentElement)" class="btn-glow inline-flex items-center border border-purple-500 px-4 py-1 rounded-full text-sm hover:bg-purple-600 transition">
+                                    View
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105 award-card min-w-0">
+                        <div class="card-carousel w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="images/IMG_0315.JPG" alt="Video Editing Competition Winner" class="max-h-full max-w-full object-contain active" />
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-lg font-semibold">Video Editing Competition Winner</h3>
+                            <p class="text-sm text-gray-300">College Event • 2024</p>
+                            <p class="text-sm text-gray-400 mt-2">Won first place in a video editing competition conducted by our college, showcasing creativity and technical skills.</p>
+                            <div class="mt-3">
+                                <button onclick="openAwardModal(this.parentElement.parentElement.parentElement)" class="btn-glow inline-flex items-center border border-purple-500 px-4 py-1 rounded-full text-sm hover:bg-purple-600 transition">
+                                    View
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105 award-card min-w-0">
+                        <div class="card-carousel w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="images/IMG_0326.JPG" alt="Essay Writing Competition Winner" class="max-h-full max-w-full object-contain active" />
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-lg font-semibold">Essay Writing Competition Winner</h3>
+                            <p class="text-sm text-gray-300">CRDA Event • 2024</p>
+                            <p class="text-sm text-gray-400 mt-2">Received an award for excelling in an essay writing competition organized by CRDA, demonstrating strong communication and analytical skills.</p>
+                            <div class="mt-3">
+                                <button onclick="openAwardModal(this.parentElement.parentElement.parentElement)" class="btn-glow inline-flex items-center border border-purple-500 px-4 py-1 rounded-full text-sm hover:bg-purple-600 transition">
+                                    View
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105 award-card min-w-0">
+                        <div class="card-carousel w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="images/IMG_0340.JPG" alt="Treasure Hunt Winner" class="max-h-full max-w-full object-contain active" />
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-lg font-semibold">Treasure Hunt Winner</h3>
+                            <p class="text-sm text-gray-300">College Event • 2024</p>
+                            <p class="text-sm text-gray-400 mt-2">Secured first place in a treasure hunt competition organized by our college, showcasing teamwork and problem-solving abilities.</p>
+                            <div class="mt-3">
+                                <button onclick="openAwardModal(this.parentElement.parentElement.parentElement)" class="btn-glow inline-flex items-center border border-purple-500 px-4 py-1 rounded-full text-sm hover:bg-purple-600 transition">
+                                    View
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105 award-card min-w-0">
+                        <div class="card-carousel w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="images/IMG-20231016-WA0048.jpg" alt="Drone Event Success" class="max-h-full max-w-full object-contain active" />
+                            <img src="images/Snapchat-1512121116.jpg" alt="Drone Event Secondary" class="max-h-full max-w-full object-contain" />
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-lg font-semibold">Drone Event Success</h3>
+                            <p class="text-sm text-gray-300">College Event • 2024</p>
+                            <p class="text-sm text-gray-400 mt-2">Successfully completed a drone event, demonstrating technical expertise and innovation in drone technology.</p>
+                            <div class="mt-3">
+                                <button onclick="openAwardModal(this.parentElement.parentElement.parentElement)" class="btn-glow inline-flex items-center border border-purple-500 px-4 py-1 rounded-full text-sm hover:bg-purple-600 transition">
+                                    View
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105 award-card min-w-0">
+                        <div class="card-carousel w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="images/IMG-20230915-WA0012.jpg" alt="Fusion X 2K23 Hackathon 3rd Prize" class="max-h-full max-w-full object-contain active" />
+                            <img src="images/certificates.jpg" alt="Fusion X 2K23 Secondary" class="max-h-full max-w-full object-contain" />
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-lg font-semibold">Fusion X 2K23 Hackathon 3rd Prize</h3>
+                            <p class="text-sm text-gray-300">Fusion X Event • 2023</p>
+                            <p class="text-sm text-gray-400 mt-2">Won 3rd prize in a 24-hour hackathon at Fusion X 2K23, showcasing coding skills and innovative problem-solving.</p>
+                            <div class="mt-3">
+                                <button onclick="openAwardModal(this.parentElement.parentElement.parentElement)" class="btn-glow inline-flex items-center border border-purple-500 px-4 py-1 rounded-full text-sm hover:bg-purple-600 transition">
+                                    View
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105 award-card min-w-0">
+                        <div class="card-carousel w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="images/IMG-20230915-WA0007-min.jpg" alt="Essay Writing Competition Winner" class="max-h-full max-w-full object-contain active" />
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-lg font-semibold">Essay Writing Competition Winner</h3>
+                            <p class="text-sm text-gray-300">College Event • 2023</p>
+                            <p class="text-sm text-gray-400 mt-2">Won an essay writing competition in my second year of college, highlighting strong written communication skills.</p>
+                            <div class="mt-3">
+                                <button onclick="openAwardModal(this.parentElement.parentElement.parentElement)" class="btn-glow inline-flex items-center border border-purple-500 px-4 py-1 rounded-full text-sm hover:bg-purple-600 transition">
+                                    View
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105 award-card min-w-0">
+                        <div class="card-carousel w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                            <img src="images/IMG20240216133803.jpg" alt="AVISHKAR Startup Expo Participant" class="max-h-full max-w-full object-contain active" />
+                            <img src="images/deepak (1).jpg" alt="AVISHKAR Startup Expo Secondary" class="max-h-full max-w-full object-contain" />
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-lg font-semibold">AVISHKAR Startup Expo Participant</h3>
+                            <p class="text-sm text-gray-300">Silver Jubilee Celebration, College Event • 2024</p>
+                            <p class="text-sm text-gray-400 mt-2">Participated in the AVISHKAR Startup Expo 2024 during our college's silver jubilee celebration, showcasing entrepreneurial skills.</p>
+                            <div class="mt-3">
+                                <button onclick="openAwardModal(this.parentElement.parentElement.parentElement)" class="btn-glow inline-flex items-center border border-purple-500 px-4 py-1 rounded-full text-sm hover:bg-purple-600 transition">
+                                    View
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="awardsNext" class="awards-arrow right-arrow" aria-label="Scroll awards right">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Interests -->
+    <section id="interests" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center heading-font">
+                <span class="gradient-text">Personal</span> <span class="text-white">Interests</span>
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Machine Learning -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-brain text-3xl text-purple-400"></i>
+                    <p class="mt-2 text-sm">Machine Learning</p>
+                </div>
+                <!-- Coding -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-code text-3xl text-green-400"></i>
+                    <p class="mt-2 text-sm">Coding</p>
+                </div>
+                <!-- Drones -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-drone text-3xl text-blue-400"></i>
+                    <p class="mt-2 text-sm">Drones</p>
+                </div>
+                <!-- Cricket -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-baseball-bat-ball text-3xl text-orange-400"></i>
+                    <p class="mt-2 text-sm">Cricket</p>
+                </div>
+                <!-- Badminton -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-table-tennis-paddle-ball text-3xl text-pink-400"></i>
+                    <p class="mt-2 text-sm">Badminton</p>
+                </div>
+                <!-- Kabaddi -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-people-arrows text-3xl text-red-400"></i>
+                    <p class="mt-2 text-sm">Kabaddi</p>
+                </div>
+                <!-- Playing Guitar -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-guitar text-3xl text-yellow-400"></i>
+                    <p class="mt-2 text-sm">Playing Guitar</p>
+                </div>
+                <!-- Travelling -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-plane-departure text-3xl text-cyan-400"></i>
+                    <p class="mt-2 text-sm">Travelling</p>
+                </div>
+                <!-- Innovation -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-lightbulb text-3xl text-amber-400"></i>
+                    <p class="mt-2 text-sm">Innovation</p>
+                </div>
+                <!-- Listening Music -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-music text-3xl text-indigo-400"></i>
+                    <p class="mt-2 text-sm">Listening Music</p>
+                </div>
+                <!-- Learning New Things -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-book-open-reader text-3xl text-teal-400"></i>
+                    <p class="mt-2 text-sm">Learning New Things</p>
+                </div>
+                <!-- Creating Applications -->
+                <div class="fade-in glass-card p-6 rounded-xl text-center interest">
+                    <i class="fa-solid fa-laptop-code text-3xl text-fuchsia-400"></i>
+                    <p class="mt-2 text-sm">Creating Applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-gradient-to-b from-slate-800 to-slate-900">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font"><span class="gradient-text">Get In</span> <span class="text-white">Touch</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6 gradient-text heading-font">Contact Information</h3>
+                    <p class="mb-8">Have a project in mind or want to discuss potential opportunities? Feel free to reach out and I'll get back to you as soon as possible.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center"><div class="bg-purple-500/20 p-3 rounded-full mr-4"><i class="fas fa-envelope text-purple-400"></i></div><div><h4 class="font-semibold">Email</h4><a href="mailto:dhupatideepak@gmail.com" class="text-gray-300 hover:text-purple-300 transition">dhupatideepak@gmail.com</a></div></div>
+                        <div class="flex items-center"><div class="bg-purple-500/20 p-3 rounded-full mr-4"><i class="fas fa-phone-alt text-purple-400"></i></div><div><h4 class="font-semibold">Phone</h4><a href="tel:+91-9704374382" class="text-gray-300 hover:text-purple-300 transition">+91-9704374382</a></div></div>
+                        <div class="flex items-center"><div class="bg-purple-500/20 p-3 rounded-full mr-4"><i class="fas fa-map-marker-alt text-purple-400"></i></div><div><h4 class="font-semibold">Location</h4><p class="text-gray-300">Guntur, India</p></div></div>
+                    </div>
+                    <div class="mt-8">
+    <h4 class="font-semibold mb-4">Follow Me</h4>
+    <div class="flex space-x-4">
+        <a href="https://github.com/DhupatiDeepak" class="bg-purple-900/50 p-7 rounded-full hover:bg-purple-700 transition">
+            <i class="fab fa-github text-4xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/dhupati-deepak-771622269/" class="bg-purple-900/50 p-7 rounded-full hover:bg-purple-700 transition">
+            <i class="fab fa-linkedin-in text-4xl"></i>
+        </a>
+    </div>
+</div>
+                </div>
+                <div class="fade-in glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 gradient-text heading-font">Send Me a Message</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div><label for="name" class="block mb-2 font-medium">Your Name</label><input type="text" id="name" name="name" class="form-input w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500 transition" required /></div>
+                        <div><label for="email" class="block mb-2 font-medium">Your Email</label><input type="email" id="email" name="email" class="form-input w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500 transition" required /></div>
+                        <div><label for="subject" class="block mb-2 font-medium">Subject</label><input type="text" id="subject" name="subject" class="form-input w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500 transition" /></div>
+                        <div><label for="message" class="block mb-2 font-medium">Message</label><textarea id="message" name="message" rows="5" class="form-input w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500 transition" required></textarea></div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition">Send Message</button>
+                            <button type="reset" class="w-full border-2 border-purple-500 text-white px-6 py-3 rounded-full font-medium hover:bg-purple-900/30 transition">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 bg-slate-900">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0"><a href="#" class="text-2xl font-bold gradient-text heading-font">DEEPAK<span class="text-white">PORTFOLIO</span></a></div>
+                <div class="flex flex-wrap gap-6 mb-4 md:mb-0">
+                    <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a>
+                    <a href="#internships" class="text-gray-400 hover:text-white transition">Internships</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a>
+                    <a href="#certificates" class="text-gray-400 hover:text-white transition">Certificates</a>
+                    <a href="#education" class="text-gray-400 hover:text-white transition">Education</a>
+                    <a href="#awards" class="text-gray-400 hover:text-white transition">Awards</a>
+                    <a href="#interests" class="text-gray-400 hover:text-white transition">Interests</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+                <div class="text-gray-400 text-sm">&copy; 2025 DeepakPortfolio. All rights reserved.</div>
+            </div>
         </div>
     </footer>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
+    <!-- Modal for Certificates and Awards -->
+    <div id="certificateModal" class="hidden">
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Expanded image" />
+            <div class="modal-nav">
+                <button id="prevBtn" aria-label="Previous image">&#10094;</button>
+                <button id="nextBtn" aria-label="Next image">&#10095;</button>
+            </div>
+            <button onclick="closeModal()" class="absolute top-4 right-4 bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-red-700" aria-label="Close modal">✕</button>
+        </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
