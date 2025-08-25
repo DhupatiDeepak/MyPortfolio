@@ -527,7 +527,7 @@ body {
 .project-card:nth-child(2) { transition-delay: 0.3s; }
 .project-card:nth-child(3) { transition-delay: 0.5s; }
 
-/* Mobile view adjustments for Awards and Projects sections */
+/* Mobile view adjustments for Awards section only */
 @media (max-width: 640px) {
     /* Awards Section */
     .award-card {
@@ -563,38 +563,6 @@ body {
     .awards-arrow {
         font-size: 1.5rem; /* Smaller arrows */
         padding: 0.5rem;
-    }
-
-    /* Projects Section */
-    .project-card {
-        width: 100%;
-        max-width: 16rem; /* Reduced card width for mobile (~256px) */
-        margin: 0 auto; /* Center cards */
-    }
-    .project-card .h-48 {
-        height: 10rem; /* Reduced image height for mobile (~160px) */
-    }
-    .project-card img {
-        max-height: 100%;
-        max-width: 100%;
-        object-fit: cover;
-    }
-    .project-card .p-6 {
-        padding: 1rem; /* Reduced padding for content */
-    }
-    .project-card h3 {
-        font-size: 1rem; /* Smaller heading size */
-    }
-    .project-card p {
-        font-size: 0.75rem; /* Smaller text size */
-    }
-    .project-card .text-xs {
-        font-size: 0.6rem; /* Smaller tags */
-        padding: 0.25rem 0.5rem;
-    }
-    .project-card a {
-        padding: 0.5rem 1rem; /* Smaller button */
-        font-size: 0.75rem;
     }
 
     /* Modal adjustments for mobile */
