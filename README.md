@@ -47,7 +47,7 @@ CSS, JavaScript, and Tailwind CSS-inspired styling**.
     ├── assets/          # Images, certificates, project screenshots
     └── README.md        # Project documentation
 
-------------------------------------------------------------------------
+
 
 
 ------------------------------------------------------------------------
