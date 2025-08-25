@@ -310,6 +310,8 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 1.5rem;
+    width: 100%;
+    max-width: 24rem; /* Default for larger screens */
 }
 
 /* Card carousel styles */
@@ -339,8 +341,7 @@ body {
 
 /* Awards grid with horizontal auto-scroll */
 #awardsTrack {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(400px, 1fr));
+    display: flex;
     gap: 1.5rem;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -525,6 +526,83 @@ body {
 .project-card:nth-child(1) { transition-delay: 0.1s; }
 .project-card:nth-child(2) { transition-delay: 0.3s; }
 .project-card:nth-child(3) { transition-delay: 0.5s; }
+
+/* Mobile view adjustments for Awards and Projects sections */
+@media (max-width: 640px) {
+    /* Awards Section */
+    .award-card {
+        width: 100%;
+        max-width: 16rem; /* Reduced card width for mobile (~256px) */
+        margin: 0 auto; /* Center cards */
+    }
+    #awardsTrack {
+        gap: 1rem; /* Smaller gap between cards */
+        padding: 0 20px; /* Reduced padding for mobile */
+    }
+    .award-card .card-carousel {
+        height: 10rem; /* Reduced height for mobile (~160px) */
+    }
+    .award-card .card-carousel img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+    .award-card .mt-4 {
+        padding: 0.5rem; /* Reduced padding for content */
+    }
+    .award-card h3 {
+        font-size: 1rem; /* Smaller heading size */
+    }
+    .award-card p {
+        font-size: 0.75rem; /* Smaller text size */
+    }
+    .award-card .btn-glow {
+        padding: 0.5rem 1rem; /* Smaller button */
+        font-size: 0.75rem;
+    }
+    .awards-arrow {
+        font-size: 1.5rem; /* Smaller arrows */
+        padding: 0.5rem;
+    }
+
+    /* Projects Section */
+    .project-card {
+        width: 100%;
+        max-width: 16rem; /* Reduced card width for mobile (~256px) */
+        margin: 0 auto; /* Center cards */
+    }
+    .project-card .h-48 {
+        height: 10rem; /* Reduced image height for mobile (~160px) */
+    }
+    .project-card img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+    .project-card .p-6 {
+        padding: 1rem; /* Reduced padding for content */
+    }
+    .project-card h3 {
+        font-size: 1rem; /* Smaller heading size */
+    }
+    .project-card p {
+        font-size: 0.75rem; /* Smaller text size */
+    }
+    .project-card .text-xs {
+        font-size: 0.6rem; /* Smaller tags */
+        padding: 0.25rem 0.5rem;
+    }
+    .project-card a {
+        padding: 0.5rem 1rem; /* Smaller button */
+        font-size: 0.75rem;
+    }
+
+    /* Modal adjustments for mobile */
+    #certificateModal .modal-content img {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+}
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
