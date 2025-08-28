@@ -245,48 +245,66 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-   // EmailJS functionality
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    // EmailJS functionality
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        // Initialize EmailJS with your public key
-        emailjs.init('X-ud7RB3C-r97TyLR'); // Replace with your EmailJS public key
+            // Prepare form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
 
-        // Prepare form data
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
-
-        // Send email using EmailJS
-        emailjs.send('service_9h1mavu', 'template_2oli97l', formData)
-            .then(() => {
-                alert('Message sent successfully!');
-                contactForm.reset();
-            })
-            .catch((error) => {
-                console.error('EmailJS error:', error);
-                alert('Failed to send message. Please try again later.');
-            });
-    });
-}
-
-// Theme toggle
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = themeToggle.querySelector('i');
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    if (document.body.classList.contains('light-mode')) {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    } else {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
+            // Send email using EmailJS
+            emailjs.send('service_9h1mavu', 'template_2oli97l', formData)
+                .then(() => {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                })
+                .catch((error) => {
+                    console.error('EmailJS error:', error);
+                    alert('Failed to send message. Please try again later.');
+                });
+        });
     }
-});
 
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        // Ensure body starts with dark-mode (as per HTML)
+        if (!document.body.classList.contains('light-mode') && !document.body.classList.contains('dark-mode')) {
+            document.body.classList.add('dark-mode');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
+            const isLightMode = document.body.classList.contains('light-mode');
+            themeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+    }
+
+    // Starfield animation
+    function createStars() {
+        const starfield = document.querySelector('.starfield');
+        if (starfield) {
+            const starCount = 100; // Adjust for desired star density
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = `${Math.random() * 2 + 1}px`;
+                star.style.height = star.style.width;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                starfield.appendChild(star);
+            }
+        }
+    }
+    createStars();
 });

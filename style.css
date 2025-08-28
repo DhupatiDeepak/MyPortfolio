@@ -1,754 +1,763 @@
 /* Root variables */
 :root {
-    --primary: #6366f1;
-    --secondary: #8b5cf6;
-    --accent: #ec4899;
-    --dark: #2a2f3a;
-    --light: #f8fafc;
+  --primary: #6366f1;
+  --secondary: #8b5cf6;
+  --accent: #ec4899;
+  --dark: #0f172a;
+  --light: #f8fafc;
+  --gold: #ebcb61; /* Gold color for cards */
+  --gold-light: #FFECB3; /* Lighter gold for gradients */
+  --gold-dark: #DAA520; /* Darker gold for depth */
 }
 
 /* Base styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--dark);
-    color: var(--light);
-    overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark);
+  color: var(--light);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
+
+body::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
 .heading-font {
-    font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-/* Enhanced hero text gradient for "Hi, I'm" */
-.gradient-hello {
-    background: linear-gradient(90deg, #a855f7, #ec4899, #f472b6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    background-size: 200% 100%;
-    animation: textGradient 3s ease infinite;
-    display: inline-block;
-}
-@keyframes textGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Starfield animation */
+.starfield {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  perspective: 500px; /* Adds 3D perspective for depth */
 }
 
-/* Enhanced neon glow for "Dhupati Deepak" with hover effect */
-.neon-name {
-    color: #f0f9ff;
-    text-shadow: 
-        0 0 5px #a855f7,
-        0 0 10px #ec4899,
-        0 0 15px #f472b6,
-        0 0 20px #a855f7;
-    display: inline-block;
-    animation: pulseGlow 2s ease-in-out infinite;
-}
-.neon-name span {
-    display: inline-block;
-}
-@keyframes pulseGlow {
-    0%, 100% { 
-        text-shadow: 
-            0 0 5px #a855f7,
-            0 0 10px #ec4899,
-            0 0 15px #f472b6,
-            0 0 20px #a855f7;
-    }
-    50% { 
-        text-shadow: 
-            0 0 8px #a855f7,
-            0 0 15px #ec4899,
-            0 0 25px #f472b6,
-            0 0 30px #a855f7;
-    }
-}
-.hover-glow:hover {
-    transform: scale(1.05);
-    text-shadow: 
-        0 0 10px #a855f7,
-        0 0 20px #ec4899,
-        0 0 30px #f472b6,
-        0 0 40px #a855f7;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
+#stars, #stars2, #stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2000px;
+  height: 2000px;
+  background: transparent;
+  transform-style: preserve-3d;
 }
 
-/* Enhanced typing animation for hero heading */
-.enhanced-typing-animation {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    visibility: visible;
+#stars {
+  width: 1px;
+  height: 1px;
+  box-shadow: 1266px 781px #FFF, 34px 205px #FFF, 1819px 1907px #FFF, 787px 54px #FFF, 881px 59px #FFF, 1351px 955px #FFF, 697px 61px #FFF, 623px 1707px #FFF, 35px 1146px #FFF, 1678px 825px #FFF, 858px 760px #FFF, 1956px 716px #FFF, 1961px 1139px #FFF, 1679px 675px #FFF, 412px 1877px #FFF, 417px 362px #FFF, 866px 88px #FFF, 1830px 774px #FFF, 9px 1081px #FFF, 688px 344px #FFF, 375px 33px #FFF, 1844px 1284px #FFF, 1234px 834px #FFF, 1821px 1492px #FFF, 1800px 1530px #FFF, 209px 1010px #FFF, 791px 493px #FFF, 1393px 476px #FFF, 1863px 615px #FFF, 312px 335px #FFF, 1570px 404px #FFF, 354px 1488px #FFF, 1146px 1727px #FFF, 960px 1612px #FFF, 363px 1832px #FFF, 1893px 1678px #FFF, 1991px 1331px #FFF, 766px 1161px #FFF, 1746px 569px #FFF, 1123px 149px #FFF, 45px 1154px #FFF, 1818px 1632px #FFF, 886px 1148px #FFF, 319px 639px #FFF, 173px 1352px #FFF, 1933px 1185px #FFF, 2px 1919px #FFF, 114px 435px #FFF, 1974px 850px #FFF, 4px 1834px #FFF, 1654px 1156px #FFF, 1738px 1546px #FFF, 1201px 1487px #FFF, 1085px 1140px #FFF, 1017px 1406px #FFF, 1790px 1192px #FFF, 1800px 1245px #FFF, 1442px 173px #FFF, 918px 1892px #FFF, 264px 1256px #FFF, 340px 156px #FFF, 515px 1965px #FFF, 649px 1969px #FFF, 1537px 1660px #FFF, 1543px 1956px #FFF, 893px 740px #FFF, 1785px 1521px #FFF, 471px 1930px #FFF, 281px 1673px #FFF, 1359px 1562px #FFF, 1580px 1065px #FFF, 1205px 805px #FFF, 487px 1681px #FFF, 1642px 648px #FFF, 1617px 945px #FFF, 518px 85px #FFF, 1628px 1393px #FFF, 1199px 5px #FFF, 1538px 1357px #FFF, 1141px 1860px #FFF, 926px 510px #FFF, 1678px 463px #FFF, 88px 383px #FFF, 55px 373px #FFF, 6px 1950px #FFF, 1263px 1934px #FFF, 644px 1700px #FFF, 877px 1703px #FFF, 1581px 1939px #FFF, 1534px 1574px #FFF, 947px 1335px #FFF, 260px 174px #FFF, 1928px 346px #FFF, 1349px 1272px #FFF, 1768px 756px #FFF, 1690px 1401px #FFF, 467px 1517px #FFF, 189px 479px #FFF, 82px 141px #FFF, 1006px 626px #FFF, 616px 938px #FFF, 1678px 1892px #FFF, 1804px 314px #FFF, 529px 1386px #FFF, 1329px 1620px #FFF, 1644px 1307px #FFF, 1842px 1441px #FFF, 176px 742px #FFF, 331px 1640px #FFF, 1076px 281px #FFF, 1845px 1453px #FFF, 1353px 1519px #FFF, 1116px 1594px #FFF, 1783px 1336px #FFF, 77px 955px #FFF, 1428px 1465px #FFF, 1680px 1831px #FFF, 325px 875px #FFF, 1449px 1972px #FFF, 964px 1397px #FFF, 1698px 195px #FFF, 468px 1907px #FFF, 1332px 1800px #FFF, 830px 773px #FFF, 868px 622px #FFF, 158px 1162px #FFF, 842px 216px #FFF, 1486px 789px #FFF, 104px 558px #FFF, 1452px 42px #FFF, 34px 1233px #FFF, 898px 480px #FFF, 1640px 1430px #FFF, 501px 393px #FFF, 111px 990px #FFF, 1570px 1735px #FFF, 55px 801px #FFF, 172px 357px #FFF, 224px 919px #FFF, 93px 1927px #FFF, 630px 939px #FFF, 472px 1374px #FFF, 1632px 226px #FFF, 928px 1827px #FFF, 1809px 1723px #FFF, 1352px 194px #FFF, 1574px 815px #FFF, 593px 1875px #FFF, 1092px 742px #FFF, 1207px 1392px #FFF, 1958px 671px #FFF, 1132px 664px #FFF, 1663px 984px #FFF, 470px 98px #FFF, 756px 1818px #FFF, 1273px 59px #FFF, 1883px 1304px #FFF, 585px 956px #FFF, 1583px 1860px #FFF, 1137px 1372px #FFF, 152px 1694px #FFF, 1377px 1313px #FFF, 1715px 1129px #FFF, 1204px 1020px #FFF, 1248px 176px #FFF, 1775px 1032px #FFF, 1996px 523px #FFF, 724px 1361px #FFF, 1830px 401px #FFF, 1574px 259px #FFF, 323px 583px #FFF, 1981px 1085px #FFF, 776px 494px #FFF, 1588px 1661px #FFF, 314px 1067px #FFF, 662px 1759px #FFF, 1917px 1685px #FFF, 1520px 498px #FFF, 874px 290px #FFF, 374px 1075px #FFF, 693px 400px #FFF, 1500px 921px #FFF, 1940px 354px #FFF, 1914px 769px #FFF, 943px 1812px #FFF, 1669px 1899px #FFF, 179px 1636px #FFF, 1979px 1117px #FFF, 524px 1185px #FFF, 1502px 1833px #FFF, 181px 1194px #FFF, 1907px 1706px #FFF, 381px 1814px #FFF, 544px 1882px #FFF, 546px 53px #FFF, 1590px 212px #FFF, 646px 517px #FFF, 112px 1955px #FFF, 444px 1075px #FFF, 1412px 302px #FFF;
+  animation: animStar 10s linear infinite; /* Faster speed for more noticeable movement */
+  transform: translateZ(-10px);
 }
-.enhanced-typing-animation span {
-    opacity: 0;
-    animation: enhancedTyping 0.15s forwards;
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  box-shadow: 1860px 98px #FFF, 77px 1505px #FFF, 17px 404px #FFF, 1475px 644px #FFF, 769px 1455px #FFF, 801px 455px #FFF, 1955px 1441px #FFF, 894px 1877px #FFF, 769px 113px #FFF, 380px 759px #FFF, 380px 1141px #FFF, 299px 1696px #FFF, 428px 1281px #FFF, 604px 80px #FFF, 1442px 1803px #FFF, 194px 1462px #FFF, 1400px 736px #FFF, 1332px 27px #FFF, 668px 1077px #FFF, 702px 24px #FFF, 467px 776px #FFF, 1217px 256px #FFF, 1552px 594px #FFF, 3px 114px #FFF, 1668px 880px #FFF, 202px 1518px #FFF, 1577px 590px #FFF, 1648px 1262px #FFF, 294px 1043px #FFF, 861px 755px #FFF, 1525px 1623px #FFF, 1116px 801px #FFF, 595px 88px #FFF, 1964px 544px #FFF, 80px 2000px #FFF, 1929px 1512px #FFF, 472px 636px #FFF, 508px 262px #FFF, 1054px 1187px #FFF, 645px 1961px #FFF, 1240px 1471px #FFF, 443px 1065px #FFF, 1734px 1594px #FFF, 227px 920px #FFF, 1272px 5px #FFF, 239px 1015px #FFF, 646px 565px #FFF, 1702px 292px #FFF, 226px 1985px #FFF, 160px 1376px #FFF, 1554px 1909px #FFF, 1298px 1844px #FFF, 1406px 455px #FFF, 1691px 1380px #FFF, 1898px 862px #FFF, 1741px 1335px #FFF, 577px 17px #FFF, 875px 1381px #FFF, 152px 1522px #FFF, 464px 635px #FFF, 494px 193px #FFF, 1262px 983px #FFF, 1048px 16px #FFF, 1750px 571px #FFF, 1285px 533px #FFF, 672px 1636px #FFF, 507px 717px #FFF, 828px 920px #FFF, 1344px 889px #FFF, 1120px 270px #FFF, 686px 187px #FFF, 1193px 437px #FFF, 482px 766px #FFF, 908px 1856px #FFF, 818px 532px #FFF, 22px 341px #FFF, 254px 1783px #FFF, 311px 1336px #FFF, 1461px 1588px #FFF, 230px 1584px #FFF, 1611px 1428px #FFF, 591px 1786px #FFF, 55px 1952px #FFF, 581px 607px #FFF, 1912px 1500px #FFF, 1439px 1397px #FFF, 267px 444px #FFF, 571px 1701px #FFF, 1785px 1416px #FFF, 826px 915px #FFF, 1835px 1820px #FFF, 1503px 1868px #FFF, 1518px 182px #FFF, 1065px 920px #FFF, 1498px 943px #FFF, 837px 554px #FFF, 1045px 446px #FFF, 1876px 1296px #FFF, 275px 129px #FFF, 1979px 87px #FFF, 1453px 317px #FFF, 828px 608px #FFF, 373px 998px #FFF, 1721px 722px #FFF, 1715px 1210px #FFF, 1870px 1279px #FFF, 111px 561px #FFF, 52px 665px #FFF, 595px 1539px #FFF, 633px 256px #FFF, 1096px 1010px #FFF, 335px 1255px #FFF, 1128px 320px #FFF, 1803px 617px #FFF, 1477px 1975px #FFF, 1709px 677px #FFF, 797px 844px #FFF, 332px 1439px #FFF, 1598px 456px #FFF, 1179px 1845px #FFF, 1231px 1244px #FFF, 1569px 1304px #FFF, 1822px 674px #FFF, 1630px 1667px #FFF, 18px 1429px #FFF, 513px 1838px #FFF, 416px 387px #FFF, 956px 711px #FFF, 1428px 639px #FFF, 1414px 397px #FFF, 848px 865px #FFF, 1458px 874px #FFF, 370px 179px #FFF, 537px 936px #FFF, 1305px 1840px #FFF, 1136px 1415px #FFF, 1888px 915px #FFF, 1077px 336px #FFF, 1636px 1264px #FFF, 211px 21px #FFF, 1584px 991px #FFF, 48px 673px #FFF, 19px 1068px #FFF, 21px 756px #FFF, 175px 1929px #FFF, 453px 1334px #FFF, 617px 1716px #FFF, 187px 250px #FFF, 1325px 1178px #FFF, 1547px 886px #FFF, 1081px 493px #FFF, 772px 479px #FFF, 647px 86px #FFF, 1081px 1224px #FFF, 558px 735px #FFF, 156px 408px #FFF, 681px 1531px #FFF, 13px 649px #FFF, 1393px 1653px #FFF, 980px 73px #FFF, 1510px 14px #FFF, 781px 640px #FFF, 1581px 508px #FFF, 461px 191px #FFF, 1466px 648px #FFF, 1860px 803px #FFF, 1640px 679px #FFF, 897px 178px #FFF, 1961px 1611px #FFF, 1891px 947px #FFF, 1554px 1272px #FFF, 1342px 976px #FFF, 771px 992px #FFF, 843px 1817px #FFF, 1702px 56px #FFF, 1509px 1652px #FFF, 266px 1212px #FFF, 1947px 1855px #FFF, 603px 801px #FFF, 1080px 749px #FFF, 1504px 682px #FFF, 743px 776px #FFF, 945px 818px #FFF, 1971px 800px #FFF, 724px 1075px #FFF, 261px 1489px #FFF, 173px 1241px #FFF, 1285px 1696px #FFF, 812px 676px #FFF, 547px 125px #FFF, 1299px 1094px #FFF, 1603px 1152px #FFF, 809px 247px #FFF, 809px 240px #FFF, 52px 642px #FFF, 27px 503px #FFF, 1685px 296px #FFF, 1275px 250px #FFF, 1991px 1353px #FFF, 1334px 728px #FFF;
+  animation: animStar 20s linear infinite; /* Faster speed for more noticeable movement */
+  transform: translateZ(-20px);
 }
-@keyframes enhancedTyping {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  box-shadow: 263px 233px #FFF, 1301px 1199px #FFF, 1023px 1035px #FFF, 138px 1910px #FFF, 1389px 112px #FFF, 1500px 477px #FFF, 441px 1276px #FFF, 1024px 1778px #FFF, 115px 505px #FFF, 462px 1982px #FFF, 79px 1817px #FFF, 1959px 1963px #FFF, 17px 1000px #FFF, 1207px 237px #FFF, 1112px 1360px #FFF, 1030px 460px #FFF, 137px 1290px #FFF, 1595px 1992px #FFF, 880px 1331px #FFF, 441px 1368px #FFF, 1071px 528px #FFF, 1208px 1957px #FFF, 402px 1621px #FFF, 1509px 318px #FFF, 1017px 344px #FFF, 58px 1954px #FFF, 1395px 1212px #FFF, 219px 265px #FFF, 1195px 440px #FFF, 197px 1052px #FFF, 1838px 1742px #FFF, 344px 768px #FFF, 1596px 460px #FFF, 1873px 140px #FFF, 1879px 125px #FFF, 102px 848px #FFF, 1029px 781px #FFF, 126px 1803px #FFF, 1367px 429px #FFF, 1146px 822px #FFF, 840px 547px #FFF, 902px 2000px #FFF, 1476px 369px #FFF, 1501px 558px #FFF, 1511px 867px #FFF, 1473px 772px #FFF, 612px 1865px #FFF, 409px 1745px #FFF, 1204px 1367px #FFF, 1428px 377px #FFF, 1654px 583px #FFF, 46px 239px #FFF, 1705px 1634px #FFF, 1951px 1115px #FFF, 539px 77px #FFF, 638px 184px #FFF, 1457px 1945px #FFF, 123px 1677px #FFF, 1726px 1954px #FFF, 603px 1527px #FFF, 1126px 303px #FFF, 678px 1744px #FFF, 1555px 1299px #FFF, 564px 955px #FFF, 238px 476px #FFF, 781px 1754px #FFF, 734px 303px #FFF, 851px 991px #FFF, 86px 749px #FFF, 1139px 276px #FFF, 1217px 605px #FFF, 1926px 417px #FFF, 1707px 1248px #FFF, 1199px 1049px #FFF, 1108px 566px #FFF, 1079px 1148px #FFF, 717px 214px #FFF, 1509px 875px #FFF, 129px 1897px #FFF, 1096px 633px #FFF, 838px 1017px #FFF, 1560px 1338px #FFF, 1899px 332px #FFF, 525px 929px #FFF, 299px 1500px #FFF, 402px 1793px #FFF, 1962px 138px #FFF, 1089px 1806px #FFF, 897px 355px #FFF, 930px 1120px #FFF, 1180px 1162px #FFF, 1731px 1075px #FFF, 536px 1056px #FFF, 1285px 202px #FFF, 1569px 122px #FFF, 1926px 1802px #FFF, 1929px 357px #FFF, 136px 1473px #FFF, 1248px 64px #FFF, 1816px 707px #FFF;
+  animation: animStar 30s linear infinite; /* Faster speed for more noticeable movement */
+  transform: translateZ(-30px);
 }
-.enhanced-typing-animation span:nth-child(1) { animation-delay: 0.1s; }
-.enhanced-typing-animation span:nth-child(2) { animation-delay: 0.2s; }
-.enhanced-typing-animation span:nth-child(3) { animation-delay: 0.3s; }
-.enhanced-typing-animation span:nth-child(4) { animation-delay: 0.4s; }
-.enhanced-typing-animation span:nth-child(5) { animation-delay: 0.5s; }
-.enhanced-typing-animation span:nth-child(6) { animation-delay: 0.6s; }
-.enhanced-typing-animation span:nth-child(7) { animation-delay: 0.7s; }
-.enhanced-typing-animation span:nth-child(8) { animation-delay: 0.8s; }
-.enhanced-typing-animation span:nth-child(9) { animation-delay: 0.9s; }
-.enhanced-typing-animation span:nth-child(10) { animation-delay: 1.0s; }
-.enhanced-typing-animation span:nth-child(11) { animation-delay: 1.1s; }
-.enhanced-typing-animation span:nth-child(12) { animation-delay: 1.2s; }
-.enhanced-typing-animation span:nth-child(13) { animation-delay: 1.3s; }
-.enhanced-typing-animation span:nth-child(14) { animation-delay: 1.4s; }
-.enhanced-typing-animation span:nth-child(15) { animation-delay: 1.5s; }
-.enhanced-typing-animation span:nth-child(16) { animation-delay: 1.6s; }
-.enhanced-typing-animation span:nth-child(17) { animation-delay: 1.7s; }
-.enhanced-typing-animation span:nth-child(18) { animation-delay: 1.8s; }
-.enhanced-typing-animation span:nth-child(19) { animation-delay: 1.9s; }
-.enhanced-typing-animation span:nth-child(20) { animation-delay: 2.0s; }
-.enhanced-typing-animation span:nth-child(21) { animation-delay: 2.1s; }
-.enhanced-typing-animation span:nth-child(22) { animation-delay: 2.2s; }
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
 
 /* Hero gradient animation */
 .gradient-bg {
-    background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #475569, #6366f1);
-    background-size: 400% 400%;
-    animation: gradient 20s ease infinite;
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #475569);
+  background-size: 400% 400%;
+  animation: gradient 14s ease infinite;
 }
+
 @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Glassmorphism */
 .glass-card {
-    background: rgba(15, 23, 42, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
 }
 
 /* Neon glow */
 .neon-text {
-    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00b7eb, 0 0 20px #00b7eb;
-    color: #00ffff;
-}
-.neon-text span {
-    display: inline-block;
+  text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px var(--primary), 0 0 12px var(--primary);
 }
 
-/* Unified hover motion for all cards */
-.hover-tilt {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    will-change: transform;
+.neon-border {
+  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary), 0 0 20px var(--primary);
 }
+
+/* Unified hover motion */
+.hover-tilt {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+
 .hover-tilt:hover {
-    transform: translateY(-12px) rotateX(3deg) rotateY(3deg);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary), 0 0 40px var(--secondary);
-    border-color: rgba(99, 102, 241, 0.7);
+  transform: translateY(-12px) rotateX(3deg) rotateY(3deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary), 0 0 40px var(--secondary);
+  border-color: rgba(99, 102, 241, 0.7);
 }
 
 .btn-glow {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
+
 .btn-glow:hover {
-    box-shadow: 0 0 15px var(--primary), 0 0 25px var(--primary), 0 0 35px var(--primary);
-    transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--primary), 0 0 25px var(--primary), 0 0 35px var(--primary);
+  transform: translateY(-2px);
 }
 
 /* Fade / slide scroll animations */
 .fade-in {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
+
 .slide-in {
-    opacity: 0;
-    transform: translateX(-24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .slide-in.visible {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Floating particles */
 .particles {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
+
 .particle {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    pointer-events: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 /* Gradient text */
 .gradient-text {
-    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    background-size: 200% 100%;
-    transition: all 0.3s ease;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  transition: all 0.3s ease;
 }
+
 .gradient-text:hover {
-    animation: textGradient 2s linear infinite;
+  animation: textGradient 2s linear infinite;
+}
+
+@keyframes textGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 
 /* Certificates overlay */
 .cert-card {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
+
 .cert-card img {
-    transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
+
 .cert-card:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
+
 .cert-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(15, 23, 42, 0.85) 80%);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    padding: 1rem;
-    display: flex;
-    align-items: end;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(15, 23, 42, 0.85) 80%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  padding: 1rem;
+  display: flex;
+  align-items: end;
 }
+
 .cert-card:hover .cert-overlay {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Timeline */
 .timeline {
-    position: relative;
+  position: relative;
 }
+
 .timeline:before {
-    content: "";
-    position: absolute;
-    left: 1rem;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, var(--primary), var(--accent));
-    opacity: 0.35;
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+  opacity: 0.35;
 }
+
 .timeline-item {
-    position: relative;
-    padding-left: 3.5rem;
+  position: relative;
+  padding-left: 3.5rem;
 }
+
 .timeline-dot {
-    position: absolute;
-    left: 0.8rem;
-    top: 0.75rem;
-    width: 14px;
-    height: 14px;
-    background: var(--primary);
-    border-radius: 9999px;
-    box-shadow: 0 0 12px var(--primary);
+  position: absolute;
+  left: 0.8rem;
+  top: 0.75rem;
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  border-radius: 9999px;
+  box-shadow: 0 0 12px var(--primary);
 }
 
 /* Awards flip cards */
 .flip {
-    perspective: 1000px;
+  perspective: 1000px;
 }
+
 .flip-inner {
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
+
 .flip:hover .flip-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
+
 .flip-face {
-    position: relative;
-    backface-visibility: hidden;
+  position: relative;
+  backface-visibility: hidden;
 }
+
 .flip-back {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 /* Interests playful motion */
 .interest {
-    transition: transform 0.35s ease, filter 0.35s ease;
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
+
 .interest:hover {
-    transform: translateY(-6px) rotate(4deg) scale(1.05);
-    filter: drop-shadow(0 0 10px var(--secondary));
+  transform: translateY(-6px) rotate(4deg) scale(1.05);
+  filter: drop-shadow(0 0 10px var(--secondary));
 }
 
 /* Award card styles */
 .award-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 1.5rem;
-    width: 100%;
-    max-width: 24rem; /* Default for larger screens */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
 }
 
 /* Card carousel styles */
 .card-carousel {
-    position: relative;
-    width: 100%;
-    height: 14rem;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background: #fff;
-    border-radius: 0.5rem;
+  position: relative;
+  width: 100%;
+  height: 14rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0.5rem;
 }
+
 .card-carousel img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    cursor: pointer;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  cursor: pointer;
 }
+
 .card-carousel img.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Awards grid with horizontal auto-scroll */
 #awardsTrack {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    padding: 0 80px;
-    width: 100%;
-    animation: autoScroll 20s linear infinite;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(400px, 1fr));
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 0 80px;
+  width: 100%;
 }
+
 #awardsTrack:hover {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
-@keyframes autoScroll {
-    0% { transform: translateX(calc(-100% + 100vw)); }
-    100% { transform: translateX(0); }
-}
+
 #awardsTrack::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Ensure View button aligns with Certificates */
 .award-card .btn-glow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  margin-top: 1rem;
 }
 
 /* Arrows for awardsTrack scroll */
 .awards-arrow {
-    position: absolute;
-    top: 50%;
-    z-index: 20;
-    background: rgba(0, 0, 0, 0.75);
-    color: white;
-    border: none;
-    font-size: 2.5rem;
-    padding: 0.1rem 1.5rem;
-    cursor: pointer;
-    border-radius: 50%;
-    transform: translateY(-50%);
-    transition: background 0.3s;
-    user-select: none;
+  position: absolute;
+  top: 50%;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  padding: 0.1rem 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: background 0.3s;
+  user-select: none;
 }
+
 .awards-arrow:hover {
-    background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 1);
 }
+
 .awards-arrow:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
+
 .left-arrow {
-    left: 0px;
+  left: 0px;
 }
+
 .right-arrow {
-    right: 0px;
+  right: 0px;
 }
 
 /* Modal styles */
 #certificateModal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.92);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 99999;
-    padding: 1rem;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 1rem;
 }
+
 #certificateModal.hidden {
-    display: none;
+  display: none;
 }
+
 #certificateModal .modal-content {
-    position: relative;
-    max-width: 95vw;
-    max-height: 95vh;
-    width: auto;
-    border-radius: 20px;
-    overflow: hidden;
-    background: transparent;
+  position: relative;
+  max-width: 95vw;
+  max-height: 95vh;
+  width: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background: transparent;
 }
+
 #certificateModal .modal-content img {
-    width: auto;
-    max-width: 90vw;
-    max-height: 85vh;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 18px;
-    background: #161a23;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.65);
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+  width: auto;
+  max-width: 90vw;
+  max-height: 85vh;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 18px;
+  background: #161a23;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.65);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
+
 .modal-nav {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    pointer-events: none;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
+
 .modal-nav button {
-    pointer-events: all;
-    background: rgba(20, 23, 49, 0.7);
-    border: none;
-    font-size: 2.5rem;
-    color: white;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
-    border-radius: 6px;
+  pointer-events: all;
+  background: rgba(20, 23, 49, 0.7);
+  border: none;
+  font-size: 2.5rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-radius: 6px;
 }
+
 .modal-nav button:hover {
-    background: rgba(99, 102, 241, 0.6);
+  background: rgba(99, 102, 241, 0.6);
 }
+
 .modal-nav button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Ensure container doesn't constrain track */
 .container {
-    overflow-x: visible !important;
-    width: 100%;
+  overflow-x: visible !important;
+  width: 100%;
 }
 
 /* Ensure images in project cards maintain aspect ratio and fit properly */
 .glass-card img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 /* Ensure tags are consistently styled */
 .text-xs.bg-purple-900\/50 {
-    background-color: rgba(108, 70, 117, 0.5);
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 0.75rem;
-}
-
-/* Ensure project card text is readable */
-.text-gray-300 {
-    color: #d1d5db;
+  background-color: rgba(108, 70, 117, 0.5);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
 }
 
 /* Responsive grid adjustments */
 @media (min-width: 1024px) {
-    .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 /* Force logo size inside internship timeline */
 .timeline-logo {
-    width: 200px !important;
-    height: auto !important;
-    max-height: 610px !important;
-    object-fit: contain;
+  width: 200px !important;
+  height: auto !important;
+  max-height: 610px !important;
+  object-fit: contain;
 }
 
 /* Force education logo size inside education timeline */
 .education-logo {
-    width: 48px !important;
-    height: 48px !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    border: 2px solid #fff;
-    background: #fff;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid #fff;
+  background: #fff;
 }
 
 /* Project cards animation */
 .project-card {
-    opacity: 0;
-    transform: translateY(60px);
-    transition: opacity 0.7s cubic-bezier(.64, .04, .35, 1), transform 0.7s cubic-bezier(.64, .04, .35, 1);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.64, .04, .35, 1), transform 0.7s cubic-bezier(.64, .04, .35, 1);
 }
+
 .project-card.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
+
 .project-card:nth-child(1) { transition-delay: 0.1s; }
 .project-card:nth-child(2) { transition-delay: 0.3s; }
 .project-card:nth-child(3) { transition-delay: 0.5s; }
 
-/* Mobile view adjustments for Awards section only */
-@media (max-width: 640px) {
-    /* Awards Section */
-    .award-card {
-        width: 100%;
-        max-width: 16rem; /* Reduced card width for mobile (~256px) */
-        margin: 0 auto; /* Center cards */
-    }
-    #awardsTrack {
-        gap: 1rem; /* Smaller gap between cards */
-        padding: 0 20px; /* Reduced padding for mobile */
-    }
-    .award-card .card-carousel {
-        height: 10rem; /* Reduced height for mobile (~160px) */
-    }
-    .award-card .card-carousel img {
-        max-height: 100%;
-        max-width: 100%;
-        object-fit: contain;
-    }
-    .award-card .mt-4 {
-        padding: 0.5rem; /* Reduced padding for content */
-    }
-    .award-card h3 {
-        font-size: 1rem; /* Smaller heading size */
-    }
-    .award-card p {
-        font-size: 0.75rem; /* Smaller text size */
-    }
-    .award-card .btn-glow {
-        padding: 0.5rem 1rem; /* Smaller button */
-        font-size: 0.75rem;
-    }
-    .awards-arrow {
-        font-size: 1.5rem; /* Smaller arrows */
-        padding: 0.5rem;
-    }
-
-    /* Modal adjustments for mobile */
-    #certificateModal .modal-content img {
-        max-width: 95vw;
-        max-height: 80vh;
-    }
-}
-
 /* Responsive tweaks */
 @media (max-width: 768px) {
-    .hero-text { text-align: center; padding: 0 1rem; }
-    .enhanced-typing-animation { font-size: 2.5rem; }
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
-    .timeline:before { left: 0.6rem; }
-    .timeline-item { padding-left: 2.5rem; }
-    .timeline-dot { left: 0.3rem; }
-    .award-card { min-width: 90vw; max-width: 95vw; }
-    .card-carousel { height: 12rem; }
+  .hero-content { flex-direction: column; }
+  .hero-text { text-align: center; padding: 0 1rem; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .timeline:before { left: 0.6rem; }
+  .timeline-item { padding-left: 2.5rem; }
+  .timeline-dot { left: 0.3rem; }
+  .award-card { min-width: 90vw; max-width: 95vw; }
+  .card-carousel { height: 12rem; }
 }
+
 @media (max-width: 800px) {
-    #certificateModal .modal-content img { max-width: 99vw; max-height: 56vw; }
+  #certificateModal .modal-content img { max-width: 99vw; max-height: 56vw; }
 }
 
 button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
-/* Light mode overrides - Sky Blue + Pink Theme with Lavender-Peach Cards */
+/* Light mode overrides */
 .light-mode {
-    background: linear-gradient(135deg, #e0f7ff, #ffe6f7);
-    color: #1f2937;
+  background-color: #032e42;
+  color: #1f2937;
 }
 
 .light-mode .text-white {
-    color: #1f2937 !important;
+  color: #1f2937 !important;
 }
 
 .light-mode .text-gray-300 {
-    color: #374151 !important;
+  color: #4b5563 !important;
 }
 
 .light-mode .text-gray-400 {
-    color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
 .light-mode .gradient-bg {
-    background: linear-gradient(-45deg, #c2e9fb, #a1c4fd, #fbc2eb, #a18cd1);
-    background-size: 400% 400%;
-    animation: gradient 14s ease infinite;
+  background: linear-gradient(-45deg, #e0f2fe, #bae6fd, #7dd3fc, #38bdf8);
+  background-size: 400% 400%;
+  animation: gradient 14s ease infinite;
 }
 
-.light-mode .glass-card,
-.light-mode .award-card,
-.light-mode .cert-card,
-.light-mode .project-card,
-.light-mode .flip {
-    background: linear-gradient(135deg, rgba(221, 214, 243, 0.65), rgba(250, 207, 183, 0.65));
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(221, 160, 221, 0.3);
-    box-shadow: 0 8px 24px rgba(75, 0, 130, 0.12);
+.light-mode .glass-card {
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%); /* Goldish gradient */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 215, 0, 0.3); /* Goldish border */
+  box-shadow: 0 6px 24px rgba(218, 165, 32, 0.3), 0 0 15px rgba(255, 215, 0, 0.2); /* Enhanced gold shadow */
+  border-radius: 1rem; /* Smoother corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transitions */
+}
+
+.light-mode .glass-card:hover {
+  transform: scale(1.02) translateY(-4px); /* Subtle lift and scale on hover */
+  box-shadow: 0 12px 32px rgba(218, 165, 32, 0.4), 0 0 20px rgba(255, 215, 0, 0.3); /* Enhanced gold glow */
+}
+
+.light-mode .award-card {
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%); /* Goldish gradient */
+  border: 1px solid rgba(255, 215, 0, 0.3); /* Goldish border */
+  box-shadow: 0 6px 24px rgba(218, 165, 32, 0.3); /* Gold shadow */
+  border-radius: 1rem; /* Consistent rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.light-mode .award-card:hover {
+  transform: scale(1.02) translateY(-4px); /* Subtle lift and scale */
+  box-shadow: 0 12px 32px rgba(218, 165, 32, 0.4), 0 0 20px rgba(255, 215, 0, 0.3); /* Enhanced gold glow */
+}
+
+.light-mode .card-carousel {
+  background: linear-gradient(135deg, var(--gold-light) 10%, var(--gold) 50%, var(--gold-dark) 90%); /* Goldish gradient */
+  border: 1px solid rgba(255, 215, 0, 0.3); /* Goldish border */
+  box-shadow: 0 4px 20px rgba(218, 165, 32, 0.3); /* Subtle gold shadow */
+  border-radius: 0.75rem; /* Slightly larger radius for elegance */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.light-mode .card-carousel:hover {
+  box-shadow: 0 8px 28px rgba(218, 165, 32, 0.4); /* Enhanced gold hover glow */
 }
 
 .light-mode .neon-text {
-    text-shadow: 0 0 3px #ff69b4, 0 0 6px #00bfff, 0 0 9px var(--primary), 0 0 12px var(--secondary);
+  text-shadow: 0 0 2px #000, 0 0 4px #000, 0 0 6px var(--gold), 0 0 8px var(--gold); /* Gold neon text */
 }
 
 .light-mode .hover-tilt:hover {
-    box-shadow: 0 18px 36px rgba(75, 0, 130, 0.15), 0 0 15px #00bfff, 0 0 25px #ff69b4;
+  box-shadow: 0 15px 30px rgba(218, 165, 32, 0.3), 0 0 10px var(--gold), 0 0 20px var(--gold-dark); /* Gold hover shadow */
 }
 
 .light-mode .btn-glow:hover {
-    box-shadow: 0 0 12px #00bfff, 0 0 20px #ff69b4, 0 0 28px var(--secondary);
+  box-shadow: 0 0 10px var(--gold), 0 0 15px var(--gold), 0 0 20px var(--gold); /* Gold button glow */
 }
 
 .light-mode .particle {
-    background: rgba(0, 191, 255, 0.3);
+  background: rgba(218, 165, 32, 0.3); /* Gold particles */
 }
 
 .light-mode .bg-gradient-to-b.from-slate-900.to-slate-800 {
-    background: linear-gradient(to bottom, #dff6ff, #ffe6f7) !important;
+  background: linear-gradient(to bottom, #f9fafb, #f3f4f6) !important;
 }
 
 .light-mode .bg-gradient-to-b.from-slate-800.to-slate-900 {
-    background: linear-gradient(to bottom, #e0f7ff, #fbc2eb) !important;
+  background: linear-gradient(to bottom, #f3f4f6, #e5e7eb) !important;
 }
 
 .light-mode .bg-slate-900 {
-    background-color: #f0f9ff !important;
+  background-color: #f3f4f6 !important;
 }
 
 .light-mode .form-input {
-    background-color: #ffffff !important;
-    border-color: #a5b4fc !important;
-    color: #1f2937 !important;
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+  color: #1f2937 !important;
 }
 
 .light-mode .form-input:focus {
-    border-color: #ff69b4 !important;
+  border-color: var(--gold) !important; /* Gold focus border */
 }
 
 .light-mode .bg-purple-900\/50 {
-    background-color: rgba(0, 191, 255, 0.1) !important;
+  background-color: rgba(88, 28, 135, 0.1) !important;
 }
 
 .light-mode .bg-purple-900\/90 {
-    background-color: rgba(255, 105, 180, 0.2) !important;
+  background-color: rgba(88, 28, 135, 0.2) !important;
 }
 
 .light-mode .bg-purple-500\/20 {
-    background-color: rgba(161, 196, 253, 0.2) !important;
+  background-color: rgba(168, 85, 247, 0.1) !important;
 }
 
-.light-mode .text-purple-300,
+.light-mode .text-purple-300 {
+  color: #a855f7 !important;
+}
+
 .light-mode .text-purple-400 {
-    color: #ec4899 !important;
+  color: #a855f7 !important;
 }
 
 .light-mode #theme-toggle {
-    color: #1f2937;
+  color: #1f2937;
 }
 
 .light-mode .hover\:text-purple-300:hover {
-    color: #00bfff !important;
+  color: #a855f7 !important;
 }
 
 .light-mode .hover\:bg-purple-900\/30:hover {
-    background-color: rgba(255, 105, 180, 0.15) !important;
+  background-color: rgba(88, 28, 135, 0.1) !important;
 }
 
 .light-mode .hover\:bg-purple-700:hover {
-    background-color: #ff69b4 !important;
+  background-color: #7c3aed !important;
 }
 
 .light-mode .hover\:bg-purple-600:hover {
-    background-color: #00bfff !important;
+  background-color: #9333ea !important;
 }
 
 .light-mode .timeline:before {
-    background: linear-gradient(180deg, #00bfff, #ff69b4);
-    opacity: 0.3;
+  background: linear-gradient(180deg, var(--gold), var(--gold-dark)); /* Gold timeline */
+  opacity: 0.2;
 }
 
 .light-mode .timeline-dot {
-    background: #00bfff;
-    box-shadow: 0 0 10px #ff69b4;
+  background: var(--gold); /* Gold timeline dot */
+  box-shadow: 0 0 8px var(--gold); /* Gold shadow */
 }
 
 .light-mode .bg-white {
-    background-color: #ffffff !important;
+  background-color: #ffffff !important;
 }
 
 .light-mode .absolute.inset-0.bg-gradient-to-t.from-black\/80.to-transparent {
-    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent) !important;
+  background: linear-gradient(to top, rgba(218, 165, 32, 0.6), transparent) !important; /* Gold overlay */
 }
 
 .light-mode .hover\:shadow-purple-500\/40:hover {
-    box-shadow: 0 10px 15px -3px rgba(168,85,247,0.2), 0 4px 6px -2px rgba(168,85,247,0.1) !important;
+  box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.2), 0 4px 6px -2px rgba(168, 85, 247, 0.1) !important;
+}
+
+.light-mode #stars {
+  box-shadow: 1266px 781px #FFFFFF, 34px 205px #FFFFFF, 1819px 1907px #FFFFFF, 787px 54px #FFFFFF, 881px 59px #FFFFFF, 1351px 955px #FFFFFF, 697px 61px #FFFFFF, 623px 1707px #FFFFFF, 35px 1146px #FFFFFF, 1678px 825px #FFFFFF, 858px 760px #FFFFFF, 1956px 716px #FFFFFF, 1961px 1139px #FFFFFF, 1679px 675px #FFFFFF, 412px 1877px #FFFFFF, 417px 362px #FFFFFF, 866px 88px #FFFFFF, 1830px 774px #FFFFFF, 9px 1081px #FFFFFF, 688px 344px #FFFFFF, 375px 33px #FFFFFF, 1844px 1284px #FFFFFF, 1234px 834px #FFFFFF, 1821px 1492px #FFFFFF, 1800px 1530px #FFFFFF, 209px 1010px #FFFFFF, 791px 493px #FFFFFF, 1393px 476px #FFFFFF, 1863px 615px #FFFFFF, 312px 335px #FFFFFF, 1570px 404px #FFFFFF, 354px 1488px #FFFFFF, 1146px 1727px #FFFFFF, 960px 1612px #FFFFFF, 363px 1832px #FFFFFF, 1893px 1678px #FFFFFF, 1991px 1331px #FFFFFF, 766px 1161px #FFFFFF, 1746px 569px #FFFFFF, 1123px 149px #FFFFFF, 45px 1154px #FFFFFF, 1818px 1632px #FFFFFF, 886px 1148px #FFFFFF, 319px 639px #FFFFFF, 173px 1352px #FFFFFF, 1933px 1185px #FFFFFF, 2px 1919px #FFFFFF, 114px 435px #FFFFFF, 1974px 850px #FFFFFF, 4px 1834px #FFFFFF, 1654px 1156px #FFFFFF, 1738px 1546px #FFFFFF, 1201px 1487px #FFFFFF, 1085px 1140px #FFFFFF, 1017px 1406px #FFFFFF, 1790px 1192px #FFFFFF, 1800px 1245px #FFFFFF, 1442px 173px #FFFFFF, 918px 1892px #FFFFFF, 264px 1256px #FFFFFF, 340px 156px #FFFFFF, 515px 1965px #FFFFFF, 649px 1969px #FFFFFF, 1537px 1660px #FFFFFF, 1543px 1956px #FFFFFF, 893px 740px #FFFFFF, 1785px 1521px #FFFFFF, 471px 1930px #FFFFFF, 281px 1673px #FFFFFF, 1359px 1562px #FFFFFF, 1580px 1065px #FFFFFF, 1205px 805px #FFFFFF, 487px 1681px #FFFFFF, 1642px 648px #FFFFFF, 1617px 945px #FFFFFF, 518px 85px #FFFFFF, 1628px 1393px #FFFFFF, 1199px 5px #FFFFFF, 1538px 1357px #FFFFFF, 1141px 1860px #FFFFFF, 926px 510px #FFFFFF, 1678px 463px #FFFFFF, 88px 383px #FFFFFF, 55px 373px #FFFFFF, 6px 1950px #FFFFFF, 1263px 1934px #FFFFFF, 644px 1700px #FFFFFF, 877px 1703px #FFFFFF, 1581px 1939px #FFFFFF, 1534px 1574px #FFFFFF, 947px 1335px #FFFFFF, 260px 174px #FFFFFF, 1928px 346px #FFFFFF, 1349px 1272px #FFFFFF, 1768px 756px #FFFFFF, 1690px 1401px #FFFFFF, 467px 1517px #FFFFFF, 189px 479px #FFFFFF, 82px 141px #FFFFFF, 1006px 626px #FFFFFF, 616px 938px #FFFFFF, 1678px 1892px #FFFFFF, 1804px 314px #FFFFFF, 529px 1386px #FFFFFF, 1329px 1620px #FFFFFF, 1644px 1307px #FFFFFF, 1842px 1441px #FFFFFF, 176px 742px #FFFFFF, 331px 1640px #FFFFFF, 1076px 281px #FFFFFF, 1845px 1453px #FFFFFF, 1353px 1519px #FFFFFF, 1116px 1594px #FFFFFF, 1783px 1336px #FFFFFF, 77px 955px #FFFFFF, 1428px 1465px #FFFFFF, 1680px 1831px #FFFFFF, 325px 875px #FFFFFF, 1449px 1972px #FFFFFF, 964px 1397px #FFFFFF, 1698px 195px #FFFFFF, 468px 1907px #FFFFFF, 1332px 1800px #FFFFFF, 830px 773px #FFFFFF, 868px 622px #FFFFFF, 158px 1162px #FFFFFF, 842px 216px #FFFFFF, 1486px 789px #FFFFFF, 104px 558px #FFFFFF, 1452px 42px #FFFFFF, 34px 1233px #FFFFFF, 898px 480px #FFFFFF, 1640px 1430px #FFFFFF, 501px 393px #FFFFFF, 111px 990px #FFFFFF, 1570px 1735px #FFFFFF, 55px 801px #FFFFFF, 172px 357px #FFFFFF, 224px 919px #FFFFFF, 93px 1927px #FFFFFF, 630px 939px #FFFFFF, 472px 1374px #FFFFFF, 1632px 226px #FFFFFF, 928px 1827px #FFFFFF, 1809px 1723px #FFFFFF, 1352px 194px #FFFFFF, 1574px 815px #FFFFFF, 593px 1875px #FFFFFF, 1092px 742px #FFFFFF, 1207px 1392px #FFFFFF, 1958px 671px #FFFFFF, 1132px 664px #FFFFFF, 1663px 984px #FFFFFF, 470px 98px #FFFFFF, 756px 1818px #FFFFFF, 1273px 59px #FFFFFF, 1883px 1304px #FFFFFF, 585px 956px #FFFFFF, 1583px 1860px #FFFFFF, 1137px 1372px #FFFFFF, 152px 1694px #FFFFFF, 1377px 1313px #FFFFFF, 1715px 1129px #FFFFFF, 1204px 1020px #FFFFFF, 1248px 176px #FFFFFF, 1775px 1032px #FFFFFF, 1996px 523px #FFFFFF, 724px 1361px #FFFFFF, 1830px 401px #FFFFFF, 1574px 259px #FFFFFF, 323px 583px #FFFFFF, 1981px 1085px #FFFFFF, 776px 494px #FFFFFF, 1588px 1661px #FFFFFF, 314px 1067px #FFFFFF, 662px 1759px #FFFFFF, 1917px 1685px #FFFFFF, 1520px 498px #FFFFFF, 874px 290px #FFFFFF, 374px 1075px #FFFFFF, 693px 400px #FFFFFF, 1500px 921px #FFFFFF, 1940px 354px #FFFFFF, 1914px 769px #FFFFFF, 943px 1812px #FFFFFF, 1669px 1899px #FFFFFF, 179px 1636px #FFFFFF, 1979px 1117px #FFFFFF, 524px 1185px #FFFFFF, 1502px 1833px #FFFFFF, 181px 1194px #FFFFFF, 1907px 1706px #FFFFFF, 381px 1814px #FFFFFF, 544px 1882px #FFFFFF, 546px 53px #FFFFFF, 1590px 212px #FFFFFF, 646px 517px #FFFFFF, 112px 1955px #FFFFFF, 444px 1075px #FFFFFF, 1412px 302px #FFFFFF;
+  animation: twinkle 3s infinite ease-in-out, animStar 10s linear infinite;
+}
+
+.light-mode #stars2 {
+  box-shadow: 1860px 98px #FFFFFF, 77px 1505px #FFFFFF, 17px 404px #FFFFFF, 1475px 644px #FFFFFF, 769px 1455px #FFFFFF, 801px 455px #FFFFFF, 1955px 1441px #FFFFFF, 894px 1877px #FFFFFF, 769px 113px #FFFFFF, 380px 759px #FFFFFF, 380px 1141px #FFFFFF, 299px 1696px #FFFFFF, 428px 1281px #FFFFFF, 604px 80px #FFFFFF, 1442px 1803px #FFFFFF, 194px 1462px #FFFFFF, 1400px 736px #FFFFFF, 1332px 27px #FFFFFF, 668px 1077px #FFFFFF, 702px 24px #FFFFFF, 467px 776px #FFFFFF, 1217px 256px #FFFFFF, 1552px 594px #FFFFFF, 3px 114px #FFFFFF, 1668px 880px #FFFFFF, 202px 1518px #FFFFFF, 1577px 590px #FFFFFF, 1648px 1262px #FFFFFF, 294px 1043px #FFFFFF, 861px 755px #FFFFFF, 1525px 1623px #FFFFFF, 1116px 801px #FFFFFF, 595px 88px #FFFFFF, 1964px 544px #FFFFFF, 80px 2000px #FFFFFF, 1929px 1512px #FFFFFF, 472px 636px #FFFFFF, 508px 262px #FFFFFF, 1054px 1187px #FFFFFF, 645px 1961px #FFFFFF, 1240px 1471px #FFFFFF, 443px 1065px #FFFFFF, 1734px 1594px #FFFFFF, 227px 920px #FFFFFF, 1272px 5px #FFFFFF, 239px 1015px #FFFFFF, 646px 565px #FFFFFF, 1702px 292px #FFFFFF, 226px 1985px #FFFFFF, 160px 1376px #FFFFFF, 1554px 1909px #FFFFFF, 1298px 1844px #FFFFFF, 1406px 455px #FFFFFF, 1691px 1380px #FFFFFF, 1898px 862px #FFFFFF, 1741px 1335px #FFFFFF, 577px 17px #FFFFFF, 875px 1381px #FFFFFF, 152px 1522px #FFFFFF, 464px 635px #FFFFFF, 494px 193px #FFFFFF, 1262px 983px #FFFFFF, 1048px 16px #FFFFFF, 1750px 571px #FFFFFF, 1285px 533px #FFFFFF, 672px 1636px #FFFFFF, 507px 717px #FFFFFF, 828px 920px #FFFFFF, 1344px 889px #FFFFFF, 1120px 270px #FFFFFF, 686px 187px #FFFFFF, 1193px 437px #FFFFFF, 482px 766px #FFFFFF, 908px 1856px #FFFFFF, 818px 532px #FFFFFF, 22px 341px #FFFFFF, 254px 1783px #FFFFFF, 311px 1336px #FFFFFF, 1461px 1588px #FFFFFF, 230px 1584px #FFFFFF, 1611px 1428px #FFFFFF, 591px 1786px #FFFFFF, 55px 1952px #FFFFFF, 581px 607px #FFFFFF, 1912px 1500px #FFFFFF, 1439px 1397px #FFFFFF, 267px 444px #FFFFFF, 571px 1701px #FFFFFF, 1785px 1416px #FFFFFF, 826px 915px #FFFFFF, 1835px 1820px #FFFFFF, 1503px 1868px #FFFFFF, 1518px 182px #FFFFFF, 1065px 920px #FFFFFF, 1498px 943px #FFFFFF, 837px 554px #FFFFFF, 1045px 446px #FFFFFF, 1876px 1296px #FFFFFF, 275px 129px #FFFFFF, 1979px 87px #FFFFFF, 1453px 317px #FFFFFF, 828px 608px #FFFFFF, 373px 998px #FFFFFF, 1721px 722px #FFFFFF, 1715px 1210px #FFFFFF, 1870px 1279px #FFFFFF, 111px 561px #FFFFFF, 52px 665px #FFFFFF, 595px 1539px #FFFFFF, 633px 256px #FFFFFF, 1096px 1010px #FFFFFF, 335px 1255px #FFFFFF, 1128px 320px #FFFFFF, 1803px 617px #FFFFFF, 1477px 1975px #FFFFFF, 1709px 677px #FFFFFF, 797px 844px #FFFFFF, 332px 1439px #FFFFFF, 1598px 456px #FFFFFF, 1179px 1845px #FFFFFF, 1231px 1244px #FFFFFF, 1569px 1304px #FFFFFF, 1822px 674px #FFFFFF, 1630px 1667px #FFFFFF, 18px 1429px #FFFFFF, 513px 1838px #FFFFFF, 416px 387px #FFFFFF, 956px 711px #FFFFFF, 1428px 639px #FFFFFF, 1414px 397px #FFFFFF, 848px 865px #FFFFFF, 1458px 874px #FFFFFF, 370px 179px #FFFFFF, 537px 936px #FFFFFF, 1305px 1840px #FFFFFF, 1136px 1415px #FFFFFF, 1888px 915px #FFFFFF, 1077px 336px #FFFFFF, 1636px 1264px #FFFFFF, 211px 21px #FFFFFF, 1584px 991px #FFFFFF, 48px 673px #FFFFFF, 19px 1068px #FFFFFF, 21px 756px #FFFFFF, 175px 1929px #FFFFFF, 453px 1334px #FFFFFF, 617px 1716px #FFFFFF, 187px 250px #FFFFFF, 1325px 1178px #FFFFFF, 1547px 886px #FFFFFF, 1081px 493px #FFFFFF, 772px 479px #FFFFFF, 647px 86px #FFFFFF, 1081px 1224px #FFFFFF, 558px 735px #FFFFFF, 156px 408px #FFFFFF, 681px 1531px #FFFFFF, 13px 649px #FFFFFF, 1393px 1653px #FFFFFF, 980px 73px #FFFFFF, 1510px 14px #FFFFFF, 781px 640px #FFFFFF, 1581px 508px #FFFFFF, 461px 191px #FFFFFF, 1466px 648px #FFFFFF, 1860px 803px #FFFFFF, 1640px 679px #FFFFFF, 897px 178px #FFFFFF, 1961px 1611px #FFFFFF, 1891px 947px #FFFFFF, 1554px 1272px #FFFFFF, 1342px 976px #FFFFFF, 771px 992px #FFFFFF, 843px 1817px #FFFFFF, 1702px 56px #FFFFFF, 1509px 1652px #FFFFFF, 266px 1212px #FFFFFF, 1947px 1855px #FFFFFF, 603px 801px #FFFFFF, 1080px 749px #FFFFFF, 1504px 682px #FFFFFF, 743px 776px #FFFFFF, 945px 818px #FFFFFF, 1971px 800px #FFFFFF, 724px 1075px #FFFFFF, 261px 1489px #FFFFFF, 173px 1241px #FFFFFF, 1285px 1696px #FFFFFF, 812px 676px #FFFFFF, 547px 125px #FFFFFF, 1299px 1094px #FFFFFF, 1603px 1152px #FFFFFF, 809px 247px #FFFFFF, 809px 240px #FFFFFF, 52px 642px #FFFFFF, 27px 503px #FFFFFF, 1685px 296px #FFFFFF, 1275px 250px #FFFFFF, 1991px 1353px #FFFFFF, 1334px 728px #FFFFFF;
+  animation: twinkle 3.5s infinite ease-in-out, animStar 20s linear infinite;
+}
+
+.light-mode #stars3 {
+  box-shadow: 263px 233px #FFFFFF, 1301px 1199px #FFFFFF, 1023px 1035px #FFFFFF, 138px 1910px #FFFFFF, 1389px 112px #FFFFFF, 1500px 477px #FFFFFF, 441px 1276px #FFFFFF, 1024px 1778px #FFFFFF, 115px 505px #FFFFFF, 462px 1982px #FFFFFF, 79px 1817px #FFFFFF, 1959px 1963px #FFFFFF, 17px 1000px #FFFFFF, 1207px 237px #FFFFFF, 1112px 1360px #FFFFFF, 1030px 460px #FFFFFF, 137px 1290px #FFFFFF, 1595px 1992px #FFFFFF, 880px 1331px #FFFFFF, 441px 1368px #FFFFFF, 1071px 528px #FFFFFF, 1208px 1957px #FFFFFF, 402px 1621px #FFFFFF, 1509px 318px #FFFFFF, 1017px 344px #FFFFFF, 58px 1954px #FFFFFF, 1395px 1212px #FFFFFF, 219px 265px #FFFFFF, 1195px 440px #FFFFFF, 197px 1052px #FFFFFF, 1838px 1742px #FFFFFF, 344px 768px #FFFFFF, 1596px 460px #FFFFFF, 1873px 140px #FFFFFF, 1879px 125px #FFFFFF, 102px 848px #FFFFFF, 1029px 781px #FFFFFF, 126px 1803px #FFFFFF, 1367px 429px #FFFFFF, 1146px 822px #FFFFFF, 840px 547px #FFFFFF, 902px 2000px #FFFFFF, 1476px 369px #FFFFFF, 1501px 558px #FFFFFF, 1511px 867px #FFFFFF, 1473px 772px #FFFFFF, 612px 1865px #FFFFFF, 409px 1745px #FFFFFF, 1204px 1367px #FFFFFF, 1428px 377px #FFFFFF, 1654px 583px #FFFFFF, 46px 239px #FFFFFF, 1705px 1634px #FFFFFF, 1951px 1115px #FFFFFF, 539px 77px #FFFFFF, 638px 184px #FFFFFF, 1457px 1945px #FFFFFF, 123px 1677px #FFFFFF, 1726px 1954px #FFFFFF, 603px 1527px #FFFFFF, 1126px 303px #FFFFFF, 678px 1744px #FFFFFF, 1555px 1299px #FFFFFF, 564px 955px #FFFFFF, 238px 476px #FFFFFF, 781px 1754px #FFFFFF, 734px 303px #FFFFFF, 851px 991px #FFFFFF, 86px 749px #FFFFFF, 1139px 276px #FFFFFF, 1217px 605px #FFFFFF, 1926px 417px #FFFFFF, 1707px 1248px #FFFFFF, 1199px 1049px #FFFFFF, 1108px 566px #FFFFFF, 1079px 1148px #FFFFFF, 717px 214px #FFFFFF, 1509px 875px #FFFFFF, 129px 1897px #FFFFFF, 1096px 633px #FFFFFF, 838px 1017px #FFFFFF, 1560px 1338px #FFFFFF, 1899px 332px #FFFFFF, 525px 929px #FFFFFF, 299px 1500px #FFFFFF, 402px 1793px #FFFFFF, 1962px 138px #FFFFFF, 1089px 1806px #FFFFFF, 897px 355px #FFFFFF, 930px 1120px #FFFFFF, 1180px 1162px #FFFFFF, 1731px 1075px #FFFFFF, 536px 1056px #FFFFFF, 1285px 202px #FFFFFF, 1569px 122px #FFFFFF, 1926px 1802px #FFFFFF, 1929px 357px #FFFFFF, 136px 1473px #FFFFFF, 1248px 64px #FFFFFF, 1816px 707px #FFFFFF;
+  animation: twinkle 4s infinite ease-in-out, animStar 30s linear infinite;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.5; transform: scale(1); }
 }
 
 /* Ensure images fit the container with object-cover and maintain aspect ratio */
 .glass-card .relative img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 /* Container for hover effect to work within bounds */
 .glass-card .relative {
-    overflow: hidden;
-    position: relative;
+  overflow: hidden;
+  position: relative;
 }
 
 /* Enhance hover scaling to ensure it stays within bounds */
 .glass-card .relative img:hover {
-    transform: scale(1.10);
+  transform: scale(1.10);
 }
 
 /* Ensure the gradient overlay and text are positioned correctly */
 .glass-card .absolute {
-    z-index: 10;
+  z-index: 10;
 }
 
 /* Responsive image handling */
 @media (max-width: 767px) {
-    .glass-card .relative { height: 36rem; }
+  .glass-card .relative { height: 36rem; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }

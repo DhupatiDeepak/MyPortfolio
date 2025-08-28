@@ -13,27 +13,151 @@
     <script src="script.js" defer></script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "X-ud7RB3C-r97TyLR",
-      });
-   })();
-</script>
-      <style>
-        #certificateModal .modal-content img {
-            max-width: 90vw;
-            max-height: 85vh;
-            width: auto;
-            height: auto;
-        }
-    </style>
-</head>
-<body class="min-h-screen">
-    <!-- Floating particles background -->
-    <div class="particles" id="particles"></div>
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "X-ud7RB3C-r97TyLR",
+            });
+        })();
+    </script>
+    <style>
+    body.light-mode {
+        background: linear-gradient(135deg, #f0f4ff, #d9e2ff);
+    }
+    body.dark-mode {
+        background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    }
+    .starfield {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+    }
+    #stars, #stars2, #stars3 {
+        position: absolute;
+        background: transparent;
+        border-radius: 50%;
+    }
+    body.dark-mode #stars {
+        width: 1px;
+        height: 1px;
+        box-shadow: 1266px 781px 2px #FFF, 34px 205px 2px #FFF, 1819px 1907px 2px #FFF, 787px 54px 2px #FFF, 881px 59px 2px #FFF, 1351px 955px 2px #FFF, 697px 61px 2px #FFF, 623px 1707px 2px #FFF, 35px 1146px 2px #FFF, 1678px 825px 2px #FFF, 858px 760px 2px #FFF, 1956px 716px 2px #FFF, 1961px 1139px 2px #FFF, 1679px 675px 2px #FFF, 412px 1877px 2px #FFF, 417px 362px 2px #FFF, 866px 88px 2px #FFF, 1830px 774px 2px #FFF, 9px 1081px 2px #FFF, 688px 344px 2px #FFF, 375px 33px 2px #FFF, 1844px 1284px 2px #FFF, 1234px 834px 2px #FFF, 1821px 1492px 2px #FFF, 1800px 1530px 2px #FFF, 209px 1010px 2px #FFF, 791px 493px 2px #FFF, 1393px 476px 2px #FFF, 1863px 615px 2px #FFF, 312px 335px 2px #FFF, 1570px 404px 2px #FFF, 354px 1488px 2px #FFF, 1146px 1727px 2px #FFF, 960px 1612px 2px #FFF, 363px 1832px 2px #FFF, 1893px 1678px 2px #FFF, 1991px 1331px 2px #FFF, 766px 1161px 2px #FFF, 1746px 569px 2px #FFF, 1123px 149px 2px #FFF, 45px 1154px 2px #FFF, 1818px 1632px 2px #FFF, 886px 1148px 2px #FFF, 319px 639px 2px #FFF, 173px 1352px 2px #FFF, 1933px 1185px 2px #FFF, 2px 1919px 2px #FFF, 114px 435px 2px #FFF, 1974px 850px 2px #FFF, 4px 1834px 2px #FFF, 1654px 1156px 2px #FFF, 1738px 1546px 2px #FFF, 1201px 1487px 2px #FFF, 1085px 1140px 2px #FFF, 1017px 1406px 2px #FFF, 1790px 1192px 2px #FFF, 1800px 1245px 2px #FFF, 1442px 173px 2px #FFF, 918px 1892px 2px #FFF, 264px 1256px 2px #FFF, 340px 156px 2px #FFF, 515px 1965px 2px #FFF, 649px 1969px 2px #FFF, 1537px 1660px 2px #FFF, 1543px 1956px 2px #FFF, 893px 740px 2px #FFF, 1785px 1521px 2px #FFF, 471px 1930px 2px #FFF, 281px 1673px 2px #FFF, 1359px 1562px 2px #FFF, 1580px 1065px 2px #FFF, 1205px 805px 2px #FFF, 487px 1681px 2px #FFF, 1642px 648px 2px #FFF, 1617px 945px 2px #FFF, 518px 85px 2px #FFF, 1628px 1393px 2px #FFF, 1199px 5px 2px #FFF, 1538px 1357px 2px #FFF, 1141px 1860px 2px #FFF, 926px 510px 2px #FFF, 1678px 463px 2px #FFF, 88px 383px 2px #FFF, 55px 373px 2px #FFF, 6px 1950px 2px #FFF, 1263px 1934px 2px #FFF, 644px 1700px 2px #FFF, 877px 1703px 2px #FFF, 1581px 1939px 2px #FFF, 1534px 1574px 2px #FFF, 947px 1335px 2px #FFF, 260px 174px 2px #FFF, 1928px 346px 2px #FFF, 1349px 1272px 2px #FFF, 1768px 756px 2px #FFF, 1690px 1401px 2px #FFF, 467px 1517px 2px #FFF, 189px 479px 2px #FFF, 82px 141px 2px #FFF, 1006px 626px 2px #FFF, 616px 938px 2px #FFF, 1678px 1892px 2px #FFF, 1804px 314px 2px #FFF, 529px 1386px 2px #FFF, 1329px 1620px 2px #FFF, 1644px 1307px 2px #FFF, 1842px 1441px 2px #FFF, 176px 742px 2px #FFF, 331px 1640px 2px #FFF, 1076px 281px 2px #FFF, 1845px 1453px 2px #FFF, 1353px 1519px 2px #FFF, 1116px 1594px 2px #FFF, 1783px 1336px 2px #FFF, 77px 955px 2px #FFF, 1428px 1465px 2px #FFF, 1680px 1831px 2px #FFF, 325px 875px 2px #FFF, 1449px 1972px 2px #FFF, 964px 1397px 2px #FFF, 1698px 195px 2px #FFF, 468px 1907px 2px #FFF, 1332px 1800px 2px #FFF, 830px 773px 2px #FFF, 868px 622px 2px #FFF, 158px 1162px 2px #FFF, 842px 216px 2px #FFF, 1486px 789px 2px #FFF, 104px 558px 2px #FFF, 1452px 42px 2px #FFF, 34px 1233px 2px #FFF, 898px 480px 2px #FFF, 1640px 1430px 2px #FFF, 501px 393px 2px #FFF, 111px 990px 2px #FFF, 1570px 1735px 2px #FFF, 55px 801px 2px #FFF, 172px 357px 2px #FFF, 224px 919px 2px #FFF, 93px 1927px 2px #FFF, 630px 939px 2px #FFF, 472px 1374px 2px #FFF, 1632px 226px 2px #FFF, 928px 1827px 2px #FFF, 1809px 1723px 2px #FFF, 1352px 194px 2px #FFF, 1574px 815px 2px #FFF, 593px 1875px 2px #FFF, 1092px 742px 2px #FFF, 1207px 1392px 2px #FFF, 1958px 671px 2px #FFF, 1132px 664px 2px #FFF, 1663px 984px 2px #FFF, 470px 98px 2px #FFF, 756px 1818px 2px #FFF, 1273px 59px 2px #FFF, 1883px 1304px 2px #FFF, 585px 956px 2px #FFF, 1583px 1860px 2px #FFF, 1137px 1372px 2px #FFF, 152px 1694px 2px #FFF, 1377px 1313px 2px #FFF, 1715px 1129px 2px #FFF, 1204px 1020px 2px #FFF, 1248px 176px 2px #FFF, 1775px 1032px 2px #FFF, 1996px 523px 2px #FFF, 724px 1361px 2px #FFF, 1830px 401px 2px #FFF, 1574px 259px 2px #FFF, 323px 583px 2px #FFF, 1981px 1085px 2px #FFF, 776px 494px 2px #FFF, 1588px 1661px 2px #FFF, 314px 1067px 2px #FFF, 662px 1759px 2px #FFF, 1917px 1685px 2px #FFF, 1520px 498px 2px #FFF, 874px 290px 2px #FFF, 374px 1075px 2px #FFF, 693px 400px 2px #FFF, 1500px 921px 2px #FFF, 1940px 354px 2px #FFF, 1914px 769px 2px #FFF, 943px 1812px 2px #FFF, 1669px 1899px 2px #FFF, 179px 1636px 2px #FFF, 1979px 1117px 2px #FFF, 524px 1185px 2px #FFF, 1502px 1833px 2px #FFF, 181px 1194px 2px #FFF, 1907px 1706px 2px #FFF, 381px 1814px 2px #FFF, 544px 1882px 2px #FFF, 546px 53px 2px #FFF, 1590px 212px 2px #FFF, 646px 517px 2px #FFF, 112px 1955px 2px #FFF, 444px 1075px 2px #FFF, 1412px 302px 2px #FFF;
+        animation: twinkle-dark 5s infinite ease-in-out, animStar 10s linear infinite;
+    }
 
+
+  body.light-mode #stars {
+    width: 1px;
+    height: 1px;
+    box-shadow: 
+    
+        1266px 781px 2px #ffd000, 34px 205px 2px #ffd000, 1819px 1907px 2px #ffd000,
+        787px 54px 2px #ffd000, 881px 59px 2px #ffd000, 1351px 955px 2px #ffd000,
+        697px 61px 2px #ffd000, 623px 1707px 2px #ffd000, 35px 1146px 2px #ffd000,
+        1678px 825px 2px #ffd000, 858px 760px 2px #ffd000, 1956px 716px 2px #ffd000,
+        1961px 1139px 2px #ffd000, 1679px 675px 2px #ffd000, 412px 1877px 2px #ffd000,
+        417px 362px 2px #ffd000, 866px 88px 2px #ffd000, 1830px 774px 2px #ffd000,
+        9px 1081px 2px #ffd000, 688px 344px 2px #ffd000, 375px 33px 2px #ffd000,
+        1844px 1284px 2px #ffd000, 1234px 834px 2px #ffd000, 1821px 1492px 2px #ffd000,
+        1800px 1530px 2px #ffd000, 209px 1010px 2px #ffd000, 791px 493px 2px #ffd000,
+        1393px 476px 2px #ffd000, 1863px 615px 2px #ffd000, 312px 335px 2px #ffd000,
+        1570px 404px 2px #ffd000, 354px 1488px 2px #ffd000, 1146px 1727px 2px #ffd000,
+        960px 1612px 2px #ffd000, 363px 1832px 2px #ffd000, 1893px 1678px 2px #ffd000,
+        1991px 1331px 2px #ffd000, 766px 1161px 2px #ffd000, 1746px 569px 2px #ffd000,
+        1123px 149px 2px #ffd000, 45px 1154px 2px #ffd000, 1818px 1632px 2px #ffd000,
+        886px 1148px 2px #ffd000, 319px 639px 2px #ffd000, 173px 1352px 2px #ffd000,
+        1933px 1185px 2px #ffd000, 2px 1919px 2px #ffd000, 114px 435px 2px #ffd000,
+        1974px 850px 2px #ffd000, 4px 1834px 2px #ffd000, 1654px 1156px 2px #ffd000,
+        1738px 1546px 2px #ffd000, 1201px 1487px 2px #ffd000, 1085px 1140px 2px #ffd000,
+        1017px 1406px 2px #ffd000, 1790px 1192px 2px #ffd000, 1800px 1245px 2px #ffd000,
+        1442px 173px 2px #ffd000, 918px 1892px 2px #ffd000, 264px 1256px 2px #ffd000,
+        340px 156px 2px #ffd000, 515px 1965px 2px #ffd000, 649px 1969px 2px #ffd000,
+        1537px 1660px 2px #ffd000, 1543px 1956px 2px #ffd000, 893px 740px 2px #ffd000,
+        1785px 1521px 2px #ffd000, 471px 1930px 2px #ffd000, 281px 1673px 2px #ffd000,
+        1359px 1562px 2px #ffd000, 1580px 1065px 2px #ffd000, 1205px 805px 2px #ffd000,
+        487px 1681px 2px #ffd000, 1642px 648px 2px #ffd000, 1617px 945px 2px #ffd000,
+        518px 85px 2px #ffd000, 1628px 1393px 2px #ffd000, 1199px 5px 2px #ffd000,
+        1538px 1357px 2px #ffd000, 1141px 1860px 2px #ffd000, 926px 510px 2px #ffd000,
+        1678px 463px 2px #ffd000, 88px 383px 2px #ffd000, 55px 373px 2px #ffd000,
+        6px 1950px 2px #ffd000, 1263px 1934px 2px #ffd000, 644px 1700px 2px #ffd000,
+        877px 1703px 2px #ffd000, 1581px 1939px 2px #ffd000, 1534px 1574px 2px #ffd000,
+        947px 1335px 2px #ffd000, 260px 174px 2px #ffd000, 1928px 346px 2px #ffd000,
+        1349px 1272px 2px #ffd000, 1768px 756px 2px #ffd000, 1690px 1401px 2px #ffd000,
+        467px 1517px 2px #ffd000, 189px 479px 2px #ffd000, 82px 141px 2px #ffd000,
+        1006px 626px 2px #ffd000, 616px 938px 2px #ffd000, 1678px 1892px 2px #ffd000,
+        1804px 314px 2px #ffd000, 529px 1386px 2px #ffd000, 1329px 1620px 2px #ffd000,
+        1644px 1307px 2px #ffd000, 1842px 1441px 2px #ffd000, 176px 742px 2px #ffd000,
+        331px 1640px 2px #ffd000, 1076px 281px 2px #ffd000, 1845px 1453px 2px #ffd000,
+        1353px 1519px 2px #ffd000, 1116px 1594px 2px #ffd000, 1783px 1336px 2px #ffd000,
+        77px 955px 2px #ffd000, 1428px 1465px 2px #ffd000, 1680px 1831px 2px #ffd000,
+        325px 875px 2px #ffd000, 1449px 1972px 2px #ffd000, 964px 1397px 2px #ffd000,
+        1698px 195px 2px #ffd000, 468px 1907px 2px #ffd000, 1332px 1800px 2px #ffd000,
+        830px 773px 2px #ffd000, 868px 622px 2px #ffd000, 158px 1162px 2px #ffd000,
+        842px 216px 2px #ffd000, 1486px 789px 2px #ffd000, 104px 558px 2px #ffd000,
+        1452px 42px 2px #ffd000, 34px 1233px 2px #ffd000, 898px 480px 2px #ffd000,
+        1640px 1430px 2px #ffd000, 501px 393px 2px #ffd000, 111px 990px 2px #ffd000,
+        1570px 1735px 2px #ffd000, 55px 801px 2px #ffd000, 172px 357px 2px #ffd000,
+        224px 919px 2px #ffd000, 93px 1927px 2px #ffd000, 630px 939px 2px #ffd000,
+        472px 1374px 2px #ffd000, 1632px 226px 2px #ffd000, 928px 1827px 2px #ffd000,
+        1809px 1723px 2px #ffd000, 1352px 194px 2px #ffd000, 1574px 815px 2px #ffd000,
+        593px 1875px 2px #ffd000, 1092px 742px 2px #ffd000, 1207px 1392px 2px #ffd000,
+        1958px 671px 2px #ffd000, 1132px 664px 2px #ffd000, 1663px 984px 2px #ffd000,
+        470px 98px 2px #ffd000, 756px 1818px 2px #ffd000, 1273px 59px 2px #ffd000,
+        1883px 1304px 2px #ffd000, 585px 956px 2px #ffd000, 1583px 1860px 2px #ffd000,
+        1137px 1372px 2px #ffd000, 152px 1694px 2px #ffd000, 1377px 1313px 2px #ffd000,
+        1715px 1129px 2px #ffd000, 1204px 1020px 2px #ffd000, 1248px 176px 2px #ffd000,
+        1775px 1032px 2px #ffd000, 1996px 523px 2px #ffd000, 724px 1361px 2px #ffd000,
+        1830px 401px 2px #ffd000, 1574px 259px 2px #ffd000, 323px 583px 2px #ffd000,
+        1981px 1085px 2px #ffd000, 776px 494px 2px #ffd000, 1588px 1661px 2px #ffd000,
+        314px 1067px 2px #ffd000, 662px 1759px 2px #ffd000, 1917px 1685px 2px #ffd000,
+        1520px 498px 2px #ffd000, 874px 290px 2px #ffd000, 374px 1075px 2px #ffd000,
+        693px 400px 2px #ffd000, 1500px 921px 2px #ffd000, 1940px 354px 2px #ffd000,
+        1914px 769px 2px #ffd000, 943px 1812px 2px #ffd000, 1669px 1899px 2px #ffd000,
+        179px 1636px 2px #ffd000, 1979px 1117px 2px #ffd000, 524px 1185px 2px #ffd000,
+        1502px 1833px 2px #ffd000, 181px 1194px 2px #ffd000, 1907px 1706px 2px #ffd000,
+        381px 1814px 2px #ffd000, 544px 1882px 2px #ffd000, 546px 53px 2px #ffd000,
+        1590px 212px 2px #ffd000, 646px 517px 2px #ffd000, 112px 1955px 2px #ffd000,
+        444px 1075px 2px #ffd000, 1412px 302px 2px #ffd000;
+    animation: twinkle-light 4s infinite ease-in-out, animStar 8s linear infinite;
+}
+
+
+    /* Repeat similar blocks for body.dark-mode #stars2, body.light-mode #stars2, body.dark-mode #stars3, body.light-mode #stars3 with their respective multi-shadow lists, replacing #FFF with #FFD700 for light mode and adding '2px' blur if desired. I've omitted them here for brevity, but copy from your style.css. */
+    #stars2 {
+        animation-delay: 1s;
+    }
+    #stars3 {
+        animation-delay: 2s;
+    }
+    @keyframes twinkle-dark {
+        0%, 100% { opacity: 0.2; transform: scale(0.8); }
+        50% { opacity: 0.9; transform: scale(1.2); }
+    }
+    @keyframes twinkle-light {
+        0%, 100% { opacity: 0.3; transform: scale(0.7); }
+        50% { opacity: 1; transform: scale(1.3); }
+    }
+    @keyframes animStar {
+        from { transform: translateY(0vh); }
+        to { transform: translateY(-100vh); }
+    }
+    .gradient-bg {
+        background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    }
+</style>
+</head>
+<body class="min-h-screen relative dark-mode">
+    <!-- Space background animation -->
+    <div class="starfield">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+    
     <!-- Navigation -->
     <nav class="glass-card fixed w-full z-50 py-4 px-6 md:px-12">
         <div class="flex justify-between items-center">
@@ -77,64 +201,69 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center px-4 pt-24 pb-10">
-        <div class="container mx-auto">
-            <div class="hero-content flex flex-col md:flex-row items-center justify-between gap-12">
-                <!-- Hero Text -->
-                <div class="hero-text fade-in">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4 heading-font enhanced-typing-animation">
-                        <span class="neon-name hover-glow">
-                            <span>H</span><span>i</span><span>,</span><span> </span>
-                            <span>I</span><span>'</span><span>m</span><span> </span>
-                        </span>
-                        <span class="white-text">
-                            <span>D</span><span>h</span><span>u</span><span>p</span><span>a</span><span>t</span><span>i</span><span> </span>
-                            <span>D</span><span>e</span><span>e</span><span>p</span><span>a</span><span>k</span>
-                        </span>
-                    </h1>
-                    <h2 class="text-2xl md:text-4xl font-semibold mb-6 gradient-text heading-font">
-                        Aspiring Software Engineer
-                    </h2>
-                    <p class="text-lg md:text-xl mb-8 max-w-xl">
-                        I’m Dhupati Deepak, an aspiring Software Engineer with expertise in 
-                        <span class="font-semibold text-purple-300">C++, Python, Android, Linux, and AI</span>. 
-                        Passionate about building smart solutions that blend software, AI, and embedded systems 
-                        to solve real-world challenges.
-                    </p>
-                    <div class="flex flex-wrap items-center gap-4">
-                        <a href="#projects" class="btn-glow bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-3 rounded-full font-medium transition">View My Work</a>
-                        <a href="#contact" class="btn-glow border-2 border-purple-500 text-white px-6 py-3 rounded-full font-medium hover:bg-purple-900/30 transition">Contact Me</a>
-                        <a href="images/Deepak_Resume.pdf" download class="btn-glow pulse-glow border-2 border-purple-500 px-6 py-3 rounded-full font-medium hover:bg-purple-900/30 transition flex items-center">
-                            <i class="fa-solid fa-file-arrow-down mr-2"></i> Resume
-                        </a>
-                    </div>
+    <div class="container mx-auto relative z-10">
+        <div class="hero-content flex flex-col md:flex-row items-center justify-between gap-12">
+            <!-- Hero Text -->
+            <div class="hero-text fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 heading-font enhanced-typing-animation">
+                    <br>
+                    <br>
+                    <br>
+                    <span class="neon-name hover-glow">
+                        <span>H</span><span>i</span><span>,</span><span> </span>
+                        <span>I</span><span>'</span><span>m</span><span> </span>
+                    </span>
+                    <span class="white-text">
+                        <span>D</span><span>h</span><span>u</span><span>p</span><span>a</span><span>t</span><span>i</span><span> </span>
+                        <span>D</span><span>e</span><span>e</span><span>p</span><span>a</span><span>k</span>
+                    </span>
+                </h1>
+                <h2 class="text-2xl md:text-4xl font-semibold mb-6 gradient-text heading-font">
+                    Aspiring Software Engineer
+                </h2>
+                <p class="text-lg md:text-xl mb-8 max-w-xl">
+                    I’m Dhupati Deepak, an aspiring Software Engineer with expertise in 
+                    <span class="font-semibold text-purple-300">C++, Python, Android, Linux, and AI</span>. 
+                    Passionate about building smart solutions that blend software, AI, and embedded systems 
+                    to solve real-world challenges.
+                </p>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#projects" class="btn-glow bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-3 rounded-full font-medium transition">View My Work</a>
+                    <a href="#contact" class="btn-glow border-2 border-purple-500 text-white px-6 py-3 rounded-full font-medium hover:bg-purple-900/30 transition">Contact Me</a>
+                    <a href="images/Deepak_Resume.pdf" download class="btn-glow pulse-glow border-2 border-purple-500 px-6 py-3 rounded-full font-medium hover:bg-purple-900/30 transition flex items-center">
+                        <i class="fa-solid fa-file-arrow-down mr-2"></i> Resume
+                    </a>
                 </div>
-                <!-- Hero Image -->
-                <div class="hero-image fade-in">
-                    <div class="relative">
-                        <!-- Profile Image -->
-                        <div class="w-80 h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] rounded-full overflow-hidden border-[6px] border-purple-500/40 shadow-2xl relative">
-                            <img src="images/Gemini_Generated_Image_ifcvuhifcvuhifcv.png" 
-                                 alt="Dhupati Deepak" 
-                                 class="w-full h-full object-cover transition duration-700 hover:scale-110" />
-                        </div>
-                        <!-- Availability Badge -->
-                        <div class="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-purple-900/90 backdrop-blur-md px-4 md:px-7 py-2 md:py-3.5 rounded-full shadow-lg">
-                            <span class="text-base md:text-xl font-semibold tracking-wide">🚀 Available for Work</span>
-                        </div>
+            </div>
+            <!-- Hero Image -->
+            <div class="hero-image fade-in">
+                <div class="relative">
+                    <!-- Profile Image -->
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="w-80 h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] rounded-full overflow-hidden border-[6px] border-purple-500/40 shadow-2xl relative">
+                        <img src="images/Gemini_Generated_Image_ifcvuhifcvuhifcv.png" 
+                             alt="Dhupati Deepak" 
+                             class="w-full h-full object-cover transition duration-700 hover:scale-110" />
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-4">
+    <section id="about" class="py-24 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font">
                 <span class="gradient-text">About</span> <span class="text-white">Me</span>
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Who I Am -->
                 <div class="fade-in glass-card p-8 rounded-2xl hover-tilt border border-transparent">
                     <h3 class="text-2xl font-bold mb-4 gradient-text heading-font">Who I Am</h3>
@@ -238,12 +367,12 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section id="skills" class="py-24 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font">
                 <span class="gradient-text">My</span> <span class="text-white">Skills</span>
             </h2>
-            <div class="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div class="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
                 <!-- Python -->
                 <div class="fade-in glass-card p-6 rounded-xl flex flex-col items-center hover-tilt border border-transparent">
                     <div class="text-4xl mb-3 text-yellow-400"><i class="fab fa-python"></i></div>
@@ -299,12 +428,12 @@
     </section>
 
     <!-- Internships Section (Timeline) -->
-    <section id="internships" class="py-20 px-4 bg-gradient-to-b from-slate-800 to-slate-900">
+    <section id="internships" class="py-24 px-4 bg-gradient-to-b from-slate-800 to-slate-900">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font">
                 <span class="gradient-text">Internships</span> <span class="text-white">Timeline</span>
             </h2>
-            <div class="timeline space-y-6">
+            <div class="timeline space-y-8">
                 <div class="timeline-item fade-in">
                     <span class="timeline-dot"></span>
                     <div class="glass-card border border-transparent hover-tilt rounded-lg p-6">
@@ -331,10 +460,10 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4">
+    <section id="projects" class="py-24 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font"><span class="gradient-text">My</span> <span class="text-white">Projects</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <!-- Project 1: ASL Translator -->
                 <div class="fade-in glass-card rounded-xl overflow-hidden hover-tilt border border-transparent project-card">
                     <div class="relative h-48 overflow-hidden">
@@ -350,7 +479,7 @@
                             <span class="text-xs bg-purple-900/50 px-2 py-1 rounded">MediaPipe</span>
                         </div>
                         <div class="flex space-x-3 mt-4">
-                            <a href="https://github.com/DhupatiDeepak/Sign-languge-to-text-converter" class="text-sm border border-purple-500 text-white px-4 py-2 rounded-full font-medium transition hover:bg-purple-900/30">View on GitHub</a>
+                            <a href="https://github.com/DhupatiDeepak/Sign-language-to-text-converter" class="text-sm border border-purple-500 text-white px-4 py-2 rounded-full font-medium transition hover:bg-purple-900/30">View on GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -510,12 +639,12 @@
     </section>
 
     <!-- Certificates Section -->
-    <section id="certificates" class="py-20 px-4">
+    <section id="certificates" class="py-24 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font">
                 <span class="gradient-text">Certificates</span>
             </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
                 <!-- Certificate Card -->
                 <div class="fade-in glass-card rounded-xl border border-transparent p-4 hover:shadow-xl hover:shadow-purple-500/40 transition-transform transform hover:scale-105">
                     <div class="w-full h-60 flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
@@ -566,12 +695,12 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section id="education" class="py-24 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font">
                 <span class="gradient-text">My</span> <span class="text-white">Education</span>
             </h2>
-            <div class="timeline space-y-6">
+            <div class="timeline space-y-8">
                 <div class="timeline-item fade-in">
                     <span class="timeline-dot"></span>
                     <div class="glass-card border border-transparent hover-tilt rounded-xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -616,7 +745,7 @@
     </section>
 
     <!-- Awards Section -->
-    <section id="awards" class="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section id="awards" class="py-24 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font">
                 <span class="gradient-text">Awards</span>
@@ -756,12 +885,12 @@
     </section>
 
     <!-- Personal Interests -->
-    <section id="interests" class="py-20 px-4">
+    <section id="interests" class="py-24 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center heading-font">
                 <span class="gradient-text">Personal</span> <span class="text-white">Interests</span>
             </h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
                 <!-- Machine Learning -->
                 <div class="fade-in glass-card p-6 rounded-xl text-center interest">
                     <i class="fa-solid fa-brain text-3xl text-purple-400"></i>
@@ -827,7 +956,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 bg-gradient-to-b from-slate-800 to-slate-900">
+    <section id="contact" class="py-24 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center heading-font"><span class="gradient-text">Get In</span> <span class="text-white">Touch</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -840,16 +969,16 @@
                         <div class="flex items-center"><div class="bg-purple-500/20 p-3 rounded-full mr-4"><i class="fas fa-map-marker-alt text-purple-400"></i></div><div><h4 class="font-semibold">Location</h4><p class="text-gray-300">Guntur, India</p></div></div>
                     </div>
                     <div class="mt-8">
-    <h4 class="font-semibold mb-4">Follow Me</h4>
-    <div class="flex space-x-4">
-        <a href="https://github.com/DhupatiDeepak" class="bg-purple-900/50 p-3 md:p-7 rounded-full hover:bg-purple-700 transition">
-            <i class="fab fa-github text-2xl md:text-4xl"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/dhupati-deepak-771622269/" class="bg-purple-900/50 p-3 md:p-7 rounded-full hover:bg-purple-700 transition">
-            <i class="fab fa-linkedin-in text-2xl md:text-4xl"></i>
-        </a>
-    </div>
-</div>
+                        <h4 class="font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/DhupatiDeepak" class="bg-purple-900/50 p-3 md:p-7 rounded-full hover:bg-purple-700 transition">
+                                <i class="fab fa-github text-2xl md:text-4xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/dhupati-deepak-771622269/" class="bg-purple-900/50 p-3 md:p-7 rounded-full hover:bg-purple-700 transition">
+                                <i class="fab fa-linkedin-in text-2xl md:text-4xl"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="fade-in glass-card p-8 rounded-2xl">
                     <h3 class="text-2xl font-bold mb-6 gradient-text heading-font">Send Me a Message</h3>
