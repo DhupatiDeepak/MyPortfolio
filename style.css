@@ -21,6 +21,7 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
+
 body::-webkit-scrollbar {
   display: none;  /* Chrome, Safari, Opera */
 }
@@ -1227,3 +1228,154 @@ body.color-theme-rose .glass-card {
 /* Light mode uses default gold theme only - no color theme overrides */
 
 /* End of light mode theme overrides - only default gold theme used */
+
+/* Mobile Responsive Color Picker */
+@media (max-width: 768px) {
+    /* Color Picker Modal Mobile Adjustments */
+    #colorPickerModal {
+        padding: 1rem;
+        margin: 0.5rem;
+        max-width: calc(100vw - 1rem);
+        max-height: calc(100vh - 1rem);
+        border-radius: 1rem;
+    }
+    
+    #colorPickerModal .glass-card {
+        padding: 1rem;
+        min-height: auto;
+    }
+    
+    /* Color Picker Grid Mobile Layout */
+    #colorPickerModal .grid.grid-cols-4 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+    
+    /* Color Options Mobile Size */
+    #colorPickerModal .color-option {
+        min-height: 2.5rem;
+    }
+    
+    #colorPickerModal .color-option .w-full {
+        height: 2.5rem;
+        border-radius: 0.5rem;
+    }
+    
+    /* Color Picker Header Mobile */
+    #colorPickerModal .flex.justify-between.items-center {
+        margin-bottom: 1rem;
+    }
+    
+    #colorPickerModal h3 {
+        font-size: 1.125rem;
+    }
+    
+    /* Color Picker Button Mobile */
+    #colorPickerModal #closeColorPicker {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+    
+    /* Reset Button Mobile */
+    #colorPickerModal #resetColor {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra Small Mobile Adjustments */
+    #colorPickerModal {
+        padding: 0.75rem;
+        margin: 0.25rem;
+        max-width: calc(100vw - 0.5rem);
+        max-height: calc(100vh - 0.5rem);
+    }
+    
+    #colorPickerModal .glass-card {
+        padding: 0.75rem;
+    }
+    
+    /* Color Grid for Very Small Screens */
+    #colorPickerModal .grid.grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    /* Smaller Color Options */
+    #colorPickerModal .color-option .w-full {
+        height: 2rem;
+        border-radius: 0.375rem;
+    }
+    
+    /* Compact Header */
+    #colorPickerModal h3 {
+        font-size: 1rem;
+    }
+    
+    #colorPickerModal #closeColorPicker {
+        font-size: 1.25rem;
+        padding: 0.25rem;
+    }
+    
+    /* Smaller Reset Button */
+    #colorPickerModal #resetColor {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Color Picker Button Mobile Responsive */
+@media (max-width: 768px) {
+    /* Color Picker Button Mobile Positioning */
+    #color-picker-btn {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: rgba(99, 102, 241, 0.9);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        transition: all 0.3s ease;
+    }
+    
+    #color-picker-btn:hover {
+        transform: scale(1.1);
+        background: rgba(99, 102, 241, 1);
+        box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+    }
+    
+    /* Hide color picker button on very small screens if needed */
+    @media (max-width: 320px) {
+        #color-picker-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1rem;
+            bottom: 0.75rem;
+            right: 0.75rem;
+        }
+    }
+}
+
+/* Light Mode Color Picker Button Mobile */
+@media (max-width: 768px) {
+    .light-mode #color-picker-btn {
+        background: rgba(218, 165, 32, 0.9);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 20px rgba(218, 165, 32, 0.3);
+        color: #1f2937;
+    }
+    
+    .light-mode #color-picker-btn:hover {
+        background: rgba(218, 165, 32, 1);
+        box-shadow: 0 6px 25px rgba(218, 165, 32, 0.4);
+    }
+}
