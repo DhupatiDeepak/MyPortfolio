@@ -307,4 +307,116 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     createStars();
+
+    // Color Picker Functionality
+    const colorPickerBtn = document.getElementById('color-picker-btn');
+    const colorPickerModal = document.getElementById('colorPickerModal');
+    const closeColorPicker = document.getElementById('closeColorPicker');
+    const colorOptions = document.querySelectorAll('.color-option');
+    const resetColor = document.getElementById('resetColor');
+    
+    // Open color picker modal
+    colorPickerBtn.addEventListener('click', () => {
+        colorPickerModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    // Close color picker modal
+    closeColorPicker.addEventListener('click', () => {
+        colorPickerModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close modal when clicking outside
+    colorPickerModal.addEventListener('click', (e) => {
+        if (e.target === colorPickerModal) {
+            colorPickerModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Color theme selection
+    colorOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const color = option.dataset.color;
+            
+            // Remove all existing color theme classes
+            document.body.classList.remove(
+                'color-theme-blue',
+                'color-theme-green', 
+                'color-theme-red',
+                'color-theme-orange',
+                'color-theme-pink',
+                'color-theme-cyan',
+                'color-theme-indigo',
+                'color-theme-teal',
+                'color-theme-violet',
+                'color-theme-emerald',
+                'color-theme-rose'
+            );
+            
+            // Add selected color theme class
+            if (color !== 'purple') {
+                document.body.classList.add(`color-theme-${color}`);
+            }
+            
+            // Update selected state
+            colorOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+            
+            // Save to localStorage
+            localStorage.setItem('selectedColorTheme', color);
+            
+            // Close modal
+            colorPickerModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+    });
+    
+    // Reset to default color
+    resetColor.addEventListener('click', () => {
+        // Remove all color theme classes
+        document.body.classList.remove(
+            'color-theme-blue',
+            'color-theme-green', 
+            'color-theme-red',
+            'color-theme-orange',
+            'color-theme-pink',
+            'color-theme-cyan',
+            'color-theme-indigo',
+            'color-theme-teal',
+            'color-theme-violet',
+            'color-theme-emerald',
+            'color-theme-rose'
+        );
+        
+        // Update selected state
+        colorOptions.forEach(opt => opt.classList.remove('selected'));
+        colorOptions[0].classList.add('selected'); // Purple is default
+        
+        // Save to localStorage
+        localStorage.setItem('selectedColorTheme', 'purple');
+        
+        // Close modal
+        colorPickerModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Load saved color theme on page load
+    const savedColorTheme = localStorage.getItem('selectedColorTheme');
+    if (savedColorTheme && savedColorTheme !== 'purple') {
+        document.body.classList.add(`color-theme-${savedColorTheme}`);
+        
+        // Update selected state in modal
+        colorOptions.forEach(opt => {
+            if (opt.dataset.color === savedColorTheme) {
+                opt.classList.add('selected');
+            } else {
+                opt.classList.remove('selected');
+            }
+        });
+    } else {
+        // Set purple as default selected
+        colorOptions[0].classList.add('selected');
+    }
 });

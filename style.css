@@ -545,9 +545,36 @@ button:disabled {
 
 /* Light mode overrides */
 .light-mode {
-  background-color: #032e42;
+  background-color: #ffffff;
   color: #1f2937;
 }
+
+/* Hide color picker in light mode */
+.light-mode .dark-mode-only {
+  display: none !important;
+}
+
+/* Light mode default gold theme - force gold theme in light mode */
+.light-mode {
+  background: #ffffff !important;
+}
+
+.light-mode #stars {
+  box-shadow: 1266px 781px var(--gold), 34px 205px var(--gold), 1819px 1907px var(--gold), 787px 54px var(--gold), 881px 59px var(--gold), 1351px 955px var(--gold), 697px 61px var(--gold), 623px 1707px var(--gold), 35px 1146px var(--gold), 1678px 825px var(--gold), 858px 760px var(--gold), 1956px 716px var(--gold), 1961px 1139px var(--gold), 1679px 675px var(--gold), 412px 1877px var(--gold), 417px 362px var(--gold), 866px 88px var(--gold), 1830px 774px var(--gold), 9px 1081px var(--gold), 688px 344px var(--gold), 375px 33px var(--gold), 1844px 1284px var(--gold), 1234px 834px var(--gold), 1821px 1492px var(--gold), 1800px 1530px var(--gold), 209px 1010px var(--gold), 791px 493px var(--gold), 1393px 476px var(--gold), 1863px 615px var(--gold), 312px 335px var(--gold), 1570px 404px var(--gold), 354px 1488px var(--gold), 1146px 1727px var(--gold), 960px 1612px var(--gold), 363px 1832px var(--gold), 1893px 1678px var(--gold), 1991px 1331px var(--gold), 766px 1161px var(--gold), 1746px 569px var(--gold), 1123px 149px var(--gold), 45px 1154px var(--gold), 1818px 1632px var(--gold), 886px 1148px var(--gold), 319px 639px var(--gold), 173px 1352px var(--gold), 1933px 1185px var(--gold), 2px 1919px var(--gold), 114px 435px var(--gold), 1974px 850px var(--gold), 4px 1834px var(--gold), 1654px 1156px var(--gold), 1738px 1546px var(--gold), 1201px 1487px var(--gold), 1085px 1140px var(--gold), 1017px 1406px var(--gold), 1790px 1192px var(--gold), 1800px 1245px var(--gold), 1442px 173px var(--gold), 918px 1892px var(--gold), 264px 1256px var(--gold), 340px 156px var(--gold), 515px 1965px var(--gold), 649px 1969px var(--gold), 1537px 1660px var(--gold), 1543px 1956px var(--gold), 893px 740px var(--gold), 1785px 1521px var(--gold), 471px 1930px var(--gold), 281px 1673px var(--gold), 1359px 1562px var(--gold), 1580px 1065px var(--gold), 1205px 805px var(--gold), 487px 1681px var(--gold), 1642px 648px var(--gold), 1617px 945px var(--gold), 518px 85px var(--gold), 1628px 1393px var(--gold), 1199px 5px var(--gold), 1538px 1357px var(--gold), 1141px 1860px var(--gold), 926px 510px var(--gold), 1678px 463px var(--gold), 88px 383px var(--gold), 55px 373px var(--gold), 6px 1950px var(--gold), 1263px 1934px var(--gold), 644px 1700px var(--gold), 877px 1703px var(--gold), 1581px 1939px var(--gold), 1534px 1574px var(--gold), 947px 1335px var(--gold), 260px 174px var(--gold), 1928px 346px var(--gold), 1349px 1272px var(--gold), 1768px 756px var(--gold), 1690px 1401px var(--gold), 467px 1517px var(--gold), 189px 479px var(--gold), 82px 141px var(--gold), 1006px 626px var(--gold), 616px 938px var(--gold), 1678px 1892px var(--gold), 1804px 314px var(--gold), 529px 1386px var(--gold), 1329px 1620px var(--gold), 1644px 1307px var(--gold), 1842px 1441px var(--gold), 176px 742px var(--gold), 331px 1640px var(--gold), 1076px 281px var(--gold), 1845px 1453px var(--gold), 1353px 1519px var(--gold), 1116px 1594px var(--gold), 1783px 1336px var(--gold), 77px 955px var(--gold), 1428px 1465px var(--gold), 1680px 1831px var(--gold), 325px 875px var(--gold), 1449px 1972px var(--gold), 964px 1397px var(--gold), 1698px 195px var(--gold), 468px 1907px var(--gold), 1332px 1800px var(--gold), 830px 773px var(--gold), 868px 622px var(--gold), 158px 1162px var(--gold), 842px 216px var(--gold), 1486px 789px var(--gold), 104px 558px var(--gold), 1452px 42px var(--gold), 34px 1233px var(--gold), 898px 480px var(--gold), 1640px 1430px var(--gold), 501px 393px var(--gold), 111px 990px var(--gold), 1570px 1735px var(--gold), 55px 801px var(--gold), 172px 357px var(--gold), 224px 919px var(--gold), 93px 1927px var(--gold), 630px 939px var(--gold), 472px 1374px var(--gold), 1632px 226px var(--gold), 928px 1827px var(--gold), 1809px 1723px var(--gold), 1352px 194px var(--gold), 1574px 815px var(--gold), 593px 1875px var(--gold), 1092px 742px var(--gold), 1207px 1392px var(--gold), 1958px 671px var(--gold), 1132px 664px var(--gold), 1663px 984px var(--gold), 470px 98px var(--gold), 756px 1818px var(--gold), 1273px 59px var(--gold), 1883px 1304px var(--gold), 585px 956px var(--gold), 1583px 1860px var(--gold), 1137px 1372px var(--gold), 152px 1694px var(--gold), 1377px 1313px var(--gold), 1715px 1129px var(--gold), 1204px 1020px var(--gold), 1248px 176px var(--gold), 1775px 1032px var(--gold), 1996px 523px var(--gold), 724px 1361px var(--gold), 1830px 401px var(--gold), 1574px 259px var(--gold), 323px 583px var(--gold), 1981px 1085px var(--gold), 776px 494px var(--gold), 1588px 1661px var(--gold), 314px 1067px var(--gold), 662px 1759px var(--gold), 1917px 1685px var(--gold), 1520px 498px var(--gold), 874px 290px var(--gold), 374px 1075px var(--gold), 693px 400px var(--gold), 1500px 921px var(--gold), 1940px 354px var(--gold), 1914px 769px var(--gold), 943px 1812px var(--gold), 1669px 1899px var(--gold), 179px 1636px var(--gold), 1979px 1117px var(--gold), 524px 1185px var(--gold), 1502px 1833px var(--gold), 181px 1194px var(--gold), 1907px 1706px var(--gold), 381px 1814px var(--gold), 544px 1882px var(--gold), 546px 53px var(--gold), 1590px 212px var(--gold), 646px 517px var(--gold), 112px 1955px var(--gold), 444px 1075px var(--gold), 1412px 302px var(--gold);
+  animation: twinkle 3s infinite ease-in-out, animStar 10s linear infinite;
+}
+
+.light-mode #stars2 {
+  box-shadow: 1860px 98px var(--gold), 77px 1505px var(--gold), 17px 404px var(--gold), 1475px 644px var(--gold), 769px 1455px var(--gold), 801px 455px var(--gold), 1955px 1441px var(--gold), 894px 1877px var(--gold), 769px 113px var(--gold), 380px 759px var(--gold), 380px 1141px var(--gold), 299px 1696px var(--gold), 428px 1281px var(--gold), 604px 80px var(--gold), 1442px 1803px var(--gold), 194px 1462px var(--gold), 1400px 736px var(--gold), 1332px 27px var(--gold), 668px 1077px var(--gold), 702px 24px var(--gold), 467px 776px var(--gold), 1217px 256px var(--gold), 1552px 594px var(--gold), 3px 114px var(--gold), 1668px 880px var(--gold), 202px 1518px var(--gold), 1577px 590px var(--gold), 1648px 1262px var(--gold), 294px 1043px var(--gold), 861px 755px var(--gold), 1525px 1623px var(--gold), 1116px 801px var(--gold), 595px 88px var(--gold), 1964px 544px var(--gold), 80px 2000px var(--gold), 1929px 1512px var(--gold), 472px 636px var(--gold), 508px 262px var(--gold), 1054px 1187px var(--gold), 645px 1961px var(--gold), 1240px 1471px var(--gold), 443px 1065px var(--gold), 1734px 1594px var(--gold), 227px 920px var(--gold), 1272px 5px var(--gold), 239px 1015px var(--gold), 646px 565px var(--gold), 1702px 292px var(--gold), 226px 1985px var(--gold), 160px 1376px var(--gold), 1554px 1909px var(--gold), 1298px 1844px var(--gold), 1406px 455px var(--gold), 1691px 1380px var(--gold), 1898px 862px var(--gold), 1741px 1335px var(--gold), 577px 17px var(--gold), 875px 1381px var(--gold), 152px 1522px var(--gold), 464px 635px var(--gold), 494px 193px var(--gold), 1262px 983px var(--gold), 1048px 16px var(--gold), 1750px 571px var(--gold), 1285px 533px var(--gold), 672px 1636px var(--gold), 507px 717px var(--gold), 828px 920px var(--gold), 1344px 889px var(--gold), 1120px 270px var(--gold), 686px 187px var(--gold), 1193px 437px var(--gold), 482px 766px var(--gold), 908px 1856px var(--gold), 818px 532px var(--gold), 22px 341px var(--gold), 254px 1783px var(--gold), 311px 1336px var(--gold), 1461px 1588px var(--gold), 230px 1584px var(--gold), 1611px 1428px var(--gold), 591px 1786px var(--gold), 55px 1952px var(--gold), 581px 607px var(--gold), 1912px 1500px var(--gold), 1439px 1397px var(--gold), 267px 444px var(--gold), 571px 1701px var(--gold), 1785px 1416px var(--gold), 826px 915px var(--gold), 1835px 1820px var(--gold), 1503px 1868px var(--gold), 1518px 182px var(--gold), 1065px 920px var(--gold), 1498px 943px var(--gold), 837px 554px var(--gold), 1045px 446px var(--gold), 1876px 1296px var(--gold), 275px 129px var(--gold), 1979px 87px var(--gold), 1453px 317px var(--gold), 828px 608px var(--gold), 373px 998px var(--gold), 1721px 722px var(--gold), 1715px 1210px var(--gold), 1870px 1279px var(--gold), 111px 561px var(--gold), 52px 665px var(--gold), 595px 1539px var(--gold), 633px 256px var(--gold), 1096px 1010px var(--gold), 335px 1255px var(--gold), 1128px 320px var(--gold), 1803px 617px var(--gold), 1477px 1975px var(--gold), 1709px 677px var(--gold), 797px 844px var(--gold), 332px 1439px var(--gold), 1598px 456px var(--gold), 1179px 1845px var(--gold), 1231px 1244px var(--gold), 1569px 1304px var(--gold), 1822px 674px var(--gold), 1630px 1667px var(--gold), 18px 1429px var(--gold), 513px 1838px var(--gold), 416px 387px var(--gold), 956px 711px var(--gold), 1428px 639px var(--gold), 1414px 397px var(--gold), 848px 865px var(--gold), 1458px 874px var(--gold), 370px 179px var(--gold), 537px 936px var(--gold), 1305px 1840px var(--gold), 1136px 1415px var(--gold), 1888px 915px var(--gold), 1077px 336px var(--gold), 1636px 1264px var(--gold), 211px 21px var(--gold), 1584px 991px var(--gold), 48px 673px var(--gold), 19px 1068px var(--gold), 21px 756px var(--gold), 175px 1929px var(--gold), 453px 1334px var(--gold), 617px 1716px var(--gold), 187px 250px var(--gold), 1325px 1178px var(--gold), 1547px 886px var(--gold), 1081px 493px var(--gold), 772px 479px var(--gold), 647px 86px var(--gold), 1081px 1224px var(--gold), 558px 735px var(--gold), 156px 408px var(--gold), 681px 1531px var(--gold), 13px 649px var(--gold), 1393px 1653px var(--gold), 980px 73px var(--gold), 1510px 14px var(--gold), 781px 640px var(--gold), 1581px 508px var(--gold), 461px 191px var(--gold), 1466px 648px var(--gold), 1860px 803px var(--gold), 1640px 679px var(--gold), 897px 178px var(--gold), 1961px 1611px var(--gold), 1891px 947px var(--gold), 1554px 1272px var(--gold), 1342px 976px var(--gold), 771px 992px var(--gold), 843px 1817px var(--gold), 1702px 56px var(--gold), 1509px 1652px var(--gold), 266px 1212px var(--gold), 1947px 1855px var(--gold), 603px 801px var(--gold), 1080px 749px var(--gold), 1504px 682px var(--gold), 743px 776px var(--gold), 945px 818px var(--gold), 1971px 800px var(--gold), 724px 1075px var(--gold), 261px 1489px var(--gold), 173px 1241px var(--gold), 1285px 1696px var(--gold), 812px 676px var(--gold), 547px 125px var(--gold), 1299px 1094px var(--gold), 1603px 1152px var(--gold), 809px 247px var(--gold), 809px 240px var(--gold), 52px 642px var(--gold), 27px 503px var(--gold), 1685px 296px var(--gold), 1275px 250px var(--gold), 1991px 1353px var(--gold), 1334px 728px var(--gold);
+  animation: twinkle 3.5s infinite ease-in-out, animStar 20s linear infinite;
+}
+
+.light-mode #stars3 {
+  box-shadow: 263px 233px var(--gold), 1301px 1199px var(--gold), 1023px 1035px var(--gold), 138px 1910px var(--gold), 1389px 112px var(--gold), 1500px 477px var(--gold), 441px 1276px var(--gold), 1024px 1778px var(--gold), 115px 505px var(--gold), 462px 1982px var(--gold), 79px 1817px var(--gold), 1959px 1963px var(--gold), 17px 1000px var(--gold), 1207px 237px var(--gold), 1112px 1360px var(--gold), 1030px 460px var(--gold), 137px 1290px var(--gold), 1595px 1992px var(--gold), 880px 1331px var(--gold), 441px 1368px var(--gold), 1071px 528px var(--gold), 1208px 1957px var(--gold), 402px 1621px var(--gold), 1509px 318px var(--gold), 1017px 344px var(--gold), 58px 1954px var(--gold), 1395px 1212px var(--gold), 219px 265px var(--gold), 1195px 440px var(--gold), 197px 1052px var(--gold), 1838px 1742px var(--gold), 344px 768px var(--gold), 1596px 460px var(--gold), 1873px 140px var(--gold), 1879px 125px var(--gold), 102px 848px var(--gold), 1029px 781px var(--gold), 126px 1803px var(--gold), 1367px 429px var(--gold), 1146px 822px var(--gold), 840px 547px var(--gold), 902px 2000px var(--gold), 1476px 369px var(--gold), 1501px 558px var(--gold), 1511px 867px var(--gold), 1473px 772px var(--gold), 612px 1865px var(--gold), 409px 1745px var(--gold), 1204px 1367px var(--gold), 1428px 377px var(--gold), 1654px 583px var(--gold), 46px 239px var(--gold), 1705px 1634px var(--gold), 1951px 1115px var(--gold), 539px 77px var(--gold), 638px 184px var(--gold), 1457px 1945px var(--gold), 123px 1677px var(--gold), 1726px 1954px var(--gold), 603px 1527px var(--gold), 1126px 303px var(--gold), 678px 1744px var(--gold), 1555px 1299px var(--gold), 564px 955px var(--gold), 238px 476px var(--gold), 781px 1754px var(--gold), 734px 303px var(--gold), 851px 991px var(--gold), 86px 749px var(--gold), 1139px 276px var(--gold), 1217px 605px var(--gold), 1926px 417px var(--gold), 1707px 1248px var(--gold), 1199px 1049px var(--gold), 1108px 566px var(--gold), 1079px 1148px var(--gold), 717px 214px var(--gold), 1509px 875px var(--gold), 129px 1897px var(--gold), 1096px 633px var(--gold), 838px 1017px var(--gold), 1560px 1338px var(--gold), 1899px 332px var(--gold), 525px 929px var(--gold), 299px 1500px var(--gold), 402px 1793px var(--gold), 1962px 138px var(--gold), 1089px 1806px var(--gold), 897px 355px var(--gold), 930px 1120px var(--gold), 1180px 1162px var(--gold), 1731px 1075px var(--gold), 536px 1056px var(--gold), 1285px 202px var(--gold), 1569px 122px var(--gold), 1926px 1802px var(--gold), 1929px 357px var(--gold), 136px 1473px var(--gold), 1248px 64px var(--gold), 1816px 707px var(--gold);
+  animation: twinkle 4s infinite ease-in-out, animStar 30s linear infinite;
+}
+
+/* Force light-mode background to stay white - no theme overrides needed */
 
 .light-mode .text-white {
   color: #1f2937 !important;
@@ -707,18 +734,23 @@ button:disabled {
   box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.2), 0 4px 6px -2px rgba(168, 85, 247, 0.1) !important;
 }
 
+/* Light mode uses default gold theme only - no color theme overrides */
+
+
+
+
 .light-mode #stars {
-  box-shadow: 1266px 781px #FFFFFF, 34px 205px #FFFFFF, 1819px 1907px #FFFFFF, 787px 54px #FFFFFF, 881px 59px #FFFFFF, 1351px 955px #FFFFFF, 697px 61px #FFFFFF, 623px 1707px #FFFFFF, 35px 1146px #FFFFFF, 1678px 825px #FFFFFF, 858px 760px #FFFFFF, 1956px 716px #FFFFFF, 1961px 1139px #FFFFFF, 1679px 675px #FFFFFF, 412px 1877px #FFFFFF, 417px 362px #FFFFFF, 866px 88px #FFFFFF, 1830px 774px #FFFFFF, 9px 1081px #FFFFFF, 688px 344px #FFFFFF, 375px 33px #FFFFFF, 1844px 1284px #FFFFFF, 1234px 834px #FFFFFF, 1821px 1492px #FFFFFF, 1800px 1530px #FFFFFF, 209px 1010px #FFFFFF, 791px 493px #FFFFFF, 1393px 476px #FFFFFF, 1863px 615px #FFFFFF, 312px 335px #FFFFFF, 1570px 404px #FFFFFF, 354px 1488px #FFFFFF, 1146px 1727px #FFFFFF, 960px 1612px #FFFFFF, 363px 1832px #FFFFFF, 1893px 1678px #FFFFFF, 1991px 1331px #FFFFFF, 766px 1161px #FFFFFF, 1746px 569px #FFFFFF, 1123px 149px #FFFFFF, 45px 1154px #FFFFFF, 1818px 1632px #FFFFFF, 886px 1148px #FFFFFF, 319px 639px #FFFFFF, 173px 1352px #FFFFFF, 1933px 1185px #FFFFFF, 2px 1919px #FFFFFF, 114px 435px #FFFFFF, 1974px 850px #FFFFFF, 4px 1834px #FFFFFF, 1654px 1156px #FFFFFF, 1738px 1546px #FFFFFF, 1201px 1487px #FFFFFF, 1085px 1140px #FFFFFF, 1017px 1406px #FFFFFF, 1790px 1192px #FFFFFF, 1800px 1245px #FFFFFF, 1442px 173px #FFFFFF, 918px 1892px #FFFFFF, 264px 1256px #FFFFFF, 340px 156px #FFFFFF, 515px 1965px #FFFFFF, 649px 1969px #FFFFFF, 1537px 1660px #FFFFFF, 1543px 1956px #FFFFFF, 893px 740px #FFFFFF, 1785px 1521px #FFFFFF, 471px 1930px #FFFFFF, 281px 1673px #FFFFFF, 1359px 1562px #FFFFFF, 1580px 1065px #FFFFFF, 1205px 805px #FFFFFF, 487px 1681px #FFFFFF, 1642px 648px #FFFFFF, 1617px 945px #FFFFFF, 518px 85px #FFFFFF, 1628px 1393px #FFFFFF, 1199px 5px #FFFFFF, 1538px 1357px #FFFFFF, 1141px 1860px #FFFFFF, 926px 510px #FFFFFF, 1678px 463px #FFFFFF, 88px 383px #FFFFFF, 55px 373px #FFFFFF, 6px 1950px #FFFFFF, 1263px 1934px #FFFFFF, 644px 1700px #FFFFFF, 877px 1703px #FFFFFF, 1581px 1939px #FFFFFF, 1534px 1574px #FFFFFF, 947px 1335px #FFFFFF, 260px 174px #FFFFFF, 1928px 346px #FFFFFF, 1349px 1272px #FFFFFF, 1768px 756px #FFFFFF, 1690px 1401px #FFFFFF, 467px 1517px #FFFFFF, 189px 479px #FFFFFF, 82px 141px #FFFFFF, 1006px 626px #FFFFFF, 616px 938px #FFFFFF, 1678px 1892px #FFFFFF, 1804px 314px #FFFFFF, 529px 1386px #FFFFFF, 1329px 1620px #FFFFFF, 1644px 1307px #FFFFFF, 1842px 1441px #FFFFFF, 176px 742px #FFFFFF, 331px 1640px #FFFFFF, 1076px 281px #FFFFFF, 1845px 1453px #FFFFFF, 1353px 1519px #FFFFFF, 1116px 1594px #FFFFFF, 1783px 1336px #FFFFFF, 77px 955px #FFFFFF, 1428px 1465px #FFFFFF, 1680px 1831px #FFFFFF, 325px 875px #FFFFFF, 1449px 1972px #FFFFFF, 964px 1397px #FFFFFF, 1698px 195px #FFFFFF, 468px 1907px #FFFFFF, 1332px 1800px #FFFFFF, 830px 773px #FFFFFF, 868px 622px #FFFFFF, 158px 1162px #FFFFFF, 842px 216px #FFFFFF, 1486px 789px #FFFFFF, 104px 558px #FFFFFF, 1452px 42px #FFFFFF, 34px 1233px #FFFFFF, 898px 480px #FFFFFF, 1640px 1430px #FFFFFF, 501px 393px #FFFFFF, 111px 990px #FFFFFF, 1570px 1735px #FFFFFF, 55px 801px #FFFFFF, 172px 357px #FFFFFF, 224px 919px #FFFFFF, 93px 1927px #FFFFFF, 630px 939px #FFFFFF, 472px 1374px #FFFFFF, 1632px 226px #FFFFFF, 928px 1827px #FFFFFF, 1809px 1723px #FFFFFF, 1352px 194px #FFFFFF, 1574px 815px #FFFFFF, 593px 1875px #FFFFFF, 1092px 742px #FFFFFF, 1207px 1392px #FFFFFF, 1958px 671px #FFFFFF, 1132px 664px #FFFFFF, 1663px 984px #FFFFFF, 470px 98px #FFFFFF, 756px 1818px #FFFFFF, 1273px 59px #FFFFFF, 1883px 1304px #FFFFFF, 585px 956px #FFFFFF, 1583px 1860px #FFFFFF, 1137px 1372px #FFFFFF, 152px 1694px #FFFFFF, 1377px 1313px #FFFFFF, 1715px 1129px #FFFFFF, 1204px 1020px #FFFFFF, 1248px 176px #FFFFFF, 1775px 1032px #FFFFFF, 1996px 523px #FFFFFF, 724px 1361px #FFFFFF, 1830px 401px #FFFFFF, 1574px 259px #FFFFFF, 323px 583px #FFFFFF, 1981px 1085px #FFFFFF, 776px 494px #FFFFFF, 1588px 1661px #FFFFFF, 314px 1067px #FFFFFF, 662px 1759px #FFFFFF, 1917px 1685px #FFFFFF, 1520px 498px #FFFFFF, 874px 290px #FFFFFF, 374px 1075px #FFFFFF, 693px 400px #FFFFFF, 1500px 921px #FFFFFF, 1940px 354px #FFFFFF, 1914px 769px #FFFFFF, 943px 1812px #FFFFFF, 1669px 1899px #FFFFFF, 179px 1636px #FFFFFF, 1979px 1117px #FFFFFF, 524px 1185px #FFFFFF, 1502px 1833px #FFFFFF, 181px 1194px #FFFFFF, 1907px 1706px #FFFFFF, 381px 1814px #FFFFFF, 544px 1882px #FFFFFF, 546px 53px #FFFFFF, 1590px 212px #FFFFFF, 646px 517px #FFFFFF, 112px 1955px #FFFFFF, 444px 1075px #FFFFFF, 1412px 302px #FFFFFF;
+  box-shadow: 1266px 781px var(--gold), 34px 205px var(--gold), 1819px 1907px var(--gold), 787px 54px var(--gold), 881px 59px var(--gold), 1351px 955px var(--gold), 697px 61px var(--gold), 623px 1707px var(--gold), 35px 1146px var(--gold), 1678px 825px var(--gold), 858px 760px var(--gold), 1956px 716px var(--gold), 1961px 1139px var(--gold), 1679px 675px var(--gold), 412px 1877px var(--gold), 417px 362px var(--gold), 866px 88px var(--gold), 1830px 774px var(--gold), 9px 1081px var(--gold), 688px 344px var(--gold), 375px 33px var(--gold), 1844px 1284px var(--gold), 1234px 834px var(--gold), 1821px 1492px var(--gold), 1800px 1530px var(--gold), 209px 1010px var(--gold), 791px 493px var(--gold), 1393px 476px var(--gold), 1863px 615px var(--gold), 312px 335px var(--gold), 1570px 404px var(--gold), 354px 1488px var(--gold), 1146px 1727px var(--gold), 960px 1612px var(--gold), 363px 1832px var(--gold), 1893px 1678px var(--gold), 1991px 1331px var(--gold), 766px 1161px var(--gold), 1746px 569px var(--gold), 1123px 149px var(--gold), 45px 1154px var(--gold), 1818px 1632px var(--gold), 886px 1148px var(--gold), 319px 639px var(--gold), 173px 1352px var(--gold), 1933px 1185px var(--gold), 2px 1919px var(--gold), 114px 435px var(--gold), 1974px 850px var(--gold), 4px 1834px var(--gold), 1654px 1156px var(--gold), 1738px 1546px var(--gold), 1201px 1487px var(--gold), 1085px 1140px var(--gold), 1017px 1406px var(--gold), 1790px 1192px var(--gold), 1800px 1245px var(--gold), 1442px 173px var(--gold), 918px 1892px var(--gold), 264px 1256px var(--gold), 340px 156px var(--gold), 515px 1965px var(--gold), 649px 1969px var(--gold), 1537px 1660px var(--gold), 1543px 1956px var(--gold), 893px 740px var(--gold), 1785px 1521px var(--gold), 471px 1930px var(--gold), 281px 1673px var(--gold), 1359px 1562px var(--gold), 1580px 1065px var(--gold), 1205px 805px var(--gold), 487px 1681px var(--gold), 1642px 648px var(--gold), 1617px 945px var(--gold), 518px 85px var(--gold), 1628px 1393px var(--gold), 1199px 5px var(--gold), 1538px 1357px var(--gold), 1141px 1860px var(--gold), 926px 510px var(--gold), 1678px 463px var(--gold), 88px 383px var(--gold), 55px 373px var(--gold), 6px 1950px var(--gold), 1263px 1934px var(--gold), 644px 1700px var(--gold), 877px 1703px var(--gold), 1581px 1939px var(--gold), 1534px 1574px var(--gold), 947px 1335px var(--gold), 260px 174px var(--gold), 1928px 346px var(--gold), 1349px 1272px var(--gold), 1768px 756px var(--gold), 1690px 1401px var(--gold), 467px 1517px var(--gold), 189px 479px var(--gold), 82px 141px var(--gold), 1006px 626px var(--gold), 616px 938px var(--gold), 1678px 1892px var(--gold), 1804px 314px var(--gold), 529px 1386px var(--gold), 1329px 1620px var(--gold), 1644px 1307px var(--gold), 1842px 1441px var(--gold), 176px 742px var(--gold), 331px 1640px var(--gold), 1076px 281px var(--gold), 1845px 1453px var(--gold), 1353px 1519px var(--gold), 1116px 1594px var(--gold), 1783px 1336px var(--gold), 77px 955px var(--gold), 1428px 1465px var(--gold), 1680px 1831px var(--gold), 325px 875px var(--gold), 1449px 1972px var(--gold), 964px 1397px var(--gold), 1698px 195px var(--gold), 468px 1907px var(--gold), 1332px 1800px var(--gold), 830px 773px var(--gold), 868px 622px var(--gold), 158px 1162px var(--gold), 842px 216px var(--gold), 1486px 789px var(--gold), 104px 558px var(--gold), 1452px 42px var(--gold), 34px 1233px var(--gold), 898px 480px var(--gold), 1640px 1430px var(--gold), 501px 393px var(--gold), 111px 990px var(--gold), 1570px 1735px var(--gold), 55px 801px var(--gold), 172px 357px var(--gold), 224px 919px var(--gold), 93px 1927px var(--gold), 630px 939px var(--gold), 472px 1374px var(--gold), 1632px 226px var(--gold), 928px 1827px var(--gold), 1809px 1723px var(--gold), 1352px 194px var(--gold), 1574px 815px var(--gold), 593px 1875px var(--gold), 1092px 742px var(--gold), 1207px 1392px var(--gold), 1958px 671px var(--gold), 1132px 664px var(--gold), 1663px 984px var(--gold), 470px 98px var(--gold), 756px 1818px var(--gold), 1273px 59px var(--gold), 1883px 1304px var(--gold), 585px 956px var(--gold), 1583px 1860px var(--gold), 1137px 1372px var(--gold), 152px 1694px var(--gold), 1377px 1313px var(--gold), 1715px 1129px var(--gold), 1204px 1020px var(--gold), 1248px 176px var(--gold), 1775px 1032px var(--gold), 1996px 523px var(--gold), 724px 1361px var(--gold), 1830px 401px var(--gold), 1574px 259px var(--gold), 323px 583px var(--gold), 1981px 1085px var(--gold), 776px 494px var(--gold), 1588px 1661px var(--gold), 314px 1067px var(--gold), 662px 1759px var(--gold), 1917px 1685px var(--gold), 1520px 498px var(--gold), 874px 290px var(--gold), 374px 1075px var(--gold), 693px 400px var(--gold), 1500px 921px var(--gold), 1940px 354px var(--gold), 1914px 769px var(--gold), 943px 1812px var(--gold), 1669px 1899px var(--gold), 179px 1636px var(--gold), 1979px 1117px var(--gold), 524px 1185px var(--gold), 1502px 1833px var(--gold), 181px 1194px var(--gold), 1907px 1706px var(--gold), 381px 1814px var(--gold), 544px 1882px var(--gold), 546px 53px var(--gold), 1590px 212px var(--gold), 646px 517px var(--gold), 112px 1955px var(--gold), 444px 1075px var(--gold), 1412px 302px var(--gold);
   animation: twinkle 3s infinite ease-in-out, animStar 10s linear infinite;
 }
 
 .light-mode #stars2 {
-  box-shadow: 1860px 98px #FFFFFF, 77px 1505px #FFFFFF, 17px 404px #FFFFFF, 1475px 644px #FFFFFF, 769px 1455px #FFFFFF, 801px 455px #FFFFFF, 1955px 1441px #FFFFFF, 894px 1877px #FFFFFF, 769px 113px #FFFFFF, 380px 759px #FFFFFF, 380px 1141px #FFFFFF, 299px 1696px #FFFFFF, 428px 1281px #FFFFFF, 604px 80px #FFFFFF, 1442px 1803px #FFFFFF, 194px 1462px #FFFFFF, 1400px 736px #FFFFFF, 1332px 27px #FFFFFF, 668px 1077px #FFFFFF, 702px 24px #FFFFFF, 467px 776px #FFFFFF, 1217px 256px #FFFFFF, 1552px 594px #FFFFFF, 3px 114px #FFFFFF, 1668px 880px #FFFFFF, 202px 1518px #FFFFFF, 1577px 590px #FFFFFF, 1648px 1262px #FFFFFF, 294px 1043px #FFFFFF, 861px 755px #FFFFFF, 1525px 1623px #FFFFFF, 1116px 801px #FFFFFF, 595px 88px #FFFFFF, 1964px 544px #FFFFFF, 80px 2000px #FFFFFF, 1929px 1512px #FFFFFF, 472px 636px #FFFFFF, 508px 262px #FFFFFF, 1054px 1187px #FFFFFF, 645px 1961px #FFFFFF, 1240px 1471px #FFFFFF, 443px 1065px #FFFFFF, 1734px 1594px #FFFFFF, 227px 920px #FFFFFF, 1272px 5px #FFFFFF, 239px 1015px #FFFFFF, 646px 565px #FFFFFF, 1702px 292px #FFFFFF, 226px 1985px #FFFFFF, 160px 1376px #FFFFFF, 1554px 1909px #FFFFFF, 1298px 1844px #FFFFFF, 1406px 455px #FFFFFF, 1691px 1380px #FFFFFF, 1898px 862px #FFFFFF, 1741px 1335px #FFFFFF, 577px 17px #FFFFFF, 875px 1381px #FFFFFF, 152px 1522px #FFFFFF, 464px 635px #FFFFFF, 494px 193px #FFFFFF, 1262px 983px #FFFFFF, 1048px 16px #FFFFFF, 1750px 571px #FFFFFF, 1285px 533px #FFFFFF, 672px 1636px #FFFFFF, 507px 717px #FFFFFF, 828px 920px #FFFFFF, 1344px 889px #FFFFFF, 1120px 270px #FFFFFF, 686px 187px #FFFFFF, 1193px 437px #FFFFFF, 482px 766px #FFFFFF, 908px 1856px #FFFFFF, 818px 532px #FFFFFF, 22px 341px #FFFFFF, 254px 1783px #FFFFFF, 311px 1336px #FFFFFF, 1461px 1588px #FFFFFF, 230px 1584px #FFFFFF, 1611px 1428px #FFFFFF, 591px 1786px #FFFFFF, 55px 1952px #FFFFFF, 581px 607px #FFFFFF, 1912px 1500px #FFFFFF, 1439px 1397px #FFFFFF, 267px 444px #FFFFFF, 571px 1701px #FFFFFF, 1785px 1416px #FFFFFF, 826px 915px #FFFFFF, 1835px 1820px #FFFFFF, 1503px 1868px #FFFFFF, 1518px 182px #FFFFFF, 1065px 920px #FFFFFF, 1498px 943px #FFFFFF, 837px 554px #FFFFFF, 1045px 446px #FFFFFF, 1876px 1296px #FFFFFF, 275px 129px #FFFFFF, 1979px 87px #FFFFFF, 1453px 317px #FFFFFF, 828px 608px #FFFFFF, 373px 998px #FFFFFF, 1721px 722px #FFFFFF, 1715px 1210px #FFFFFF, 1870px 1279px #FFFFFF, 111px 561px #FFFFFF, 52px 665px #FFFFFF, 595px 1539px #FFFFFF, 633px 256px #FFFFFF, 1096px 1010px #FFFFFF, 335px 1255px #FFFFFF, 1128px 320px #FFFFFF, 1803px 617px #FFFFFF, 1477px 1975px #FFFFFF, 1709px 677px #FFFFFF, 797px 844px #FFFFFF, 332px 1439px #FFFFFF, 1598px 456px #FFFFFF, 1179px 1845px #FFFFFF, 1231px 1244px #FFFFFF, 1569px 1304px #FFFFFF, 1822px 674px #FFFFFF, 1630px 1667px #FFFFFF, 18px 1429px #FFFFFF, 513px 1838px #FFFFFF, 416px 387px #FFFFFF, 956px 711px #FFFFFF, 1428px 639px #FFFFFF, 1414px 397px #FFFFFF, 848px 865px #FFFFFF, 1458px 874px #FFFFFF, 370px 179px #FFFFFF, 537px 936px #FFFFFF, 1305px 1840px #FFFFFF, 1136px 1415px #FFFFFF, 1888px 915px #FFFFFF, 1077px 336px #FFFFFF, 1636px 1264px #FFFFFF, 211px 21px #FFFFFF, 1584px 991px #FFFFFF, 48px 673px #FFFFFF, 19px 1068px #FFFFFF, 21px 756px #FFFFFF, 175px 1929px #FFFFFF, 453px 1334px #FFFFFF, 617px 1716px #FFFFFF, 187px 250px #FFFFFF, 1325px 1178px #FFFFFF, 1547px 886px #FFFFFF, 1081px 493px #FFFFFF, 772px 479px #FFFFFF, 647px 86px #FFFFFF, 1081px 1224px #FFFFFF, 558px 735px #FFFFFF, 156px 408px #FFFFFF, 681px 1531px #FFFFFF, 13px 649px #FFFFFF, 1393px 1653px #FFFFFF, 980px 73px #FFFFFF, 1510px 14px #FFFFFF, 781px 640px #FFFFFF, 1581px 508px #FFFFFF, 461px 191px #FFFFFF, 1466px 648px #FFFFFF, 1860px 803px #FFFFFF, 1640px 679px #FFFFFF, 897px 178px #FFFFFF, 1961px 1611px #FFFFFF, 1891px 947px #FFFFFF, 1554px 1272px #FFFFFF, 1342px 976px #FFFFFF, 771px 992px #FFFFFF, 843px 1817px #FFFFFF, 1702px 56px #FFFFFF, 1509px 1652px #FFFFFF, 266px 1212px #FFFFFF, 1947px 1855px #FFFFFF, 603px 801px #FFFFFF, 1080px 749px #FFFFFF, 1504px 682px #FFFFFF, 743px 776px #FFFFFF, 945px 818px #FFFFFF, 1971px 800px #FFFFFF, 724px 1075px #FFFFFF, 261px 1489px #FFFFFF, 173px 1241px #FFFFFF, 1285px 1696px #FFFFFF, 812px 676px #FFFFFF, 547px 125px #FFFFFF, 1299px 1094px #FFFFFF, 1603px 1152px #FFFFFF, 809px 247px #FFFFFF, 809px 240px #FFFFFF, 52px 642px #FFFFFF, 27px 503px #FFFFFF, 1685px 296px #FFFFFF, 1275px 250px #FFFFFF, 1991px 1353px #FFFFFF, 1334px 728px #FFFFFF;
+  box-shadow: 1860px 98px var(--gold), 77px 1505px var(--gold), 17px 404px var(--gold), 1475px 644px var(--gold), 769px 1455px var(--gold), 801px 455px var(--gold), 1955px 1441px var(--gold), 894px 1877px var(--gold), 769px 113px var(--gold), 380px 759px var(--gold), 380px 1141px var(--gold), 299px 1696px var(--gold), 428px 1281px var(--gold), 604px 80px var(--gold), 1442px 1803px var(--gold), 194px 1462px var(--gold), 1400px 736px var(--gold), 1332px 27px var(--gold), 668px 1077px var(--gold), 702px 24px var(--gold), 467px 776px var(--gold), 1217px 256px var(--gold), 1552px 594px var(--gold), 3px 114px var(--gold), 1668px 880px var(--gold), 202px 1518px var(--gold), 1577px 590px var(--gold), 1648px 1262px var(--gold), 294px 1043px var(--gold), 861px 755px var(--gold), 1525px 1623px var(--gold), 1116px 801px var(--gold), 595px 88px var(--gold), 1964px 544px var(--gold), 80px 2000px var(--gold), 1929px 1512px var(--gold), 472px 636px var(--gold), 508px 262px var(--gold), 1054px 1187px var(--gold), 645px 1961px var(--gold), 1240px 1471px var(--gold), 443px 1065px var(--gold), 1734px 1594px var(--gold), 227px 920px var(--gold), 1272px 5px var(--gold), 239px 1015px var(--gold), 646px 565px var(--gold), 1702px 292px var(--gold), 226px 1985px var(--gold), 160px 1376px var(--gold), 1554px 1909px var(--gold), 1298px 1844px var(--gold), 1406px 455px var(--gold), 1691px 1380px var(--gold), 1898px 862px var(--gold), 1741px 1335px var(--gold), 577px 17px var(--gold), 875px 1381px var(--gold), 152px 1522px var(--gold), 464px 635px var(--gold), 494px 193px var(--gold), 1262px 983px var(--gold), 1048px 16px var(--gold), 1750px 571px var(--gold), 1285px 533px var(--gold), 672px 1636px var(--gold), 507px 717px var(--gold), 828px 920px var(--gold), 1344px 889px var(--gold), 1120px 270px var(--gold), 686px 187px var(--gold), 1193px 437px var(--gold), 482px 766px var(--gold), 908px 1856px var(--gold), 818px 532px var(--gold), 22px 341px var(--gold), 254px 1783px var(--gold), 311px 1336px var(--gold), 1461px 1588px var(--gold), 230px 1584px var(--gold), 1611px 1428px var(--gold), 591px 1786px var(--gold), 55px 1952px var(--gold), 581px 607px var(--gold), 1912px 1500px var(--gold), 1439px 1397px var(--gold), 267px 444px var(--gold), 571px 1701px var(--gold), 1785px 1416px var(--gold), 826px 915px var(--gold), 1835px 1820px var(--gold), 1503px 1868px var(--gold), 1518px 182px var(--gold), 1065px 920px var(--gold), 1498px 943px var(--gold), 837px 554px var(--gold), 1045px 446px var(--gold), 1876px 1296px var(--gold), 275px 129px var(--gold), 1979px 87px var(--gold), 1453px 317px var(--gold), 828px 608px var(--gold), 373px 998px var(--gold), 1721px 722px var(--gold), 1715px 1210px var(--gold), 1870px 1279px var(--gold), 111px 561px var(--gold), 52px 665px var(--gold), 595px 1539px var(--gold), 633px 256px var(--gold), 1096px 1010px var(--gold), 335px 1255px var(--gold), 1128px 320px var(--gold), 1803px 617px var(--gold), 1477px 1975px var(--gold), 1709px 677px var(--gold), 797px 844px var(--gold), 332px 1439px var(--gold), 1598px 456px var(--gold), 1179px 1845px var(--gold), 1231px 1244px var(--gold), 1569px 1304px var(--gold), 1822px 674px var(--gold), 1630px 1667px var(--gold), 18px 1429px var(--gold), 513px 1838px var(--gold), 416px 387px var(--gold), 956px 711px var(--gold), 1428px 639px var(--gold), 1414px 397px var(--gold), 848px 865px var(--gold), 1458px 874px var(--gold), 370px 179px var(--gold), 537px 936px var(--gold), 1305px 1840px var(--gold), 1136px 1415px var(--gold), 1888px 915px var(--gold), 1077px 336px var(--gold), 1636px 1264px var(--gold), 211px 21px var(--gold), 1584px 991px var(--gold), 48px 673px var(--gold), 19px 1068px var(--gold), 21px 756px var(--gold), 175px 1929px var(--gold), 453px 1334px var(--gold), 617px 1716px var(--gold), 187px 250px var(--gold), 1325px 1178px var(--gold), 1547px 886px var(--gold), 1081px 493px var(--gold), 772px 479px var(--gold), 647px 86px var(--gold), 1081px 1224px var(--gold), 558px 735px var(--gold), 156px 408px var(--gold), 681px 1531px var(--gold), 13px 649px var(--gold), 1393px 1653px var(--gold), 980px 73px var(--gold), 1510px 14px var(--gold), 781px 640px var(--gold), 1581px 508px var(--gold), 461px 191px var(--gold), 1466px 648px var(--gold), 1860px 803px var(--gold), 1640px 679px var(--gold), 897px 178px var(--gold), 1961px 1611px var(--gold), 1891px 947px var(--gold), 1554px 1272px var(--gold), 1342px 976px var(--gold), 771px 992px var(--gold), 843px 1817px var(--gold), 1702px 56px var(--gold), 1509px 1652px var(--gold), 266px 1212px var(--gold), 1947px 1855px var(--gold), 603px 801px var(--gold), 1080px 749px var(--gold), 1504px 682px var(--gold), 743px 776px var(--gold), 945px 818px var(--gold), 1971px 800px var(--gold), 724px 1075px var(--gold), 261px 1489px var(--gold), 173px 1241px var(--gold), 1285px 1696px var(--gold), 812px 676px var(--gold), 547px 125px var(--gold), 1299px 1094px var(--gold), 1603px 1152px var(--gold), 809px 247px var(--gold), 809px 240px var(--gold), 52px 642px var(--gold), 27px 503px var(--gold), 1685px 296px var(--gold), 1275px 250px var(--gold), 1991px 1353px var(--gold), 1334px 728px var(--gold);
   animation: twinkle 3.5s infinite ease-in-out, animStar 20s linear infinite;
 }
 
 .light-mode #stars3 {
-  box-shadow: 263px 233px #FFFFFF, 1301px 1199px #FFFFFF, 1023px 1035px #FFFFFF, 138px 1910px #FFFFFF, 1389px 112px #FFFFFF, 1500px 477px #FFFFFF, 441px 1276px #FFFFFF, 1024px 1778px #FFFFFF, 115px 505px #FFFFFF, 462px 1982px #FFFFFF, 79px 1817px #FFFFFF, 1959px 1963px #FFFFFF, 17px 1000px #FFFFFF, 1207px 237px #FFFFFF, 1112px 1360px #FFFFFF, 1030px 460px #FFFFFF, 137px 1290px #FFFFFF, 1595px 1992px #FFFFFF, 880px 1331px #FFFFFF, 441px 1368px #FFFFFF, 1071px 528px #FFFFFF, 1208px 1957px #FFFFFF, 402px 1621px #FFFFFF, 1509px 318px #FFFFFF, 1017px 344px #FFFFFF, 58px 1954px #FFFFFF, 1395px 1212px #FFFFFF, 219px 265px #FFFFFF, 1195px 440px #FFFFFF, 197px 1052px #FFFFFF, 1838px 1742px #FFFFFF, 344px 768px #FFFFFF, 1596px 460px #FFFFFF, 1873px 140px #FFFFFF, 1879px 125px #FFFFFF, 102px 848px #FFFFFF, 1029px 781px #FFFFFF, 126px 1803px #FFFFFF, 1367px 429px #FFFFFF, 1146px 822px #FFFFFF, 840px 547px #FFFFFF, 902px 2000px #FFFFFF, 1476px 369px #FFFFFF, 1501px 558px #FFFFFF, 1511px 867px #FFFFFF, 1473px 772px #FFFFFF, 612px 1865px #FFFFFF, 409px 1745px #FFFFFF, 1204px 1367px #FFFFFF, 1428px 377px #FFFFFF, 1654px 583px #FFFFFF, 46px 239px #FFFFFF, 1705px 1634px #FFFFFF, 1951px 1115px #FFFFFF, 539px 77px #FFFFFF, 638px 184px #FFFFFF, 1457px 1945px #FFFFFF, 123px 1677px #FFFFFF, 1726px 1954px #FFFFFF, 603px 1527px #FFFFFF, 1126px 303px #FFFFFF, 678px 1744px #FFFFFF, 1555px 1299px #FFFFFF, 564px 955px #FFFFFF, 238px 476px #FFFFFF, 781px 1754px #FFFFFF, 734px 303px #FFFFFF, 851px 991px #FFFFFF, 86px 749px #FFFFFF, 1139px 276px #FFFFFF, 1217px 605px #FFFFFF, 1926px 417px #FFFFFF, 1707px 1248px #FFFFFF, 1199px 1049px #FFFFFF, 1108px 566px #FFFFFF, 1079px 1148px #FFFFFF, 717px 214px #FFFFFF, 1509px 875px #FFFFFF, 129px 1897px #FFFFFF, 1096px 633px #FFFFFF, 838px 1017px #FFFFFF, 1560px 1338px #FFFFFF, 1899px 332px #FFFFFF, 525px 929px #FFFFFF, 299px 1500px #FFFFFF, 402px 1793px #FFFFFF, 1962px 138px #FFFFFF, 1089px 1806px #FFFFFF, 897px 355px #FFFFFF, 930px 1120px #FFFFFF, 1180px 1162px #FFFFFF, 1731px 1075px #FFFFFF, 536px 1056px #FFFFFF, 1285px 202px #FFFFFF, 1569px 122px #FFFFFF, 1926px 1802px #FFFFFF, 1929px 357px #FFFFFF, 136px 1473px #FFFFFF, 1248px 64px #FFFFFF, 1816px 707px #FFFFFF;
+  box-shadow: 263px 233px var(--gold), 1301px 1199px var(--gold), 1023px 1035px var(--gold), 138px 1910px var(--gold), 1389px 112px var(--gold), 1500px 477px var(--gold), 441px 1276px var(--gold), 1024px 1778px var(--gold), 115px 505px var(--gold), 462px 1982px var(--gold), 79px 1817px var(--gold), 1959px 1963px var(--gold), 17px 1000px var(--gold), 1207px 237px var(--gold), 1112px 1360px var(--gold), 1030px 460px var(--gold), 137px 1290px var(--gold), 1595px 1992px var(--gold), 880px 1331px var(--gold), 441px 1368px var(--gold), 1071px 528px var(--gold), 1208px 1957px var(--gold), 402px 1621px var(--gold), 1509px 318px var(--gold), 1017px 344px var(--gold), 58px 1954px var(--gold), 1395px 1212px var(--gold), 219px 265px var(--gold), 1195px 440px var(--gold), 197px 1052px var(--gold), 1838px 1742px var(--gold), 344px 768px var(--gold), 1596px 460px var(--gold), 1873px 140px var(--gold), 1879px 125px var(--gold), 102px 848px var(--gold), 1029px 781px var(--gold), 126px 1803px var(--gold), 1367px 429px var(--gold), 1146px 822px var(--gold), 840px 547px var(--gold), 902px 2000px var(--gold), 1476px 369px var(--gold), 1501px 558px var(--gold), 1511px 867px var(--gold), 1473px 772px var(--gold), 612px 1865px var(--gold), 409px 1745px var(--gold), 1204px 1367px var(--gold), 1428px 377px var(--gold), 1654px 583px var(--gold), 46px 239px var(--gold), 1705px 1634px var(--gold), 1951px 1115px var(--gold), 539px 77px var(--gold), 638px 184px var(--gold), 1457px 1945px var(--gold), 123px 1677px var(--gold), 1726px 1954px var(--gold), 603px 1527px var(--gold), 1126px 303px var(--gold), 678px 1744px var(--gold), 1555px 1299px var(--gold), 564px 955px var(--gold), 238px 476px var(--gold), 781px 1754px var(--gold), 734px 303px var(--gold), 851px 991px var(--gold), 86px 749px var(--gold), 1139px 276px var(--gold), 1217px 605px var(--gold), 1926px 417px var(--gold), 1707px 1248px var(--gold), 1199px 1049px var(--gold), 1108px 566px var(--gold), 1079px 1148px var(--gold), 717px 214px var(--gold), 1509px 875px var(--gold), 129px 1897px var(--gold), 1096px 633px var(--gold), 838px 1017px var(--gold), 1560px 1338px var(--gold), 1899px 332px var(--gold), 525px 929px var(--gold), 299px 1500px var(--gold), 402px 1793px var(--gold), 1962px 138px var(--gold), 1089px 1806px var(--gold), 897px 355px var(--gold), 930px 1120px var(--gold), 1180px 1162px var(--gold), 1731px 1075px var(--gold), 536px 1056px var(--gold), 1285px 202px var(--gold), 1569px 122px var(--gold), 1926px 1802px var(--gold), 1929px 357px var(--gold), 136px 1473px var(--gold), 1248px 64px var(--gold), 1816px 707px var(--gold);
   animation: twinkle 4s infinite ease-in-out, animStar 30s linear infinite;
 }
 
@@ -760,4 +792,921 @@ button:disabled {
 @keyframes twinkle {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 1; }
+}
+
+/* Color Picker Modal Styles */
+#colorPickerModal {
+    backdrop-filter: blur(10px);
+}
+
+#colorPickerModal .glass-card {
+    background: rgba(30, 30, 47, 0.95);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Light mode color picker */
+.light-mode #colorPickerModal .glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+}
+
+.light-mode #colorPickerModal .text-white {
+    color: #1f2937 !important;
+}
+
+/* Enhanced Color Picker Modal */
+#colorPickerModal .glass-card {
+    background: rgba(30, 30, 47, 0.95);
+    border: 2px solid rgba(168, 85, 247, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(168, 85, 247, 0.3);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#colorPickerModal .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+#colorPickerModal .glass-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.color-option {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.color-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+.color-option:hover::before {
+    opacity: 1;
+}
+
+.color-option:hover {
+    transform: scale(1.1) translateY(-2px);
+    filter: brightness(1.2);
+}
+
+.color-option.selected {
+    transform: scale(1.15) translateY(-3px);
+    filter: brightness(1.3);
+}
+
+.color-option.selected .w-full {
+    border-color: #fff !important;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.4);
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.4); }
+    50% { box-shadow: 0 0 35px rgba(255, 255, 255, 1), 0 0 70px rgba(255, 255, 255, 0.6); }
+}
+
+/* Enhanced Color Picker Animations */
+#colorPickerModal {
+    animation: slideInFromRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.color-option .w-full {
+    position: relative;
+    overflow: hidden;
+}
+
+.color-option .w-full::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.color-option:hover .w-full::after {
+    left: 100%;
+}
+
+/* Floating particles effect for color picker */
+#colorPickerModal::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: float 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-100px) rotate(360deg); }
+}
+
+.color-option {
+    transition: all 0.3s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.05);
+}
+
+.color-option.selected {
+    transform: scale(1.1);
+}
+
+.color-option.selected .w-full {
+    border-color: #fff !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Color Theme Styles */
+body.color-theme-blue {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a) !important;
+}
+
+body.color-theme-green {
+    background: linear-gradient(135deg, #064e3b, #065f46) !important;
+}
+
+body.color-theme-red {
+    background: linear-gradient(135deg, #7f1d1d, #991b1b) !important;
+}
+
+body.color-theme-orange {
+    background: linear-gradient(135deg, #9a3412, #c2410c) !important;
+}
+
+body.color-theme-pink {
+    background: linear-gradient(135deg, #831843, #be185d) !important;
+}
+
+body.color-theme-cyan {
+    background: linear-gradient(135deg, #155e75, #0e7490) !important;
+}
+
+body.color-theme-indigo {
+    background: linear-gradient(135deg, #312e81, #4338ca) !important;
+}
+
+/* Blue Theme */
+body.color-theme-blue .gradient-text {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-blue .btn-glow:hover {
+    box-shadow: 0 0 20px #3b82f6, 0 0 40px #3b82f6, 0 0 60px #3b82f6;
+}
+
+body.color-theme-blue .glass-card {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Green Theme */
+body.color-theme-green .gradient-text {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-green .btn-glow:hover {
+    box-shadow: 0 0 20px #10b981, 0 0 40px #10b981, 0 0 60px #10b981;
+}
+
+body.color-theme-green .glass-card {
+    background: rgba(6, 78, 59, 0.8);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Red Theme */
+body.color-theme-red .gradient-text {
+    background: linear-gradient(135deg, #ef4444, #f87171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-red .btn-glow:hover {
+    box-shadow: 0 0 20px #ef4444, 0 0 40px #ef4444, 0 0 60px #ef4444;
+}
+
+body.color-theme-red .glass-card {
+    background: rgba(127, 29, 29, 0.8);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Orange Theme */
+body.color-theme-orange .gradient-text {
+    background: linear-gradient(135deg, #f97316, #fb923c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-orange .btn-glow:hover {
+    box-shadow: 0 0 20px #f97316, 0 0 40px #f97316, 0 0 60px #f97316;
+}
+
+body.color-theme-orange .glass-card {
+    background: rgba(154, 52, 18, 0.8);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+/* Pink Theme */
+body.color-theme-pink .gradient-text {
+    background: linear-gradient(135deg, #ec4899, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-pink .btn-glow:hover {
+    box-shadow: 0 0 20px #ec4899, 0 0 40px #ec4899, 0 0 60px #ec4899;
+}
+
+body.color-theme-pink .glass-card {
+    background: rgba(131, 24, 67, 0.8);
+    border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+/* Cyan Theme */
+body.color-theme-cyan .gradient-text {
+    background: linear-gradient(135deg, #06b6d4, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-cyan .btn-glow:hover {
+    box-shadow: 0 0 20px #06b6d4, 0 0 40px #06b6d4, 0 0 60px #06b6d4;
+}
+
+body.color-theme-cyan .glass-card {
+    background: rgba(21, 94, 117, 0.8);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+/* Indigo Theme */
+body.color-theme-indigo .gradient-text {
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-indigo .btn-glow:hover {
+    box-shadow: 0 0 20px #6366f1, 0 0 40px #6366f1, 0 0 60px #6366f1;
+}
+
+body.color-theme-indigo .glass-card {
+    background: rgba(49, 46, 129, 0.8);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+/* Teal Theme */
+body.color-theme-teal {
+    background: linear-gradient(135deg, #134e4a, #0d9488) !important;
+}
+
+body.color-theme-teal .gradient-text {
+    background: linear-gradient(135deg, #14b8a6, #5eead4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-teal .btn-glow:hover {
+    box-shadow: 0 0 20px #14b8a6, 0 0 40px #14b8a6, 0 0 60px #14b8a6;
+}
+
+body.color-theme-teal .glass-card {
+    background: rgba(19, 78, 74, 0.8);
+    border: 1px solid rgba(20, 184, 166, 0.3);
+}
+
+/* Violet Theme */
+body.color-theme-violet {
+    background: linear-gradient(135deg, #581c87, #7c3aed) !important;
+}
+
+body.color-theme-violet .gradient-text {
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-violet .btn-glow:hover {
+    box-shadow: 0 0 20px #8b5cf6, 0 0 40px #8b5cf6, 0 0 60px #8b5cf6;
+}
+
+body.color-theme-violet .glass-card {
+    background: rgba(88, 28, 135, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* Emerald Theme */
+body.color-theme-emerald {
+    background: linear-gradient(135deg, #064e3b, #059669) !important;
+}
+
+body.color-theme-emerald .gradient-text {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-emerald .btn-glow:hover {
+    box-shadow: 0 0 20px #10b981, 0 0 40px #10b981, 0 0 60px #10b981;
+}
+
+body.color-theme-emerald .glass-card {
+    background: rgba(6, 78, 59, 0.8);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Rose Theme */
+body.color-theme-rose {
+    background: linear-gradient(135deg, #881337, #e11d48) !important;
+}
+
+body.color-theme-rose .gradient-text {
+    background: linear-gradient(135deg, #f43f5e, #fb7185);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-rose .btn-glow:hover {
+    box-shadow: 0 0 20px #f43f5e, 0 0 40px #f43f5e, 0 0 60px #f43f5e;
+}
+
+body.color-theme-rose .glass-card {
+    background: rgba(136, 19, 55, 0.8);
+    border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+/* Enhanced star animations for light mode themes */
+@keyframes twinkle-enhanced {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(0.8); 
+  }
+  25% { 
+    opacity: 0.8; 
+    transform: scale(1.2); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.5); 
+  }
+  75% { 
+    opacity: 0.6; 
+    transform: scale(1.1); 
+  }
+}
+
+@keyframes twinkle-fast {
+  0%, 100% { 
+    opacity: 0.4; 
+    transform: scale(0.9); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.3); 
+  }
+}
+
+/* Light mode uses default gold theme only - no color theme overrides */
+
+/* End of light mode theme overrides - only default gold theme used */
+
+/* Additional Color Themes for Dark Mode */
+body.color-theme-amber {
+    background: linear-gradient(135deg, #92400e, #d97706) !important;
+}
+
+body.color-theme-amber .gradient-text {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-amber .btn-glow:hover {
+    box-shadow: 0 0 20px #d97706, 0 0 40px #d97706, 0 0 60px #d97706;
+}
+
+body.color-theme-amber .glass-card {
+    background: rgba(146, 64, 14, 0.8);
+    border: 1px solid rgba(217, 119, 6, 0.3);
+}
+
+body.color-theme-lime {
+    background: linear-gradient(135deg, #365314, #65a30d) !important;
+}
+
+body.color-theme-lime .gradient-text {
+    background: linear-gradient(135deg, #65a30d, #84cc16);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-lime .btn-glow:hover {
+    box-shadow: 0 0 20px #65a30d, 0 0 40px #65a30d, 0 0 60px #65a30d;
+}
+
+body.color-theme-lime .glass-card {
+    background: rgba(54, 83, 20, 0.8);
+    border: 1px solid rgba(101, 163, 13, 0.3);
+}
+
+body.color-theme-sky {
+    background: linear-gradient(135deg, #0c4a6e, #0284c7) !important;
+}
+
+body.color-theme-sky .gradient-text {
+    background: linear-gradient(135deg, #0284c7, #0ea5e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-sky .btn-glow:hover {
+    box-shadow: 0 0 20px #0284c7, 0 0 40px #0284c7, 0 0 60px #0284c7;
+}
+
+body.color-theme-sky .glass-card {
+    background: rgba(12, 74, 110, 0.8);
+    border: 1px solid rgba(2, 132, 199, 0.3);
+}
+
+body.color-theme-fuchsia {
+    background: linear-gradient(135deg, #701a75, #c026d3) !important;
+}
+
+body.color-theme-fuchsia .gradient-text {
+    background: linear-gradient(135deg, #c026d3, #d946ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-fuchsia .btn-glow:hover {
+    box-shadow: 0 0 20px #c026d3, 0 0 40px #c026d3, 0 0 60px #c026d3;
+}
+
+body.color-theme-fuchsia .glass-card {
+    background: rgba(112, 26, 117, 0.8);
+    border: 1px solid rgba(192, 38, 211, 0.3);
+}
+
+body.color-theme-slate {
+    background: linear-gradient(135deg, #1e293b, #475569) !important;
+}
+
+body.color-theme-slate .gradient-text {
+    background: linear-gradient(135deg, #475569, #64748b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-slate .btn-glow:hover {
+    box-shadow: 0 0 20px #475569, 0 0 40px #475569, 0 0 60px #475569;
+}
+
+body.color-theme-slate .glass-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+body.color-theme-zinc {
+    background: linear-gradient(135deg, #27272a, #52525b) !important;
+}
+
+body.color-theme-zinc .gradient-text {
+    background: linear-gradient(135deg, #52525b, #71717a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-zinc .btn-glow:hover {
+    box-shadow: 0 0 20px #52525b, 0 0 40px #52525b, 0 0 60px #52525b;
+}
+
+body.color-theme-zinc .glass-card {
+    background: rgba(39, 39, 42, 0.8);
+    border: 1px solid rgba(82, 82, 91, 0.3);
+}
+
+body.color-theme-gold {
+    background: linear-gradient(135deg, #a16207, #eab308) !important;
+}
+
+body.color-theme-gold .gradient-text {
+    background: linear-gradient(135deg, #eab308, #facc15);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-gold .btn-glow:hover {
+    box-shadow: 0 0 20px #eab308, 0 0 40px #eab308, 0 0 60px #eab308;
+}
+
+body.color-theme-gold .glass-card {
+    background: rgba(161, 98, 7, 0.8);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+body.color-theme-copper {
+    background: linear-gradient(135deg, #7c2d12, #ea580c) !important;
+}
+
+body.color-theme-copper .gradient-text {
+    background: linear-gradient(135deg, #ea580c, #fb923c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-copper .btn-glow:hover {
+    box-shadow: 0 0 20px #ea580c, 0 0 40px #ea580c, 0 0 60px #ea580c;
+}
+
+body.color-theme-copper .glass-card {
+    background: rgba(124, 45, 18, 0.8);
+    border: 1px solid rgba(234, 88, 12, 0.3);
+}
+
+body.color-theme-silver {
+    background: linear-gradient(135deg, #374151, #9ca3af) !important;
+}
+
+body.color-theme-silver .gradient-text {
+    background: linear-gradient(135deg, #9ca3af, #d1d5db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-silver .btn-glow:hover {
+    box-shadow: 0 0 20px #9ca3af, 0 0 40px #9ca3af, 0 0 60px #9ca3af;
+}
+
+body.color-theme-silver .glass-card {
+    background: rgba(55, 65, 81, 0.8);
+    border: 1px solid rgba(156, 163, 175, 0.3);
+}
+
+body.color-theme-bronze {
+    background: linear-gradient(135deg, #92400e, #f59e0b) !important;
+}
+
+body.color-theme-bronze .gradient-text {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-bronze .btn-glow:hover {
+    box-shadow: 0 0 20px #f59e0b, 0 0 40px #f59e0b, 0 0 60px #f59e0b;
+}
+
+body.color-theme-bronze .glass-card {
+    background: rgba(146, 64, 14, 0.8);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+body.color-theme-platinum {
+    background: linear-gradient(135deg, #1f2937, #6b7280) !important;
+}
+
+body.color-theme-platinum .gradient-text {
+    background: linear-gradient(135deg, #6b7280, #9ca3af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-platinum .btn-glow:hover {
+    box-shadow: 0 0 20px #6b7280, 0 0 40px #6b7280, 0 0 60px #6b7280;
+}
+
+body.color-theme-platinum .glass-card {
+    background: rgba(31, 41, 55, 0.8);
+    border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+body.color-theme-ruby {
+    background: linear-gradient(135deg, #7f1d1d, #dc2626) !important;
+}
+
+body.color-theme-ruby .gradient-text {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-ruby .btn-glow:hover {
+    box-shadow: 0 0 20px #dc2626, 0 0 40px #dc2626, 0 0 60px #dc2626;
+}
+
+body.color-theme-ruby .glass-card {
+    background: rgba(127, 29, 29, 0.8);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+/* Neon Color Themes */
+body.color-theme-neon-green {
+    background: linear-gradient(135deg, #14532d, #22c55e) !important;
+}
+
+body.color-theme-neon-green .gradient-text {
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-neon-green .btn-glow:hover {
+    box-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e, 0 0 60px #22c55e;
+}
+
+body.color-theme-neon-green .glass-card {
+    background: rgba(20, 83, 45, 0.8);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+body.color-theme-neon-blue {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important;
+}
+
+body.color-theme-neon-blue .gradient-text {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-neon-blue .btn-glow:hover {
+    box-shadow: 0 0 20px #3b82f6, 0 0 40px #3b82f6, 0 0 60px #3b82f6;
+}
+
+body.color-theme-neon-blue .glass-card {
+    background: rgba(30, 58, 138, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+body.color-theme-neon-pink {
+    background: linear-gradient(135deg, #831843, #ec4899) !important;
+}
+
+body.color-theme-neon-pink .gradient-text {
+    background: linear-gradient(135deg, #ec4899, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-neon-pink .btn-glow:hover {
+    box-shadow: 0 0 20px #ec4899, 0 0 40px #ec4899, 0 0 60px #ec4899;
+}
+
+body.color-theme-neon-pink .glass-card {
+    background: rgba(131, 24, 67, 0.8);
+    border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+body.color-theme-neon-purple {
+    background: linear-gradient(135deg, #581c87, #a855f7) !important;
+}
+
+body.color-theme-neon-purple .gradient-text {
+    background: linear-gradient(135deg, #a855f7, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-neon-purple .btn-glow:hover {
+    box-shadow: 0 0 20px #a855f7, 0 0 40px #a855f7, 0 0 60px #a855f7;
+}
+
+body.color-theme-neon-purple .glass-card {
+    background: rgba(88, 28, 135, 0.8);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+body.color-theme-neon-orange {
+    background: linear-gradient(135deg, #9a3412, #f97316) !important;
+}
+
+body.color-theme-neon-orange .gradient-text {
+    background: linear-gradient(135deg, #f97316, #fb923c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-neon-orange .btn-glow:hover {
+    box-shadow: 0 0 20px #f97316, 0 0 40px #f97316, 0 0 60px #f97316;
+}
+
+body.color-theme-neon-orange .glass-card {
+    background: rgba(154, 52, 18, 0.8);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+body.color-theme-neon-cyan {
+    background: linear-gradient(135deg, #155e75, #06b6d4) !important;
+}
+
+body.color-theme-neon-cyan .gradient-text {
+    background: linear-gradient(135deg, #06b6d4, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-neon-cyan .btn-glow:hover {
+    box-shadow: 0 0 20px #06b6d4, 0 0 40px #06b6d4, 0 0 60px #06b6d4;
+}
+
+body.color-theme-neon-cyan .glass-card {
+    background: rgba(21, 94, 117, 0.8);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+/* Gradient Color Themes */
+body.color-theme-sunset {
+    background: linear-gradient(135deg, #f97316, #ec4899) !important;
+}
+
+body.color-theme-sunset .gradient-text {
+    background: linear-gradient(135deg, #f97316, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-sunset .btn-glow:hover {
+    box-shadow: 0 0 20px #f97316, 0 0 40px #ec4899, 0 0 60px #f97316;
+}
+
+body.color-theme-sunset .glass-card {
+    background: rgba(249, 115, 22, 0.8);
+    border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+body.color-theme-ocean {
+    background: linear-gradient(135deg, #0ea5e9, #06b6d4) !important;
+}
+
+body.color-theme-ocean .gradient-text {
+    background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-ocean .btn-glow:hover {
+    box-shadow: 0 0 20px #0ea5e9, 0 0 40px #06b6d4, 0 0 60px #0ea5e9;
+}
+
+body.color-theme-ocean .glass-card {
+    background: rgba(14, 165, 233, 0.8);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+body.color-theme-forest {
+    background: linear-gradient(135deg, #16a34a, #22c55e) !important;
+}
+
+body.color-theme-forest .gradient-text {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-forest .btn-glow:hover {
+    box-shadow: 0 0 20px #16a34a, 0 0 40px #22c55e, 0 0 60px #16a34a;
+}
+
+body.color-theme-forest .glass-card {
+    background: rgba(22, 163, 74, 0.8);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+body.color-theme-lavender {
+    background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
+}
+
+body.color-theme-lavender .gradient-text {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-lavender .btn-glow:hover {
+    box-shadow: 0 0 20px #7c3aed, 0 0 40px #a855f7, 0 0 60px #7c3aed;
+}
+
+body.color-theme-lavender .glass-card {
+    background: rgba(124, 58, 237, 0.8);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+body.color-theme-coral {
+    background: linear-gradient(135deg, #f97316, #fb7185) !important;
+}
+
+body.color-theme-coral .gradient-text {
+    background: linear-gradient(135deg, #f97316, #fb7185);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-coral .btn-glow:hover {
+    box-shadow: 0 0 20px #f97316, 0 0 40px #fb7185, 0 0 60px #f97316;
+}
+
+body.color-theme-coral .glass-card {
+    background: rgba(249, 115, 22, 0.8);
+    border: 1px solid rgba(251, 113, 133, 0.3);
+}
+
+body.color-theme-midnight {
+    background: linear-gradient(135deg, #1e293b, #0f172a) !important;
+}
+
+body.color-theme-midnight .gradient-text {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.color-theme-midnight .btn-glow:hover {
+    box-shadow: 0 0 20px #1e293b, 0 0 40px #0f172a, 0 0 60px #1e293b;
+}
+
+body.color-theme-midnight .glass-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(15, 23, 42, 0.3);
 }
