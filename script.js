@@ -3,15 +3,40 @@
 // ========================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Ensure body starts with dark-mode (as per HTML)
-    if (!document.body.classList.contains('light-mode') && !document.body.classList.contains('dark-mode')) {
-        document.body.classList.add('dark-mode');
+    // Respect saved theme preference first
+    const savedThemePref = localStorage.getItem('theme');
+    const body = document.body;
+    if (savedThemePref === 'light') {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+    } else if (savedThemePref === 'dark') {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+    } else {
+        // Default to dark-mode if nothing saved
+        if (!body.classList.contains('light-mode') && !body.classList.contains('dark-mode')) {
+            body.classList.add('dark-mode');
+        }
     }
 
-    // Load saved color theme on page load
+    // Helper to remove all color theme classes
+    function clearColorThemes() {
+        body.classList.remove(
+            'color-theme-blue', 'color-theme-green', 'color-theme-red',
+            'color-theme-orange', 'color-theme-pink', 'color-theme-cyan',
+            'color-theme-indigo', 'color-theme-teal', 'color-theme-violet',
+            'color-theme-emerald', 'color-theme-rose'
+        );
+    }
+
+    // Apply saved color theme only in dark mode
     const savedColorTheme = localStorage.getItem('selectedColorTheme');
-    if (savedColorTheme && savedColorTheme !== 'purple') {
-        document.body.classList.add(`color-theme-${savedColorTheme}`);
+    if (body.classList.contains('dark-mode')) {
+        if (savedColorTheme && savedColorTheme !== 'purple') {
+            body.classList.add(`color-theme-${savedColorTheme}`);
+        }
+    } else {
+        clearColorThemes();
     }
 
     // ========================================
@@ -20,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    const body = document.body;
     
     if (menuToggle && mobileMenu) {
         // Mobile Menu Toggle
@@ -78,8 +102,27 @@ document.addEventListener('DOMContentLoaded', function() {
         
         toggles.forEach(toggle => {
             toggle.addEventListener('click', function() {
-                document.body.classList.toggle('light-mode');
-                document.body.classList.toggle('dark-mode');
+                const bodyEl = document.body;
+                const goingLight = !bodyEl.classList.contains('light-mode');
+
+                bodyEl.classList.toggle('light-mode');
+                bodyEl.classList.toggle('dark-mode');
+
+                // If switching to light, force-remove any color themes (light mode is fixed gold)
+                if (goingLight) {
+                    bodyEl.classList.remove(
+                        'color-theme-blue', 'color-theme-green', 'color-theme-red',
+                        'color-theme-orange', 'color-theme-pink', 'color-theme-cyan',
+                        'color-theme-indigo', 'color-theme-teal', 'color-theme-violet',
+                        'color-theme-emerald', 'color-theme-rose'
+                    );
+                } else {
+                    // Switching back to dark: re-apply saved theme if any
+                    const saved = localStorage.getItem('selectedColorTheme');
+                    if (saved && saved !== 'purple') {
+                        bodyEl.classList.add(`color-theme-${saved}`);
+                    }
+                }
                 
                 const icon = this.querySelector('i');
                 if (icon) {
@@ -149,27 +192,26 @@ document.addEventListener('DOMContentLoaded', function() {
         colorOptions.forEach(option => {
             option.addEventListener('click', () => {
                 const color = option.dataset.color;
-                
-                // Remove all existing color theme classes
-                document.body.classList.remove(
+
+                // Always persist choice
+                localStorage.setItem('selectedColorTheme', color);
+
+                // Apply only if in dark mode
+                const bodyEl = document.body;
+                bodyEl.classList.remove(
                     'color-theme-blue', 'color-theme-green', 'color-theme-red',
                     'color-theme-orange', 'color-theme-pink', 'color-theme-cyan',
                     'color-theme-indigo', 'color-theme-teal', 'color-theme-violet',
                     'color-theme-emerald', 'color-theme-rose'
                 );
-                
-                // Add selected color theme class
-                if (color !== 'purple') {
-                    document.body.classList.add(`color-theme-${color}`);
+                if (bodyEl.classList.contains('dark-mode') && color !== 'purple') {
+                    bodyEl.classList.add(`color-theme-${color}`);
                 }
-                
-                // Update selected state
+
+                // Update selected state visual
                 colorOptions.forEach(opt => opt.classList.remove('selected'));
                 option.classList.add('selected');
-                
-                // Save to localStorage
-                localStorage.setItem('selectedColorTheme', color);
-                
+
                 // Close modal
                 if (colorPickerModal) {
                     colorPickerModal.classList.add('hidden');
@@ -181,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Set default selected state
         const savedTheme = localStorage.getItem('selectedColorTheme');
-        if (savedTheme && savedTheme !== 'purple') {
+        if (savedTheme) {
             colorOptions.forEach(opt => {
                 if (opt.dataset.color === savedTheme) {
                     opt.classList.add('selected');
