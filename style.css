@@ -136,6 +136,17 @@ body::-webkit-scrollbar {
   transform: translateY(-2px);
 }
 
+/* Continuous rotation for settings gear */
+.spin-247 {
+  animation: spin247 4s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes spin247 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* Fade / slide scroll animations */
 .fade-in {
   opacity: 0;
