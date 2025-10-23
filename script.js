@@ -1,30 +1,261 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Mobile menu toggle
-    document.getElementById('menu-toggle')?.addEventListener('click', () => {
-        const menu = document.getElementById('mobile-menu');
-        menu?.classList.toggle('hidden');
+// ========================================
+// COMPLETE PORTFOLIO JAVASCRIPT - CONSOLIDATED
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Ensure body starts with dark-mode (as per HTML)
+    if (!document.body.classList.contains('light-mode') && !document.body.classList.contains('dark-mode')) {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Load saved color theme on page load
+    const savedColorTheme = localStorage.getItem('selectedColorTheme');
+    if (savedColorTheme && savedColorTheme !== 'purple') {
+        document.body.classList.add(`color-theme-${savedColorTheme}`);
+    }
+
+    // ========================================
+    // MOBILE NAVIGATION
+    // ========================================
+    
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
+    
+    if (menuToggle && mobileMenu) {
+        // Mobile Menu Toggle
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('hidden');
+            body.classList.toggle('menu-open');
+            
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                mobileMenu.classList.add('hidden');
+                body.classList.remove('menu-open');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            }
+        });
+    }
+    
+    // Close mobile menu on window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            mobileMenu.classList.remove('active');
+            mobileMenu.classList.add('hidden');
+            body.classList.remove('menu-open');
+            const icon = menuToggle?.querySelector('i');
+            if (icon) {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        }
     });
 
-    // Scroll animations
+    // ========================================
+    // THEME TOGGLE (Desktop & Mobile)
+    // ========================================
+    
+    function setupThemeToggle() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        
+        const toggles = [themeToggle, themeToggleMobile].filter(Boolean);
+        
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                document.body.classList.toggle('light-mode');
+                document.body.classList.toggle('dark-mode');
+                
+                const icon = this.querySelector('i');
+                if (icon) {
+                    if (document.body.classList.contains('light-mode')) {
+                        icon.classList.remove('fa-moon');
+                        icon.classList.add('fa-sun');
+                    } else {
+                        icon.classList.remove('fa-sun');
+                        icon.classList.add('fa-moon');
+                    }
+                }
+                
+                // Save preference
+                localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+            });
+        });
+    }
+    setupThemeToggle();
+
+    // ========================================
+    // COLOR PICKER (Desktop & Mobile)
+    // ========================================
+    
+    function setupColorPicker() {
+        const colorPickerBtn = document.getElementById('color-picker-btn');
+        const colorPickerBtnMobile = document.getElementById('color-picker-btn-mobile');
+        const colorPickerModal = document.getElementById('colorPickerModal');
+        const closeColorPicker = document.getElementById('closeColorPicker');
+        const colorOptions = document.querySelectorAll('.color-option');
+        
+        const openBtns = [colorPickerBtn, colorPickerBtnMobile].filter(Boolean);
+        
+        // Open color picker modal
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (colorPickerModal) {
+                    colorPickerModal.classList.remove('hidden');
+                    colorPickerModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Close color picker modal
+        if (closeColorPicker) {
+            closeColorPicker.addEventListener('click', () => {
+                if (colorPickerModal) {
+                    colorPickerModal.classList.add('hidden');
+                    colorPickerModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+        
+        // Close modal when clicking outside
+        if (colorPickerModal) {
+            colorPickerModal.addEventListener('click', (e) => {
+                if (e.target === colorPickerModal) {
+                    colorPickerModal.classList.add('hidden');
+                    colorPickerModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+        
+        // Color theme selection
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const color = option.dataset.color;
+                
+                // Remove all existing color theme classes
+                document.body.classList.remove(
+                    'color-theme-blue', 'color-theme-green', 'color-theme-red',
+                    'color-theme-orange', 'color-theme-pink', 'color-theme-cyan',
+                    'color-theme-indigo', 'color-theme-teal', 'color-theme-violet',
+                    'color-theme-emerald', 'color-theme-rose'
+                );
+                
+                // Add selected color theme class
+                if (color !== 'purple') {
+                    document.body.classList.add(`color-theme-${color}`);
+                }
+                
+                // Update selected state
+                colorOptions.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                
+                // Save to localStorage
+                localStorage.setItem('selectedColorTheme', color);
+                
+                // Close modal
+                if (colorPickerModal) {
+                    colorPickerModal.classList.add('hidden');
+                    colorPickerModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        
+        // Set default selected state
+        const savedTheme = localStorage.getItem('selectedColorTheme');
+        if (savedTheme && savedTheme !== 'purple') {
+            colorOptions.forEach(opt => {
+                if (opt.dataset.color === savedTheme) {
+                    opt.classList.add('selected');
+                } else {
+                    opt.classList.remove('selected');
+                }
+            });
+        } else if (colorOptions[0]) {
+            colorOptions[0].classList.add('selected');
+        }
+    }
+    setupColorPicker();
+
+    // ========================================
+    // SMOOTH SCROLLING & MOBILE MENU CLOSE
+    // ========================================
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId.length > 1) {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({ 
+                        top: targetElement.offsetTop - 80, 
+                        behavior: 'smooth' 
+                    });
+                    
+                    // Close mobile menu
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('active');
+                        body.classList.remove('menu-open');
+                        const icon = menuToggle?.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    }
+                }
+            }
+        });
+    });
+
+    // ========================================
+    // SCROLL ANIMATIONS
+    // ========================================
+    
     const fadeElements = document.querySelectorAll('.fade-in');
     const slideElements = document.querySelectorAll('.slide-in');
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
         },
         { threshold: 0.12 }
     );
-    fadeElements.forEach((el) => observer.observe(el));
-    slideElements.forEach((el) => observer.observe(el));
+    
+    fadeElements.forEach(el => observer.observe(el));
+    slideElements.forEach(el => observer.observe(el));
 
-    // Project cards animation
+    // Project cards staggered animation
     document.querySelectorAll('.project-card').forEach((el, idx) => {
         setTimeout(() => el.classList.add('visible'), idx * 150);
     });
 
-    // Floating particles animation
+    // ========================================
+    // FLOATING PARTICLES
+    // ========================================
+    
     function createParticles() {
         const particlesContainer = document.getElementById('particles');
         if (particlesContainer) {
@@ -38,44 +269,50 @@ document.addEventListener("DOMContentLoaded", () => {
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.top = `${Math.random() * 100}%`;
                 const duration = Math.random() * 20 + 10;
-                particle.style.animation = `float ${duration}s linear infinite`;
-                particle.style.animationDelay = `${Math.random() * 10}s`;
+                particle.style.setProperty('--float-duration', `${duration}s`);
+                particle.style.setProperty('--float-delay', `${Math.random() * 10}s`);
                 particlesContainer.appendChild(particle);
-                const keyframes = `@keyframes float { 0% { transform: translate(0,0) rotate(0deg); opacity: 1; } 100% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg); opacity: 0; } }`;
-                const style = document.createElement('style');
-                style.innerHTML = keyframes;
-                document.head.appendChild(style);
             }
         }
     }
     createParticles();
 
-    // Smooth scrolling for anchor links & close mobile menu
-    document.querySelectorAll('a[href^="#"]')?.forEach((anchor) => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId.length > 1) {
-                e.preventDefault();
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
-                }
+    // ========================================
+    // STARFIELD ANIMATION
+    // ========================================
+    
+    function createStars() {
+        const starfield = document.querySelector('.starfield');
+        if (starfield) {
+            const starCount = 100;
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = `${Math.random() * 2 + 1}px`;
+                star.style.height = star.style.width;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.setProperty('--twinkle-duration', `${Math.random() * 5 + 5}s`);
+                star.style.setProperty('--twinkle-delay', `${Math.random() * 5}s`);
+                starfield.appendChild(star);
             }
-        });
-    });
+        }
+    }
+    createStars();
 
-    // Award card carousels - automatic image slider for each card
+    // ========================================
+    // AWARDS CAROUSEL
+    // ========================================
+    
     const carousels = document.querySelectorAll('.card-carousel');
-    carousels.forEach((carousel) => {
+    carousels.forEach(carousel => {
         let images = carousel.querySelectorAll('img');
         let currentIndex = 0;
         let intervalId;
 
         function showImage(index) {
-            images.forEach((img) => img.classList.remove('active'));
-            images[index].classList.add('active');
+            images.forEach(img => img.classList.remove('active'));
+            if (images[index]) images[index].classList.add('active');
             currentIndex = index;
         }
 
@@ -89,14 +326,17 @@ document.addEventListener("DOMContentLoaded", () => {
             clearInterval(intervalId);
         }
 
-        startAutoSlide();
-
-        carousel.addEventListener('mouseenter', stopAutoSlide);
-        carousel.addEventListener('mouseleave', startAutoSlide);
-
-        images.forEach((img) => {
-            img.addEventListener('click', (e) => e.stopPropagation());
-        });
+        if (images.length > 0) {
+            showImage(0);
+            startAutoSlide();
+            
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+            
+            images.forEach(img => {
+                img.addEventListener('click', (e) => e.stopPropagation());
+            });
+        }
     });
 
     // Awards horizontal scroll arrows
@@ -132,7 +372,10 @@ document.addEventListener("DOMContentLoaded", () => {
         updateArrowState();
     }
 
-    // Modal Logic (for Certificates and Awards)
+    // ========================================
+    // MODAL LOGIC (Certificates & Awards)
+    // ========================================
+    
     const modal = document.getElementById('certificateModal');
     const modalImg = document.getElementById('modalImage');
     const closeBtn = modal?.querySelector('button[onclick="closeModal()"]');
@@ -168,26 +411,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    window.openModal = function (imageSrc) {
+    // Global functions for inline onclick handlers
+    window.openModal = function(imageSrc) {
         if (modal && modalImg) {
             openModal([{ src: imageSrc, alt: 'Certificate or Award' }], 0);
         }
     };
 
-    window.openAwardModal = function (card) {
+    window.openAwardModal = function(card) {
         if (modal && modalImg) {
             const images = card.querySelectorAll('.card-carousel img');
             openModal(images, 0);
         }
     };
 
-    window.closeModal = function () {
+    window.closeModal = function() {
         if (modal) {
             modal.classList.add('hidden');
             document.body.style.overflow = '';
         }
     };
 
+    // Event listeners
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             if (modal) {
@@ -228,13 +473,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (e.key === 'Escape') {
                     modal.classList.add('hidden');
                     document.body.style.overflow = '';
-                } else if (e.key === 'ArrowLeft' && !prevBtn.disabled) {
+                } else if (e.key === 'ArrowLeft' && !prevBtn?.disabled) {
                     if (modalImages.length > 0) {
                         modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
                         showModalImage();
                         updateModalArrowState();
                     }
-                } else if (e.key === 'ArrowRight' && !nextBtn.disabled) {
+                } else if (e.key === 'ArrowRight' && !nextBtn?.disabled) {
                     if (modalImages.length > 0) {
                         modalIndex = (modalIndex + 1) % modalImages.length;
                         showModalImage();
@@ -245,178 +490,36 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // EmailJS functionality
+    // ========================================
+    // CONTACT FORM (EmailJS)
+    // ========================================
+    
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // Prepare form data
             const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
+                name: document.getElementById('name')?.value || '',
+                email: document.getElementById('email')?.value || '',
+                subject: document.getElementById('subject')?.value || '',
+                message: document.getElementById('message')?.value || ''
             };
 
             // Send email using EmailJS
-            emailjs.send('service_9h1mavu', 'template_2oli97l', formData)
-                .then(() => {
-                    alert('Message sent successfully!');
-                    contactForm.reset();
-                })
-                .catch((error) => {
-                    console.error('EmailJS error:', error);
-                    alert('Failed to send message. Please try again later.');
-                });
-        });
-    }
-
-    // Theme toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) {
-        // Ensure body starts with dark-mode (as per HTML)
-        if (!document.body.classList.contains('light-mode') && !document.body.classList.contains('dark-mode')) {
-            document.body.classList.add('dark-mode');
-        }
-
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            document.body.classList.toggle('light-mode');
-            const isLightMode = document.body.classList.contains('light-mode');
-            themeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        });
-    }
-
-    // Starfield animation
-    function createStars() {
-        const starfield = document.querySelector('.starfield');
-        if (starfield) {
-            const starCount = 100; // Adjust for desired star density
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.width = `${Math.random() * 2 + 1}px`;
-                star.style.height = star.style.width;
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.animationDuration = `${Math.random() * 5 + 5}s`;
-                star.style.animationDelay = `${Math.random() * 5}s`;
-                starfield.appendChild(star);
-            }
-        }
-    }
-    createStars();
-
-    // Color Picker Functionality
-    const colorPickerBtn = document.getElementById('color-picker-btn');
-    const colorPickerModal = document.getElementById('colorPickerModal');
-    const closeColorPicker = document.getElementById('closeColorPicker');
-    const colorOptions = document.querySelectorAll('.color-option');
-    const resetColor = document.getElementById('resetColor');
-    
-    // Open color picker modal
-    colorPickerBtn.addEventListener('click', () => {
-        colorPickerModal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-    });
-    
-    // Close color picker modal
-    closeColorPicker.addEventListener('click', () => {
-        colorPickerModal.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    });
-    
-    // Close modal when clicking outside
-    colorPickerModal.addEventListener('click', (e) => {
-        if (e.target === colorPickerModal) {
-            colorPickerModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-    });
-    
-    // Color theme selection
-    colorOptions.forEach(option => {
-        option.addEventListener('click', () => {
-            const color = option.dataset.color;
-            
-            // Remove all existing color theme classes
-            document.body.classList.remove(
-                'color-theme-blue',
-                'color-theme-green', 
-                'color-theme-red',
-                'color-theme-orange',
-                'color-theme-pink',
-                'color-theme-cyan',
-                'color-theme-indigo',
-                'color-theme-teal',
-                'color-theme-violet',
-                'color-theme-emerald',
-                'color-theme-rose'
-            );
-            
-            // Add selected color theme class
-            if (color !== 'purple') {
-                document.body.classList.add(`color-theme-${color}`);
-            }
-            
-            // Update selected state
-            colorOptions.forEach(opt => opt.classList.remove('selected'));
-            option.classList.add('selected');
-            
-            // Save to localStorage
-            localStorage.setItem('selectedColorTheme', color);
-            
-            // Close modal
-            colorPickerModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-    });
-    
-    // Reset to default color
-    resetColor.addEventListener('click', () => {
-        // Remove all color theme classes
-        document.body.classList.remove(
-            'color-theme-blue',
-            'color-theme-green', 
-            'color-theme-red',
-            'color-theme-orange',
-            'color-theme-pink',
-            'color-theme-cyan',
-            'color-theme-indigo',
-            'color-theme-teal',
-            'color-theme-violet',
-            'color-theme-emerald',
-            'color-theme-rose'
-        );
-        
-        // Update selected state
-        colorOptions.forEach(opt => opt.classList.remove('selected'));
-        colorOptions[0].classList.add('selected'); // Purple is default
-        
-        // Save to localStorage
-        localStorage.setItem('selectedColorTheme', 'purple');
-        
-        // Close modal
-        colorPickerModal.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    });
-    
-    // Load saved color theme on page load
-    const savedColorTheme = localStorage.getItem('selectedColorTheme');
-    if (savedColorTheme && savedColorTheme !== 'purple') {
-        document.body.classList.add(`color-theme-${savedColorTheme}`);
-        
-        // Update selected state in modal
-        colorOptions.forEach(opt => {
-            if (opt.dataset.color === savedColorTheme) {
-                opt.classList.add('selected');
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send('service_9h1mavu', 'template_2oli97l', formData)
+                    .then(() => {
+                        alert('Message sent successfully!');
+                        contactForm.reset();
+                    })
+                    .catch((error) => {
+                        console.error('EmailJS error:', error);
+                        alert('Failed to send message. Please try again later.');
+                    });
             } else {
-                opt.classList.remove('selected');
+                alert('Email service not loaded. Please try again later.');
             }
         });
-    } else {
-        // Set purple as default selected
-        colorOptions[0].classList.add('selected');
     }
 });

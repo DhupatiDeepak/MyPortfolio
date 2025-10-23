@@ -384,11 +384,11 @@ body.light-mode #stars3 {
     
     <!-- Navigation -->
     <nav class="glass-card fixed w-full z-50 py-4 px-6 md:px-12">
-        <div class="flex justify-between items-center">
+        <div class="flex items-center justify-between w-full">
             <a href="#" class="text-2xl font-bold gradient-text heading-font">DEEPAK<span class="text-white">PORTFOLIO</span></a>
-            <div class="hidden md:flex md:items-center md:space-x-8">
+            <div class="hidden md:flex items-center space-x-8">
                 <a href="#home" class="text-white hover:text-purple-300 transition">Home</a>
-                <a href="#about" class="text-white hover:text-purple-300 transition">About</a>
+                <a href="#about" class="text-white hover:text-purple-300 transition">About</a> 
                 <a href="#skills" class="text-white hover:text-purple-300 transition">Skills</a>
                 <a href="#internships" class="text-white hover:text-purple-300 transition">Internships</a>
                 <a href="#projects" class="text-white hover:text-purple-300 transition">Projects</a>
@@ -397,16 +397,28 @@ body.light-mode #stars3 {
                 <a href="#awards" class="text-white hover:text-purple-300 transition">Awards</a>
                 <a href="#interests" class="text-white hover:text-purple-300 transition">Interests</a>
                 <a href="#contact" class="text-white hover:text-purple-300 transition">Contact</a>
-            </div>
-            <div class="flex items-center gap-3">
-                <button id="theme-toggle" class="text-white hover:text-purple-300 transition"><i class="fas fa-moon"></i></button>
-                <button id="color-picker-btn" class="text-white hover:text-purple-300 transition dark-mode-only"><i class="fas fa-palette"></i></button>
-                <br>
-                <br>
-                                <a id="resumeTopBtn" href="images/Deepak_Resume.pdf" download class="hidden md:inline-flex btn-glow pulse-glow border-2 border-purple-500 text-white px-4 py-2 rounded-full font-medium hover:bg-purple-900/30 transition">
+                <button id="theme-toggle" class="text-white hover:text-purple-300 transition p-2">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="color-picker-btn" class="text-white hover:text-purple-300 transition p-2 dark-mode-only">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <a id="resumeTopBtn" href="images/Deepak_Resume.pdf" download class="btn-glow pulse-glow border-2 border-purple-500 text-white px-4 py-2 rounded-full font-medium hover:bg-purple-900/30 transition">
                     <i class="fa-solid fa-file-arrow-down mr-2"></i> Download Resume
                 </a>
-                <button class="md:hidden text-white" id="menu-toggle"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+    
+            <!-- MOBILE NAV ICONS -->
+            <div class="mobile-nav-icons md:hidden flex items-center gap-2">
+                <button id="theme-toggle-mobile" aria-label="Toggle theme" class="text-white hover:text-purple-300 transition p-2 rounded-full bg-black/20 w-10 h-10 flex items-center justify-center">
+                    <i class="fas fa-moon text-lg"></i>
+                </button>
+                <button id="color-picker-btn-mobile" aria-label="Open color picker" class="text-white hover:text-purple-300 transition p-2 rounded-full bg-black/20 dark-mode-only w-10 h-10 flex items-center justify-center">
+                    <i class="fas fa-palette text-lg"></i>
+                </button>
+                <button id="menu-toggle" aria-label="Open menu" class="text-white p-2 rounded-full bg-black/20 w-10 h-10 flex items-center justify-center">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </div>
         </div>
         <!-- Mobile menu -->
@@ -1311,15 +1323,6 @@ body.light-mode #stars3 {
                     <div class="w-full h-8 rounded-lg border-2 border-transparent hover:border-white cursor-pointer transition-all duration-300"></div>
                 </div>
             </div>
-                <div class="text-center mt-6">
-                    <button id="resetColor" class="relative group bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 overflow-hidden">
-                        <span class="relative z-10 flex items-center gap-2">
-                            <i class="fas fa-undo text-sm"></i>
-                            Reset to Default
-                        </span>
-                        <div class="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </button>
-                </div>
             </div>
         </div>
     </div>
